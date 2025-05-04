@@ -140,7 +140,7 @@ class AiStuffCog(commands.Cog):
         embed.title = f"Generated Image by {interaction.user.display_name}"
         embed.add_field(name='Prompt', value=f'- {prompt}', inline=False)
         embed.add_field(name='Image Details', value=f"- **Model:** {model.value}\n- **Sampler:** {sampler.value}\n- **Seed:**{seed}", inline=True)
-        embed.set_footer(text=f"© Olympus Development", icon_url=self.bot.user.avatar.url)
+        embed.set_footer(text=f"© Sentinel Development", icon_url=self.bot.user.avatar.url)
         #embed.set_thumbnail(url=img_file)
         if negative:
             embed.add_field(name='Negative Prompt', value=f'- {negative}', inline=False)
@@ -153,8 +153,8 @@ class AiStuffCog(commands.Cog):
 
 
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh
+    + Discord: aadarshhhhh 
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

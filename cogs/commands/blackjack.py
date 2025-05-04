@@ -130,7 +130,7 @@ class Blackjack(commands.Cog):
 
             def check(reaction: discord.Reaction, user: Union[discord.Member, discord.User]) -> bool:
                 return all((
-                    str(reaction.emoji) in ("🇸", "🇭"),
+                    str(reaction.emoji) in ("ðŸ‡¸", "ðŸ‡­"),
                     user == ctx.author,
                     user != self.bot.user,
                     reaction.message == msg
@@ -155,8 +155,8 @@ class Blackjack(commands.Cog):
                     description=f"Your hand: {player_score}\nDealer's hand: {dealer_score}"
                 )
 
-                await msg.add_reaction("🇭")
-                await msg.add_reaction("🇸")
+                await msg.add_reaction("ðŸ‡­")
+                await msg.add_reaction("ðŸ‡¸")
 
                 try:
                     reaction, _ = await self.bot.wait_for('reaction_add', timeout=60, check=check)
@@ -164,12 +164,12 @@ class Blackjack(commands.Cog):
                     await msg.delete()
                     return
 
-                if str(reaction.emoji) == "🇭":
+                if str(reaction.emoji) == "ðŸ‡­":
                     player_hand.append(deck.pop())
                     await msg.delete()
                     continue
 
-                elif str(reaction.emoji) == "🇸":
+                elif str(reaction.emoji) == "ðŸ‡¸":
                     standing = True
                     break
 
@@ -216,8 +216,8 @@ class Blackjack(commands.Cog):
 
 
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh 
+    + Discord: aadarshhhhh 
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out support or DM me.
 """

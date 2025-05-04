@@ -36,9 +36,9 @@ class Extraowner(commands.Cog):
             await ctx.send(embed=embed)
             return
 
-        Olympus = ['1070619070468214824', '677952614390038559']
-        if ctx.author.id != ctx.guild.owner_id and str(ctx.author.id) not in Olympus:
-            embed = discord.Embed(title="<:olympus_cross:1227866668152393789> Access Denied",
+        Sentinel = ['1131806691969728593']
+        if ctx.author.id != ctx.guild.owner_id and str(ctx.author.id) not in Sentinel:
+            embed = discord.Embed(title="<:olympus_cross:1368120655643414548> Access Denied",
                                   description="Only Server Owner Can Run This Command",
                                   color=0x000000
             )
@@ -62,7 +62,7 @@ class Extraowner(commands.Cog):
         
         if option.lower() == 'set':
             if user is None or user.bot:
-                embed = discord.Embed(title="<:olympus_cross:1227866668152393789> Error",
+                embed = discord.Embed(title="<:olympus_cross:1368120655643414548> Error",
                     description="Please Provide a Valid User Mention or ID to Set as Extra Owner!",
                     color=0x000000
                 )
@@ -84,7 +84,7 @@ class Extraowner(commands.Cog):
             elif view.value:
                 await self.db.execute('INSERT OR REPLACE INTO extraowners (guild_id, owner_id) VALUES (?, ?)', (guild_id, user.id))
                 await self.db.commit()
-                embed = discord.Embed(title="<:olympus_tick:1227866641027698792> Success",
+                embed = discord.Embed(title="<:olympus_tick:1368119361440845824> Success",
                     description=f"Added {user.mention} As Extraowner",
                     color=0x000000
                 )
@@ -98,7 +98,7 @@ class Extraowner(commands.Cog):
                 row = await cursor.fetchone()
 
             if not row:
-                embed = discord.Embed(title="<:olympus_cross:1227866668152393789> Error",
+                embed = discord.Embed(title="<:olympus_cross:1368120655643414548> Error",
                     description="No extra owner has been designated for this guild.",
                     color=0x000000
                 )
@@ -119,7 +119,7 @@ class Extraowner(commands.Cog):
                 elif view.value:
                     await self.db.execute('DELETE FROM extraowners WHERE guild_id = ?', (guild_id,))
                     await self.db.commit()
-                    embed = discord.Embed(title="<:olympus_tick:1227866641027698792> Success",
+                    embed = discord.Embed(title="<:olympus_tick:1368119361440845824> Success",
                         description="Disabled Extraowner Configuration!",
                         color=0x000000
                     )
@@ -132,7 +132,7 @@ class Extraowner(commands.Cog):
                 row = await cursor.fetchone()
 
             if not row:
-                embed = discord.Embed(title="<:olympus_cross:1227866668152393789> Error",
+                embed = discord.Embed(title="<:olympus_cross:1368120655643414548> Error",
                     description="No extra owner is currently assigned.",
                     color=0x000000
                 )
@@ -167,8 +167,8 @@ class ConfirmView(View):
         self.stop()
 
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh 
+    + Discord: aadarshhhhh 
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

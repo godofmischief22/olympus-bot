@@ -72,7 +72,7 @@ class Steal(commands.Cog):
             sanitized_name = self.sanitize_name(name)
             response = requests.get(url)
             img = BytesIO(response.content)
-            emoji = "⭐"  
+            emoji = "тнР"  
             await ctx.guild.create_sticker(name=sanitized_name, description="Added by bot", file=discord.File(img, filename="sticker.png"), emoji=emoji)
             await ctx.send(embed=discord.Embed(title="Steal", description=f"Added sticker \"**{sanitized_name}**\"!", color=0x000000))
         except Exception as e:
@@ -186,8 +186,8 @@ class Steal(commands.Cog):
 
 
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh 
+    + Discord: aadarshhhhh 
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

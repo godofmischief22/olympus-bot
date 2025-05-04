@@ -73,7 +73,7 @@ class Stats(commands.Cog):
     @ignore_check()
     @commands.cooldown(1, 7, commands.BucketType.user)
     async def stats(self, ctx):
-        processing_message = await ctx.send("<a:loading:1272527164256030873> Loading Olympus information...")
+        processing_message = await ctx.send("<a:loading:1368441649235103794> Loading Sentinel information...")
         
         guild_count = len(self.bot.guilds)
         user_count = sum(g.member_count for g in self.bot.guilds if g.member_count is not None)
@@ -99,21 +99,21 @@ class Stats(commands.Cog):
         channels_connected = sum(1 for vc in self.bot.voice_clients if vc)
         playing_tracks = sum(1 for vc in self.bot.voice_clients if vc.playing)
 
-        embed = Embed(title="Olympus Statistics: General", color=0x000000)
+        embed = Embed(title="Sentinel Statistics: General", color=0x000000)
         embed.add_field(name="<:channel:1204242537804734544> Channels", value=f"Total: **{channel_count}**\nText: **{text_channel_count}**   |   Voice: **{voice_channel_count}**   |   Category: **{category_channel_count}**", inline=False)
-        embed.add_field(name="<:uptime:1292499357660086343> Uptime", value=f"{uptime}", inline=False)
-        embed.add_field(name="<a:users:1292506970019987578> User Count", value=f"Humans: **{human_count}**   |   Bots: **{bot_count}**", inline=False)
-        embed.add_field(name="<:Folders:1302319651476340748> Commands", value=f"Total: **{commands_count}**   |   Slash: **{slash_commands}**", inline=False)
-        embed.add_field(name="<:python:1219641847262085210> Libraries Used", value=f"Discord Library: **[discord.py](https://discordpy.readthedocs.io/en/stable/)**\nTotal Libraries: **{total_libraries}**", inline=False)
-        embed.add_field(name="<:code:1292498725930930279> Codebase Stats", value=f"Total Python Files: **{total_files}**\nTotal Lines: **{total_lines}**\nTotal Words: **{total_words}**", inline=False)
+        embed.add_field(name="<:uptime:1368541060711710801> Uptime", value=f"{uptime}", inline=False)
+        embed.add_field(name="<a:users:1368541179913699419> User Count", value=f"Humans: **{human_count}**   |   Bots: **{bot_count}**", inline=False)
+        embed.add_field(name="<:Folders:1368541310264279152> Commands", value=f"Total: **{commands_count}**   |   Slash: **{slash_commands}**", inline=False)
+        embed.add_field(name="<:python:1368541395304054805> Libraries Used", value=f"Discord Library: **[discord.py](https://discordpy.readthedocs.io/en/stable/)**\nTotal Libraries: **{total_libraries}**", inline=False)
+        embed.add_field(name="<:code:1368541499008094209> Codebase Stats", value=f"Total Python Files: **{total_files}**\nTotal Lines: **{total_lines}**\nTotal Words: **{total_words}**", inline=False)
         embed.add_field(
-    name="<:gvMusic:1213831433219481722> Music Stats",
-    value=f"Currently Connected: **[{channels_connected}](https://discord.gg/odx)**\n"
-          f"Currently Playing: **[{playing_tracks}](https://discord.gg/odx)**\n"
-          f"Total Songs Played: **[{self.total_songs_played}](https://discord.gg/odx)**",
+    name="<:gvMusic:1368510958493896719> Music Stats",
+    value=f"Currently Connected: **[{channels_connected}](https://discord.gg/xXqPVtZV7h)**\n"
+          f"Currently Playing: **[{playing_tracks}](https://discord.gg/xXqPVtZV7h)**\n"
+          f"Total Songs Played: **[{self.total_songs_played}](https://discord.gg/xXqPVtZV7h)**",
     inline=False
         )
-        embed.set_footer(text="Powered by Olympus Development™", icon_url=self.bot.user.display_avatar.url)
+        embed.set_footer(text="Powered by Sentinel Development™", icon_url=self.bot.user.display_avatar.url)
 
         view = View()
         
@@ -128,13 +128,13 @@ class Stats(commands.Cog):
         system_button = Button(label="System", style=ButtonStyle.gray)
         async def system_button_callback(interaction):
             if interaction.user == ctx.author:
-                system_embed = Embed(title="Olympus Statistics: System", color=0x000000)
+                system_embed = Embed(title="Sentinel Statistics: System", color=0x000000)
 
-                system_embed.add_field(name="<:system:1292507895379918891> System Info", value=f"• Discord.py: **{discord.__version__}**\n• Python: **{platform.python_version()}**\n• Architecture: **{platform.machine()}**\n• Platform: **{platform.system()}**", inline=False)
+                system_embed.add_field(name="<:system:1368541989896851519> System Info", value=f"• Discord.py: **{discord.__version__}**\n• Python: **{platform.python_version()}**\n• Architecture: **{platform.machine()}**\n• Platform: **{platform.system()}**", inline=False)
 
-                system_embed.add_field(name="<:memory_:1292508839132008533> Memory Info", value=f"• Total Memory: **{memory_info.total / (1024 ** 2):,.2f} MB**\n• Memory Left: **{memory_info.available / (1024 ** 2):,.2f} MB**\n• Heap Total: **{memory_info.used / (1024 ** 2):,.2f} MB**", inline=False)
-                system_embed.add_field(name="<:cpu:1292508956882767975> CPU Info", value=f"• CPU: **{psutil.cpu_freq().max}' GHz**\n• CPU Usage: **{psutil.cpu_percent()}%**\n• CPU Cores: **{psutil.cpu_count(logical=False)}**\n• CPU Speed: **{cpu_info.current:.2f} MHz**", inline=False)
-                system_embed.set_footer(text="Powered by Olympus Development™", icon_url=self.bot.user.display_avatar.url)
+                system_embed.add_field(name="<:memory_:1368542138249248779> Memory Info", value=f"• Total Memory: **{memory_info.total / (1024 ** 2):,.2f} MB**\n• Memory Left: **{memory_info.available / (1024 ** 2):,.2f} MB**\n• Heap Total: **{memory_info.used / (1024 ** 2):,.2f} MB**", inline=False)
+                system_embed.add_field(name="<:cpu:1368542240426692659> CPU Info", value=f"• CPU: **{psutil.cpu_freq().max}' GHz**\n• CPU Usage: **{psutil.cpu_percent()}%**\n• CPU Cores: **{psutil.cpu_count(logical=False)}**\n• CPU Speed: **{cpu_info.current:.2f} MHz**", inline=False)
+                system_embed.set_footer(text="Powered by Sentinel Development™", icon_url=self.bot.user.display_avatar.url)
                 
                 await interaction.response.edit_message(embed=system_embed, view=view)
         system_button.callback = system_button_callback
@@ -161,10 +161,10 @@ class Stats(commands.Cog):
                 wsping = round(self.bot.latency * 1000, 2)
 
                 ping_embed = Embed(title="Bot Statistic: Ping", color=0x000000)
-                ping_embed.add_field(name="<:pong:1218740734463840348> Bot Latency", value=f"{round(sh.latency * 800)} ms", inline=False)
-                ping_embed.add_field(name="<:websocket:1292512590379094139> Database Latency", value=f"{db_latency} ms", inline=False)
-                ping_embed.add_field(name="<:database:1292512419016347762> Websocket Latency", value=f"{wsping} ms", inline=False)
-                ping_embed.set_footer(text="Powered by Olympus Development™", icon_url=self.bot.user.display_avatar.url)
+                ping_embed.add_field(name="<:pong:1368542370836119573> Bot Latency", value=f"{round(sh.latency * 800)} ms", inline=False)
+                ping_embed.add_field(name="<:websocket:1368542475106517075> Database Latency", value=f"{db_latency} ms", inline=False)
+                ping_embed.add_field(name="<:database:1368542568865988709> Websocket Latency", value=f"{wsping} ms", inline=False)
+                ping_embed.set_footer(text="Powered by Sentinel Development™", icon_url=self.bot.user.display_avatar.url)
                 await interaction.response.edit_message(embed=ping_embed, view=view)
         ping_button.callback = ping_button_callback
         view.add_item(ping_button)
@@ -174,14 +174,13 @@ class Stats(commands.Cog):
         """team_button = Button(label="Team", style=ButtonStyle.primary)
         async def team_button_callback(interaction):
             if interaction.user == ctx.author:
-                team_embed = Embed(title="Olympus Team", color=0x000000)
-                team_embed.add_field(name="**<:olympus_owner:1228227536207740989> Bot Owner(s)**", value=">>> **[Sonu](https://discord.com/users/1070619070468214824)**,   **[!⌁𓆩ζ͜͡𝘿𝙉𝘼 𝙎𝙚𝙧𝙞𝙚𝙨ㄚㄒᥫ᭡](https://discord.com/users/677952614390038559)**,   **[Pritam](https://discord.com/users/1087282349395411015)**,   **[CuTeBoY.Ly](https://discord.com/users/995898882607292506)**", inline=False)
-                team_embed.add_field(name="**<:olympus_developer:1250290657256538196> Bot Developer(s)**", value="> **[Sonu!?](https://discord.com/users/213347081799073793)** (Lead Developer)", inline=False)
-                team_embed.add_field(name="**<:olympus_general:1222789674687397930> Web Developer(s)**", value="> **[Love](https://discord.com/users/773755998665441280)** (Lead Web Developer)", inline=False)
-                team_embed.add_field(name="**<:olympus_utility:1222787342474154094> Tester(s)**", value="> **[! Lucifer](https://discord.com/users/1113040686686674987)**", inline=False)
-                team_embed.add_field(name="**<:olympus_team:1243399230651895809> Team(s)**", value="> **[Olympus Development™](https://discord.gg/odx)**", inline=False)
-                team_embed.add_field(name="**<:olympus_partner:1228228301089144976> Partner(s)**", value="> **[Endercloud](https://endercloud.in/)**", inline=False)
-                team_embed.set_footer(text="Powered by Olympus Development™", icon_url=self.bot.user.display_avatar.url)
+                team_embed = Embed(title="Sentinel Team", color=0x000000)
+                team_embed.add_field(name="**<:olympus_owner:1368447998526488597>  Bot Owner(s)**", value=">>> **[aadarshhhhh](https://discord.com/users/1131806691969728593)**,   **[!GODOFMISCHIEF]**,
+ inline=False)
+
+                .add_field(name="**<:olympus_team:1368540290717192192> Team(s)**", value="> **[Sentinel Development™](https://discord.gg/xXqPVtZV7h)**", online=false),
+                
+                 team_embed.set_footer(text="Powered by Sentinel Development™", icon_url=self.bot.user.display_avatar.url)
                 await interaction.response.edit_message(embed=team_embed, view=view)
         team_button.callback = team_button_callback
         view.add_item(team_button)"""
@@ -203,8 +202,8 @@ class Stats(commands.Cog):
         await processing_message.delete()
 
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh 
+    + Discord: aadarshhhhh 
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

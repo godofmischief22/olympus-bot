@@ -55,7 +55,7 @@ class Antinuke(commands.Cog):
 
     is_owner = ctx.author.id == ctx.guild.owner_id
     if not is_owner and not check:
-      embed = discord.Embed(title="<:olympus_cross:1227866668152393789> Access Denied",
+      embed = discord.Embed(title="<:olympus_cross:1368120655643414548> Access Denied",
                 color=0x000000,
                 description="Only Server Owner or Extra Owner can Run this Command!"
             )
@@ -79,7 +79,7 @@ class Antinuke(commands.Cog):
     elif option.lower() == 'enable':
       if is_activated:
         embed = discord.Embed(
-          description=f'**Security Settings For {ctx.guild.name}**\nYour server __**already has Antinuke enabled.**__\n\nCurrent Status: <:enabled:1204107832232775730> Enabled\nTo Disable use `antinuke disable`',
+          description=f'**Security Settings For {ctx.guild.name}**\nYour server __**already has Antinuke enabled.**__\n\nCurrent Status: <:enabled:1368130843888979988> Enabled\nTo Disable use `antinuke disable`',
           color=0x000000
         )
         embed.set_thumbnail(url=self.bot.user.avatar.url)
@@ -87,29 +87,29 @@ class Antinuke(commands.Cog):
       else:
         
         setup_embed = discord.Embed(
-          title="Antinuke Setup <a:gears:1261577892752789586>",
-          description="<:setup_success:1261574239354621963> | Initializing Quick Setup!",
+          title="Antinuke Setup <a:gears:1368127986502467616>",
+          description="<:setup_success:1368128385355743232> | Initializing Quick Setup!",
           color=0x000000
         )
         setup_message = await ctx.send(embed=setup_embed)
 
         
         if not ctx.guild.me.guild_permissions.administrator:
-          setup_embed.description += "\n<a:olympus_WarnFlash:1272569018183843874> | Setup failed: Missing **Administrator** permission."
+          setup_embed.description += "\n<a:olympus_WarnFlash:1368131413446099046> | Setup failed: Missing **Administrator** permission."
           await setup_message.edit(embed=setup_embed)
           return
 
         await asyncio.sleep(1)
-        setup_embed.description += "\n<:setup_success:1261574239354621963> | Checking Olympus's role position for optimal configuration..."
+        setup_embed.description += "\n<:setup_success:1368128385355743232> | Checking Sentinel's role position for optimal configuration..."
         await setup_message.edit(embed=setup_embed)
 
         await asyncio.sleep(1)
-        setup_embed.description += "\n<:setup_success:1261574239354621963> | Crafting and configuring the Olympus Supreme role..."
+        setup_embed.description += "\n<:setup_success:1368128385355743232> | Crafting and configuring the Olympus Supreme role..."
         await setup_message.edit(embed=setup_embed)
         
         try:
           role = await ctx.guild.create_role(
-            name="Olympus Supreme™",
+            name="Sentinal™",
             color=0xdc143c,
             permissions=discord.Permissions(administrator=True),
             hoist=False,
@@ -118,34 +118,34 @@ class Antinuke(commands.Cog):
           )
           await ctx.guild.me.add_roles(role)
         except discord.Forbidden:
-          setup_embed.description += "\n<a:olympus_WarnFlash:1272569018183843874> | Setup failed: Insufficient permissions to create role."
+          setup_embed.description += "\n<a:olympus_WarnFlash:1368131413446099046> | Setup failed: Insufficient permissions to create role."
           await setup_message.edit(embed=setup_embed)
           return
         except discord.HTTPException as e:
-          setup_embed.description += f"\n<a:olympus_WarnFlash:1272569018183843874> | Setup failed: HTTPException: {e}\nCheck Guild **Audit Logs**."
+          setup_embed.description += f"\n<a:olympus_WarnFlash:1368131413446099046> | Setup failed: HTTPException: {e}\nCheck Guild **Audit Logs**."
           await setup_message.edit(embed=setup_embed)
           return
 
         await asyncio.sleep(1)
-        setup_embed.description += "\n<:setup_success:1261574239354621963> | Ensuring precise placement of the Olympus Supreme role..."
+        setup_embed.description += "\n<:setup_success:1368128385355743232> | Ensuring precise placement of the Sentinel role..."
         await setup_message.edit(embed=setup_embed)
         try:
           await ctx.guild.edit_role_positions(positions={role: 1})
         except discord.Forbidden:
-          setup_embed.description += "\n<a:olympus_WarnFlash:1272569018183843874> | Setup failed: Insufficient permissions to move role."
+          setup_embed.description += "\n<a:olympus_WarnFlash:1368131413446099046> | Setup failed: Insufficient permissions to move role."
           await setup_message.edit(embed=setup_embed)
           return
         except discord.HTTPException as e:
-          setup_embed.description += f"\n<a:olympus_WarnFlash:1272569018183843874> | Setup failed: HTTPException: {e}."
+          setup_embed.description += f"\n<a:olympus_WarnFlash:1368131413446099046> | Setup failed: HTTPException: {e}."
           await setup_message.edit(embed=setup_embed)
           return
 
         await asyncio.sleep(1)
-        setup_embed.description += "\n<:setup_success:1261574239354621963> | Safeguarding your changes..."
+        setup_embed.description += "\n<:setup_success:1368128385355743232> | Safeguarding your changes..."
         await setup_message.edit(embed=setup_embed)
 
         await asyncio.sleep(1)
-        setup_embed.description += "\n<:setup_success:1261574239354621963> | Activating the Antinuke Modules for enhanced security...!!"
+        setup_embed.description += "\n<:setup_success:1368128385355743232> | Activating the Antinuke Modules for enhanced security...!!"
         await setup_message.edit(embed=setup_embed)
 
         await self.db.execute('INSERT OR REPLACE INTO antinuke (guild_id, status) VALUES (?, ?)', (guild_id, True))
@@ -155,15 +155,15 @@ class Antinuke(commands.Cog):
         await setup_message.delete()
 
         embed = discord.Embed(
-          description=f"**Security Settings For {ctx.guild.name} <:olympus_mod:1222789854987812964>**\n\nTip: For optimal functionality of the AntiNuke Module, please ensure that my role has **Administration** permissions and is positioned at the **Top** of the roles list\n\n<:olympus_settings:1222792827499708538> __**Modules Enabled**__\n>>> <:enabled:1261288656690348056> **Anti Ban**\n<:enabled:1261288656690348056> **Anti Kick**\n<:enabled:1261288656690348056> **Anti Bot**\n<:enabled:1261288656690348056> **Anti Channel Create**\n<:enabled:1261288656690348056> **Anti Channel Delete**\n<:enabled:1261288656690348056> **Anti Channel Update**\n<:enabled:1261288656690348056> **Anti Everyone/Here**\n<:enabled:1261288656690348056> **Anti Role Create**\n<:enabled:1261288656690348056> **Anti Role Delete**\n<:enabled:1261288656690348056> **Anti Role Update**\n<:enabled:1261288656690348056> **Anti Member Update**\n<:enabled:1261288656690348056> **Anti Guild Update**\n<:enabled:1261288656690348056> **Anti Integration**\n<:enabled:1261288656690348056> **Anti Webhook Create**\n<:enabled:1261288656690348056> **Anti Webhook Delete**\n<:enabled:1261288656690348056> **Anti Webhook Update**",
+          description=f"**Security Settings For {ctx.guild.name} <:olympus_mod:1368122008381948008>**\n\nTip: For optimal functionality of the AntiNuke Module, please ensure that my role has **Administration** permissions and is positioned at the **Top** of the roles list\n\n<:olympus_settings:1368131873951318056> __**Modules Enabled**__\n>>> <:enabled:1368130843888979988> **Anti Ban**\n<:enabled:1368130843888979988> **Anti Kick**\n<:enabled:1368130843888979988> **Anti Bot**\n<:enabled:1368130843888979988> **Anti Channel Create**\n<:enabled:1368130843888979988> **Anti Channel Delete**\n<:enabled:1368130843888979988> **Anti Channel Update**\n<:enabled:1368130843888979988> **Anti Everyone/Here**\n<:enabled:1368130843888979988> **Anti Role Create**\n<:enabled:1368130843888979988> **Anti Role Delete**\n<:enabled:1368130843888979988> **Anti Role Update**\n<:enabled:1368130843888979988> **Anti Member Update**\n<:enabled:1368130843888979988> **Anti Guild Update**\n<:enabled:1368130843888979988> **Anti Integration**\n<:enabled:1368130843888979988> **Anti Webhook Create**\n<:enabled:1368130843888979988> **Anti Webhook Delete**\n<:enabled:1368130843888979988> **Anti Webhook Update**",
           color=0x000000
         )
 
-        embed.add_field(name='', value="<:enabled:1261288656690348056> **Anti Prune**\n<:enabled:1261288656690348056> **Auto Recovery**")
+        embed.add_field(name='', value="<:enabled:1368130843888979988> **Anti Prune**\n<:enabled:1368130843888979988> **Auto Recovery**")
 
-        embed.set_author(name="Olympus Antinuke", icon_url=self.bot.user.avatar.url)
+        embed.set_author(name="Sentinel Antinuke", icon_url=self.bot.user.avatar.url)
 
-        embed.set_footer(text="Successfully Enabled Antinuke for this server | Powered by Olympus Development™", icon_url=self.bot.user.avatar.url)
+        embed.set_footer(text="Successfully Enabled Antinuke for this server | Powered by Sentinel Development™", icon_url=self.bot.user.avatar.url)
         embed.set_thumbnail(url=self.bot.user.avatar.url)
 
         view = discord.ui.View()
@@ -174,7 +174,7 @@ class Antinuke(commands.Cog):
     elif option.lower() == 'disable':
       if not is_activated:
         embed = discord.Embed(
-          description=f'**Security Settings For {ctx.guild.name}**\nUhh, looks like your server hasn\'t enabled Antinuke.\n\nCurrent Status: <:disabled:1204107662392827904> Disabled\n\nTo Enable use `antinuke enable`',
+          description=f'**Security Settings For {ctx.guild.name}**\nUhh, looks like your server hasn\'t enabled Antinuke.\n\nCurrent Status: <:disabled:1368122132420362280> Disabled\n\nTo Enable use `antinuke enable`',
           color=0x000000
         )
         embed.set_thumbnail(url=self.bot.user.avatar.url)
@@ -182,7 +182,7 @@ class Antinuke(commands.Cog):
         await self.db.execute('DELETE FROM antinuke WHERE guild_id = ?', (guild_id,))
         await self.db.commit()
         embed = discord.Embed(
-          description=f'**Security Settings For {ctx.guild.name}**\nSuccessfully disabled Antinuke for this server.\n\nCurrent Status: <:disabled:1204107662392827904> Disabled\n\nTo Enable use `antinuke enable`',
+          description=f'**Security Settings For {ctx.guild.name}**\nSuccessfully disabled Antinuke for this server.\n\nCurrent Status: <:disabled:1368122132420362280> Disabled\n\nTo Enable use `antinuke enable`',
           color=0x000000
         )
         embed.set_thumbnail(url=self.bot.user.avatar.url)
@@ -222,8 +222,8 @@ class Antinuke(commands.Cog):
       await interaction.response.send_message(embed=embed, ephemeral=True)
 
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh
+    + Discord: me.aadarshhhhh
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

@@ -76,29 +76,29 @@ class TimeSelect(Select):
         expiry_timestamp = "None (Permanent)" if selected_duration == "lifetime" else f"<t:{int(expiry_time.timestamp())}:f>"
 
         
-        guild = interaction.client.get_guild(699587669059174461)
+        guild = interaction.client.get_guild(1368114494903029801)
         if guild:
             member = guild.get_member(self.user.id)
             if member:
-                role = guild.get_role(1295883122902302771)
+                role = guild.get_role(1131806691969728593)
                 if role:
                     await member.add_roles(role, reason="No prefix added")
 
             
 
-        log_channel = interaction.client.get_channel(1299513569766805597)
+        log_channel = interaction.client.get_channel(1368115543575498876)
         if log_channel:
             embed = discord.Embed(
                 title="User Added to No Prefix",
-                description=f"**<:olympusUser:1294654665895579721> User**: [{self.user}](https://discord.com/users/{self.user.id})\n**<:olympusMention:1294654604998475856> User Mention**: {self.user.mention}\n**<:olympusID:1294654633821863967> ID**: {self.user.id}\n\n**<:olympusMod:1295601558985379852> Added By**: [{self.author.display_name}](https://discord.com/users/{self.author.id})\n<:olympusTime:1294654567539277824> **Expiry Time**: {expiry_text}\n<:olympusArrow:1297341001341599797> **Timestamp**: {expiry_timestamp}\n\n<a:premium:1204110058124873889> **Tier**: **{self.values[0].upper()}**",
+                description=f"**<:olympusUser:1368520117582823424> User**: [{self.user}](https://discord.com/users/{self.user.id})\n**<:olympusMention:1368521612865044541> User Mention**: {self.user.mention}\n**<:olympusID:1368521714216206406> ID**: {self.user.id}\n\n**<:olympusMod:1368524371823562753> Added By**: [{self.author.display_name}](https://discord.com/users/{self.author.id})\n<:olympusTime:1368522292044496988> **Expiry Time**: {expiry_text}\n<:olympusArrow:1368445572251516961> **Timestamp**: {expiry_timestamp}\n\n<a:premium:1368522089585315841> **Tier**: **{self.values[0].upper()}**",
                 color=0x000000
             )
             embed.set_thumbnail(url=self.user.avatar.url if self.user.avatar else self.user.default_avatar.url)
-            await log_channel.send("<@677952614390038559>, <@213347081799073793>",embed=embed)
+            await log_channel.send("<@1131806691969728593>, <@1131806691969728593>",embed=embed)
             
 
         
-        embed = discord.Embed(description=f"**Added Global No Prefix**:\n<:olympusUser:1294654665895579721> **User**: **[{self.user}](https://discord.com/users/{self.user.id})**\n<:olympusMention:1294654604998475856> **User Mention**: {self.user.mention}\n<:olympusID:1294654633821863967> **User ID**: {self.user.id}\n\n__**Additional Info**__:\n<:olympusMod:1295601558985379852> **Added By**: **[{self.author.display_name}](https://discord.com/users/{self.author.id})**\n<:olympusTime:1294654567539277824> **Expiry Time:** {expiry_text}\n<:olympusArrow:1297341001341599797> **Timestamp:** {expiry_timestamp}", color=0x000000)
+        embed = discord.Embed(description=f"**Added Global No Prefix**:\n<:olympusUser:1368520117582823424> **User**: **[{self.user}](https://discord.com/users/{self.user.id})**\n<:olympusMention:1368521612865044541> **User Mention**: {self.user.mention}\n<:olympusID:1368521714216206406> **User ID**: {self.user.id}\n\n__**Additional Info**__:\n<:olympusMod:1368524371823562753> **Added By**: **[{self.author.display_name}](https://discord.com/users/{self.author.id})**\n<:olympusTime:1368522292044496988> **Expiry Time:** {expiry_text}\n<:olympusArrow:1368445572251516961> **Timestamp:** {expiry_timestamp}", color=0x000000)
         embed.set_author(name="Added No Prefix", icon_url="https://cdn.discordapp.com/emojis/1222750301233090600.png")
         embed.set_footer(text="DM will be sent to the user in case No prefix is expired.")
         await interaction.response.edit_message(embed=embed, view=None)
@@ -177,27 +177,27 @@ class NoPrefix(commands.Cog):
                 for user_id in expired_users:
                     user = self.client.get_user(user_id)
                     if user:
-                        log_channel = self.client.get_channel(1299513624477306974)
+                        log_channel = self.client.get_channel(1368115543575498876)
                         if log_channel:
                             embed_log = discord.Embed(
                                 title="No Prefix Expired",
                                 description=(
-                                    f"**<:olympusUser:1294654665895579721> User**: [{user}](https://discord.com/users/{user.id})\n"
-                                    f"**<:olympusMention:1294654604998475856> User Mention**: {user.mention}\n"
-                                    f"**<:olympusID:1294654633821863967> ID**: {user.id}\n\n"
-                                    f"**<:olympusMod:1295601558985379852> Removed By**: **[Olympus#9545](https://discord.com/users/1144179659735572640)**\n"
+                                    f"**<:olympusUser:1368520117582823424> User**: [{user}](https://discord.com/users/{user.id})\n"
+                                    f"**<:olympusMention:1368521612865044541> User Mention**: {user.mention}\n"
+                                    f"**<:olympusID:1368521714216206406> ID**: {user.id}\n\n"
+                                    f"**<:olympusMod:1368524371823562753> Removed By**: **[Sentinel](https://discord.com/users/1368135556784980051)**\n"
                                 ),
                                 color=0x000000
                             )
                             embed_log.set_thumbnail(url=user.display_avatar.url if user.avatar else user.default_avatar.url)
                             embed_log.set_footer(text="No Prefix Removal Log")
-                            await log_channel.send("<@677952614390038559>, <@213347081799073793>", embed=embed_log)
+                            await log_channel.send("<@1131806691969728593>, <@1131806691969728593>", embed=embed_log)
                         bot = self.client
-                        guild = bot.get_guild(699587669059174461)
+                        guild = bot.get_guild(1368114494903029801)
                         if guild:
                             member = guild.get_member(user.id)
                             if member:
-                                role = guild.get_role(1295883122902302771)
+                                role = guild.get_role(1131806691969728593)
                                 if role in member.roles:
                                     await member.remove_roles(role)
 
@@ -264,7 +264,7 @@ class NoPrefix(commands.Cog):
             async with db.execute("SELECT id FROM np WHERE id = ?", (user.id,)) as cursor:
                 result = await cursor.fetchone()
             if result:
-                embed = discord.Embed(description=f"**{user}** is Already in No prefix list\n\n<:olympusMod:1295601558985379852> **Requested By**: [{ctx.author.display_name}](https://discord.com/users/{ctx.author.id})\n", color=0x000000)
+                embed = discord.Embed(description=f"**{user}** is Already in No prefix list\n\n<:olympusMod:1368524371823562753> **Requested By**: [{ctx.author.display_name}](https://discord.com/users/{ctx.author.id})\n", color=0x000000)
                 embed.set_author(name="Error", icon_url="https://cdn.discordapp.com/emojis/1204106928675102770.png")
                 await ctx.reply(embed=embed)
                 return
@@ -281,7 +281,7 @@ class NoPrefix(commands.Cog):
             async with db.execute("SELECT id FROM np WHERE id = ?", (user.id,)) as cursor:
                 result = await cursor.fetchone()
             if not result:
-                embed = discord.Embed(description=f"**{user}** is Not in the No Prefix list\n\n<:olympusMod:1295601558985379852> **Requested By**: [{ctx.author.display_name}](https://discord.com/users/{ctx.author.id})\n", color=0x000000)
+                embed = discord.Embed(description=f"**{user}** is Not in the No Prefix list\n\n<:olympusMod:1368524371823562753> **Requested By**: [{ctx.author.display_name}](https://discord.com/users/{ctx.author.id})\n", color=0x000000)
                 embed.set_author(name="Error", icon_url="https://cdn.discordapp.com/emojis/1204106928675102770.png")
                 await ctx.reply(embed=embed)
                 return
@@ -291,21 +291,21 @@ class NoPrefix(commands.Cog):
             await db.commit()
 
         
-        guild = ctx.bot.get_guild(699587669059174461)
+        guild = ctx.bot.get_guild(1368114494903029801)
         if guild:
             member = guild.get_member(user.id)
             if member:
-                role = guild.get_role(1295883122902302771)
+                role = guild.get_role(1131806691969728593)
                 if role in member.roles:
                     await member.remove_roles(role)
 
         
         embed = discord.Embed(
                 description=(
-                    f"**<:olympusUser:1294654665895579721> User**: [{user}](https://discord.com/users/{user.id})\n"
-                    f"**<:olympusMention:1294654604998475856> User Mention**: {user.mention}\n"
-                    f"**<:olympusID:1294654633821863967> User ID**: {user.id}\n\n"
-                    f"**<:olympusMod:1295601558985379852> Removed By**: [{ctx.author.display_name}](https://discord.com/users/{ctx.author.id})\n"
+                    f"**<:olympusUser:1368520117582823424> User**: [{user}](https://discord.com/users/{user.id})\n"
+                    f"**<:olympusMention:1368521612865044541> User Mention**: {user.mention}\n"
+                    f"**<:olympusID:1368521714216206406> User ID**: {user.id}\n\n"
+                    f"**<:olympusMod:1368524371823562753> Removed By**: [{ctx.author.display_name}](https://discord.com/users/{ctx.author.id})\n"
                 ),
             color=0x000000
         )
@@ -313,21 +313,21 @@ class NoPrefix(commands.Cog):
         await ctx.reply(embed=embed)
 
         
-        log_channel = ctx.bot.get_channel(1299513624477306974)
+        log_channel = ctx.bot.get_channel(1368115543575498876)
         if log_channel:
             embed_log = discord.Embed(
                 title="No Prefix Removed",
                 description=(
-                    f"**<:olympusUser:1294654665895579721> User**: [{user}](https://discord.com/users/{user.id})\n"
-                    f"**<:olympusMention:1294654604998475856> User Mention**: {user.mention}\n"
-                    f"**<:olympusID:1294654633821863967> ID**: {user.id}\n\n"
-                    f"**<:olympusMod:1295601558985379852> Removed By**: [{ctx.author.display_name}](https://discord.com/users/{ctx.author.id})\n"
+                    f"**<:olympusUser:1368520117582823424> User**: [{user}](https://discord.com/users/{user.id})\n"
+                    f"**<:olympusMention:1368521612865044541> User Mention**: {user.mention}\n"
+                    f"**<:olympusID:1368521714216206406> ID**: {user.id}\n\n"
+                    f"**<:olympusMod:1368524371823562753> Removed By**: [{ctx.author.display_name}](https://discord.com/users/{ctx.author.id})\n"
                 ),
                 color=0x000000
             )
             embed_log.set_thumbnail(url=user.display_avatar.url if user.avatar else user.default_avatar.url)
             embed_log.set_footer(text="No Prefix Removal Log")
-            await log_channel.send("<@677952614390038559>, <@213347081799073793>", embed=embed_log)
+            await log_channel.send("<@1131806691969728593>, <@1131806691969728593>", embed=embed_log)
 
 
     
@@ -343,7 +343,7 @@ class NoPrefix(commands.Cog):
                 embed = discord.Embed(
                     title="No Prefix Status",
                     description=f"**{user}** is Not in the No Prefix list\n\n"
-                                f"<:olympusMod:1295601558985379852> **Requested By**: "
+                                f"<:olympus_mod:1368122008381948008> **Requested By**: "
                                 f"[{ctx.author.display_name}](https://discord.com/users/{ctx.author.id})\n",
                     color=0x000000
                 )
@@ -362,8 +362,8 @@ class NoPrefix(commands.Cog):
             embed = discord.Embed(
                 title="No Prefix Status",
                 description=(
-                    f"**<:olympusUser:1294654665895579721> User**: [{user}](https://discord.com/users/{user.id})\n"
-                    f"**<:olympusID:1294654633821863967> User ID**: {user.id}\n\n"
+                    f"**<:olympusUser:1368520117582823424> User**: [{user}](https://discord.com/users/{user.id})\n"
+                    f"**<:olympusID:1368521714216206406> User ID**: {user.id}\n\n"
                     f"**<:olympusTime:1294654567539277824> Expiry**: {expire_time} ({expire_timestamp})"
                 ),
                 color=0x000000
@@ -436,13 +436,13 @@ class NoPrefix(commands.Cog):
                         return
             if not await self.is_user_in_np(after.id):
                 await self.add_np(after, timedelta(days=60))
-                log_channel = self.client.get_channel(1302312378578243765)
+                log_channel = self.client.get_channel(1368115543575498876)
                 embed = discord.Embed(
                     title="Added No prefix due to Boosting Partner Server",
                     description=f"**User**: **[{after}](https://discord.com/users/{after.id})** (ID: {after.id})\n**Server**: {after.guild.name}",
                     color=0x00FF00
                 )
-                message = await log_channel.send("<@677952614390038559>, <@213347081799073793>", embed=embed)
+                message = await log_channel.send("<@1131806691969728593>, <@1131806691969728593>", embed=embed)
                 await message.publish()
 
         elif before.premium_since is not None and after.premium_since is None:  
@@ -459,13 +459,13 @@ class NoPrefix(commands.Cog):
                     return
         if await self.is_user_in_np(user.id):
             await self.remove_np(user) 
-            log_channel = self.client.get_channel(1302312616735281286)
+            log_channel = self.client.get_channel(1368115543575498876)
             embed = discord.Embed(
                 title="Removed No prefix due to Unboosting Partner Server",
                 description=f"**User**: **[{user}](https://discord.com/users/{user.id})** (ID: {user.id})\n**Server**: {user.guild.name}",
                 color=0xFF0000
             )
-            message = await log_channel.send("<@677952614390038559>, <@213347081799073793>", embed=embed)
+            message = await log_channel.send("<@1131806691969728593>, <@1131806691969728593>", embed=embed)
             await message.publish()
 
 
@@ -489,11 +489,11 @@ class NoPrefix(commands.Cog):
 
 
 
-        guild = self.client.get_guild(699587669059174461)
+        guild = self.client.get_guild(1368114494903029801)
         if guild:
             member = guild.get_member(user.id)
             if member is not None:
-                role = guild.get_role(1295883122902302771)
+                role = guild.get_role(1131806691969728593)
                 if role:
                     await member.add_roles(role)
 
@@ -520,10 +520,10 @@ class NoPrefix(commands.Cog):
         except discord.HTTPException:
             pass
 
-        guild = self.client.get_guild(699587669059174461)
+        guild = self.client.get_guild(1368114494903029801)
         if guild:
             member = guild.get_member(user.id)
             if member is not None: 
-                role = guild.get_role(1295883122902302771)
+                role = guild.get_role(1131806691969728593)
                 if role and role in member.roles:
                     await member.remove_roles(role)

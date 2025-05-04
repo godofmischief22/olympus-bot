@@ -4,7 +4,7 @@ from discord import app_commands, Interaction
 from difflib import get_close_matches
 from contextlib import suppress
 from core import Context
-from core.Olympus import Olympus
+from core.Sentinenl import Sentinel
 from core.Cog import Cog
 from utils.Tools import getConfig
 from itertools import chain
@@ -16,7 +16,7 @@ from utils.config import serverLink
 from utils.Tools import *
 
 color = 0x000000
-client = Olympus()
+client = Sentinel()
 
 class HelpCommand(commands.HelpCommand):
 
@@ -89,7 +89,7 @@ class HelpCommand(commands.HelpCommand):
       return
 
     
-    embed = discord.Embed(description="<a:RedLoading:1246777916621197424> **Loading Help module...**", color=color)
+    embed = discord.Embed(description="<a:RedLoading:1368481002254499931> **Loading Help module...**", color=color)
     ok = await self.context.reply(embed=embed)          
     data = await getConfig(self.context.guild.id)
     prefix = data["prefix"]
@@ -103,10 +103,57 @@ class HelpCommand(commands.HelpCommand):
     embed = discord.Embed(
       title="", color=0x000000)
 
-    embed.add_field(name="📜 __**General Info:**__", value= f"🔴 Server Prefix:  **{prefix}** \n🔴 Total Commands: **{len(set(self.context.bot.walk_commands()))}**\n🔴 Total Slash Commands: **{slash}**\n🔴 **[Get Olympus](https://discord.com/oauth2/authorize?client_id=1144179659735572640&permissions=2113268958&scope=bot)** | **[Support](https://discord.com/invite/odx)**\n\n❓ __**How do you use me?**__\n>>> `{prefix}help <command/module>` to get more info regarding that command/module\nFor example: `{prefix}help antinuke`\n\n")
+    embed.add_field(
+    name="**Bot Overview:**",
+    value=(
+        "```ansi\n"
+        "<:prefix:1368486105275564083> : Server Prefix: **{prefix}**\n"
+        "<:Commands:1368486421446393896> : Total Commands: **{len(set(self.context.bot.walk_commands()))}** | Slash: **{slash}**\n"
+        "<:links:1368487179541549137> : *[Get Sentinel](https://discord.com/oauth2/authorize?client_id=1368135556784980051&permissions=8&integration_type=0&scope=bot+applications.commands)** | **[Support](https://discord.gg/xXqPVtZV7h)**\n
+        "```"
+    ),
+    inline=False
+)
 
-    embed.add_field(name="⭐ __**My Features**__", value=">>> **50+ Systems, including:**\n 🛡️ Security\n 🚨 Automoderation\n 🔧 Utility\n 🎵 Music\n 🛠️ Moderation\n 🧩 Customrole\n 🎉 Giveaway\n 🎙️ Voice\n 🎮 Games\n 👋 Welcomer\n 🪩 Autoreact & responder\n 📋 Autorole & Invc\n 🎭 Fun & AI Image Gen\n   And much more!...")
-    embed.add_field(name="➡️ __**How to get help?**__", value=">>> ♨️ Use the Buttons, to swap the Pages\n♨️ Use the Menu to select all Help Pages, you want to display\n♨️ For any queries/help Contact the **[Support Team](https://discord.com/invite/odx).**")
+embed.add_field(
+    name="**How do you use me?**",
+    value=(
+        "```ansi\n"
+        ".help <command/module> for more info regarding that command/module!\n"
+        "Example: .help mute\n"
+        "```"
+    ),
+    inline=False
+)
+
+embed.add_field(
+    name="**Main Modules:**",
+    value=(
+        "```ansi\n"
+        "<:olympus_mod:1368122008381948008> : Security\n"
+        "<:olympus_automode:1368489521502486610> : Emergency\n"
+        "<:olympus_staff:1368489097689042964> : Moderation\n"
+        "<:olympus_utility:1368489251439902801> : Utility\n"
+        "<:olympus_raidmode:1368489502787502161> : Automod\n"
+        "<:olympus_welcome:1368489606479220849> : Welcoming\n"
+        "<:olympus_autorespond:1368489881981948024> : Customroles\n"
+        "<:olympus_music:1368489805968838688> : Music\n"
+        "<:olympus_giveaways:1368490008339681280> : Giveaway\n"
+        "<:Camera:1368490184970338385> : Camera Enforcement\n"
+        "<:Star:1368492678270156911> : Boycott/VcBan\n"
+        "<:olympus_verification:1368490595525464135> : Auto Roles\n"
+        "<:olympus_fun:1368490615712776233> : Fun\n"
+        "<:olympus_mic:1368448688346759249> : Voice\n"
+        "<:olympus_settings:1368131873951318056> : Ignore Commands\n"
+        "```"
+    ),
+    inline=False
+)
+
+embed.add_field(
+    text="**Use buttons to swap pages & menu to select help pages. Need help? [Contact Support.](https://discord.gg/xXqPVtZV7h)**"
+)
+
     embed.set_footer(
       text=f"Requested By {self.context.author}",
       icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
@@ -140,7 +187,7 @@ class HelpCommand(commands.HelpCommand):
     embed = discord.Embed(
         description=
         f"""```xml
-<[] = optional | ‹› = required\nDon't type these while using Commands>```\n{sonu}""",
+<[] = optional | 鈥光€� = required\nDon't type these while using Commands>```\n{sonu}""",
         color=color)
     alias = ' | '.join(command.aliases)
 
@@ -186,7 +233,7 @@ class HelpCommand(commands.HelpCommand):
 
     entries = [
         (
-            f"➜ `{self.context.prefix}{cmd.qualified_name}`\n",
+            f"鉃� `{self.context.prefix}{cmd.qualified_name}`\n",
             f"{cmd.short_doc if cmd.short_doc else ''}\n\u200b"
         )
         for cmd in group.commands
@@ -218,7 +265,7 @@ class HelpCommand(commands.HelpCommand):
 
 
     entries = [(
-      f"➜ `{self.context.prefix}{cmd.qualified_name}`",
+      f"鉃� `{self.context.prefix}{cmd.qualified_name}`",
       f"{cmd.short_doc if cmd.short_doc else ''}"
       f"\n\u200b",
     ) for cmd in cog.get_commands()]
@@ -234,7 +281,7 @@ class HelpCommand(commands.HelpCommand):
 
 class Help(Cog, name="help"):
 
-  def __init__(self, client: Olympus):
+  def __init__(self, client: Sentinel):
     self._original_help_command = client.help_command
     attributes = {
       'name':

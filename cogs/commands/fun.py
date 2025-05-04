@@ -98,7 +98,7 @@ class Fun(commands.Cog):
   @ignore_check()
   @commands.cooldown(1, 3, commands.BucketType.user)
   async def mydog(self, ctx, user: discord.User):
-      processing= await ctx.reply("<a:loading:1246691973633671268> Processing Image...")
+      processing= await ctx.reply("<a:loading:1368441649235103794> Processing Image...")
       base_image_path = "data/pictures/mydog.jpg"
       base_image = Image.open(base_image_path).convert("RGBA")
 
@@ -156,7 +156,7 @@ class Fun(commands.Cog):
   @ignore_check()
   @commands.cooldown(1, 3, commands.BucketType.user)
   async def howgay(self, ctx, *, person):
-    embed = discord.Embed(title="<a:gay:1213280970200059954> About your gayness", color=discord.Color.random())
+    embed = discord.Embed(title="<a:gay:1368451671755329627> About your gayness", color=discord.Color.random())
     responses = random.randrange(1, 150)
     embed.description = f'**{person} is {responses}% Gay** :rainbow:'
     embed.set_footer(text=f'How gay are you? - {ctx.author.name}')
@@ -171,9 +171,9 @@ class Fun(commands.Cog):
   @ignore_check()
   @commands.cooldown(1, 3, commands.BucketType.user)
   async def lesbian(self, ctx, *, person):
-    embed = discord.Embed(title="<:lesbian:1257104649119469729> Lesbian Meter", color=discord.Color.random())
+    embed = discord.Embed(title="<:lesbian:1368451875585785866> Lesbian Meter", color=discord.Color.random())
     responses = random.randrange(1, 150)
-    embed.description = f'**{person} is {responses}% Lesbian** <:e_lesbian:1257104534300266577>'
+    embed.description = f'**{person} is {responses}% Lesbian** <:e_lesbian:1368452106582757471>'
     embed.set_footer(text=f'How lesbian are you? - {ctx.author.name}')
     await ctx.reply(embed=embed)
 
@@ -185,9 +185,9 @@ class Fun(commands.Cog):
   @ignore_check()
   @commands.cooldown(1, 3, commands.BucketType.user)
   async def chutiya(self, ctx, *, person):
-    embed = discord.Embed(title="<:chumtiya:1272578700977897637> About your Chumtiyapa", color=discord.Color.random())
+    embed = discord.Embed(title="<:chumtiya:1368452237768265729> About your Chumtiyapa", color=discord.Color.random())
     responses = random.randrange(1, 150)
-    embed.description = f'**Abbe {person} to {responses}% Chootiya Ha** 😂'
+    embed.description = f'**Abbe {person} to {responses}% Chootiya Ha** 馃槀'
     embed.set_footer(text=f'How chutiya are you? - {ctx.author.name}')
     await ctx.reply(embed=embed)
 
@@ -198,9 +198,9 @@ class Fun(commands.Cog):
   @ignore_check()
   @commands.cooldown(1, 3, commands.BucketType.user)
   async def tharki(self, ctx, *, person):
-    embed = discord.Embed(title="<a:tharkinazar:1221837379581513809> About your Tharkipan", color=discord.Color.random())
+    embed = discord.Embed(title="<a:tharkinazar:1368452582992904323> About your Tharkipan", color=discord.Color.random())
     responses = random.randrange(1, 150)
-    embed.description = f'**Sala {person} to {responses}% Tharki Nikla** 😂'
+    embed.description = f'**Sala {person} to {responses}% Tharki Nikla** 馃槀'
     embed.set_footer(text=f'How tharki are you? - {ctx.author.name}')
     await ctx.reply(embed=embed)
 
@@ -212,9 +212,9 @@ class Fun(commands.Cog):
   @ignore_check()
   @commands.cooldown(1, 3, commands.BucketType.user)
   async def horny(self, ctx, *, person):
-    embed = discord.Embed(title="<:hornymf:1272578902916599881> About your horniness", color=discord.Color.random())
+    embed = discord.Embed(title="<:hornymf:<:hornymf:1368452758906339448> About your horniness", color=discord.Color.random())
     responses = random.randrange(1, 150)
-    embed.description = f'**{person} is {responses}% Horny** 😳'
+    embed.description = f'**{person} is {responses}% Horny** 馃槼'
     embed.set_footer(text=f'How horny are you? - {ctx.author.name}')
     await ctx.reply(embed=embed)
 
@@ -226,9 +226,9 @@ class Fun(commands.Cog):
   @ignore_check()
   @commands.cooldown(1, 3, commands.BucketType.user)
   async def cute(self, ctx, *, person):
-    embed = discord.Embed(title="<:cute:1272579266789244989> About your cuteness", color=discord.Color.random())
+    embed = discord.Embed(title="<:cute:1368452903953502269> About your cuteness", color=discord.Color.random())
     responses = random.randrange(1, 150)
-    embed.description = f'**{person} is {responses}% Cute** 🥰'
+    embed.description = f'**{person} is {responses}% Cute** 馃グ'
     embed.set_footer(text=f'How cute are you? - {ctx.author.name}')
     await ctx.reply(embed=embed)
 
@@ -240,9 +240,9 @@ class Fun(commands.Cog):
   @ignore_check()
   @commands.cooldown(1, 3, commands.BucketType.user)
   async def intelligence(self, ctx, *, person):
-    embed = discord.Embed(title="<:bigbrain:1272579494690951220> About your intelligence", color=discord.Color.random())
+    embed = discord.Embed(title="<:bigbrain:1368453054587867157> About your intelligence", color=discord.Color.random())
     responses = random.randrange(1, 150)
-    embed.description = f'**{person} has an IQ of {responses}%** <a:MATHS:1204235249916317697>'
+    embed.description = f'**{person} has an IQ of {responses}%** <a:MATHS:1368453177091031131>'
     embed.set_footer(text=f'How intelligent are you? - {ctx.author.name}')
     await ctx.reply(embed=embed)
 
@@ -311,7 +311,7 @@ class Fun(commands.Cog):
             title=f"IP: {query}",
             description=(
               f"\n"
-              f"🌏 __**Location Info:**__ \n"
+              f"馃審 __**Location Info:**__ \n"
               f"IP: **{query}**\n"
               f"Continent: {continent} ({continent_code})\n"
               f"Country: {country} ({country_code})\n"
@@ -323,17 +323,17 @@ class Fun(commands.Cog):
               f"Longitude: {longitude}\n"
               f"Lat/Long: {latitude}, {longitude}\n"
               f"\n"
-              f"📡 __**Timezone Info:**__\n"
+              f"馃摗 __**Timezone Info:**__\n"
               f"Timezone: {timezone}\n"
               f"Offset: {offset}\n"
               f"\n"
-              f"🛜 __**Network Info:**__ \n"
+              f"馃洔 __**Network Info:**__ \n"
               f"ISP: **{isp}**\n"
               f"Organization: {organization}\n"
               f"AS: **{asn}**\n"
               f"AS Name: **{asname}**\n"
               f"\n"
-              f"⚠️ __**Miscellaneous Info:**__ \n"
+              f"鈿狅笍 __**Miscellaneous Info:**__ \n"
               f"Mobile: {mobile}\n"
               f"Proxy: {proxy}\n"
               f"Hosting: {hosting}\n"
@@ -343,7 +343,7 @@ class Fun(commands.Cog):
           )
 
           embed.set_footer(
-            text=f'Made by Olympus Development™',
+            text=f'Made by Sentinel Development鈩�',
             icon_url=self.bot.user.avatar
           )
 
@@ -381,11 +381,11 @@ class Fun(commands.Cog):
                   weather_desc = report[0]['description']
                   
                   weather_embed = discord.Embed(
-                      title=f"☁️ Weather in {city_name}",
+                      title=f"鈽侊笍 Weather in {city_name}",
                       color=0x000000
                   )
                   weather_embed.add_field(name="Description", value=weather_desc.capitalize(), inline=False)
-                  weather_embed.add_field(name="Temperature (Celsius)", value=f"{temp_celsius:.2f} °C", inline=False)
+                  weather_embed.add_field(name="Temperature (Celsius)", value=f"{temp_celsius:.2f} 掳C", inline=False)
                   weather_embed.add_field(name="Humidity", value=f"{humidity}%", inline=False)
                   weather_embed.add_field(name="Pressure", value=f"{pressure} hPa", inline=False)
                   weather_embed.set_footer(
@@ -404,7 +404,7 @@ class Fun(commands.Cog):
   async def fake_ban(self, ctx, user: discord.Member):
     embed = discord.Embed(
       title="Successfully Banned!",
-      description=f"<:olympus_tick:1227866641027698792> | {user.mention} has been successfully banned",
+      description=f"<:olympus_tick:1368119361440845824> | {user.mention} has been successfully banned",
       color=0x000000
     )
     embed.set_footer(
@@ -421,9 +421,9 @@ class Fun(commands.Cog):
   async def hug(self, ctx, user: discord.Member = None):
       if user is None:
           user = ctx.author
-          description = f"{ctx.author.mention} hugged themselves 🥺"
+          description = f"{ctx.author.mention} hugged themselves 馃ズ"
       else:
-          description = f"{ctx.author.mention} hugged {user.mention} 🥰"
+          description = f"{ctx.author.mention} hugged {user.mention} 馃グ"
 
       image_url = await self.fetch_image(ctx, "hug")
       if image_url:
@@ -438,9 +438,9 @@ class Fun(commands.Cog):
   async def kiss(self, ctx, user: discord.Member = None):
       if user is None:
           user = ctx.author
-          description = f"{ctx.author.mention} kissed someone in their dream 💀"
+          description = f"{ctx.author.mention} kissed someone in their dream 馃拃"
       else:
-          description = f"{ctx.author.mention} kissed {user.mention} 😳"
+          description = f"{ctx.author.mention} kissed {user.mention} 馃槼"
 
       image_url = await self.fetch_image(ctx, "kiss")
       if image_url:
@@ -455,9 +455,9 @@ class Fun(commands.Cog):
   async def pat(self, ctx, user: discord.Member = None):
       if user is None:
           user = ctx.author
-          description = f"{ctx.author.mention} pats themselves 🥺"
+          description = f"{ctx.author.mention} pats themselves 馃ズ"
       else:
-          description = f"{ctx.author.mention} pats {user.mention} 🫠"
+          description = f"{ctx.author.mention} pats {user.mention} 馃珷"
 
       image_url = await self.fetch_image(ctx, "pat")
       if image_url:
@@ -472,9 +472,9 @@ class Fun(commands.Cog):
   async def cuddle(self, ctx, user: discord.Member = None):
       if user is None:
           user = ctx.author
-          description = f"{ctx.author.mention} cuddles themselves 🥺"
+          description = f"{ctx.author.mention} cuddles themselves 馃ズ"
       else:
-          description = f"{ctx.author.mention} cuddles {user.mention} 🥰"
+          description = f"{ctx.author.mention} cuddles {user.mention} 馃グ"
 
       image_url = await self.fetch_image(ctx, "cuddle")
       if image_url:
@@ -491,7 +491,7 @@ class Fun(commands.Cog):
           await ctx.reply(f"{ctx.author.mention}, you can't slap the air! Find someone to slap.")
           return
 
-      description = f"{ctx.author.mention} slaps {user.mention} 😡"
+      description = f"{ctx.author.mention} slaps {user.mention} 馃槨"
       image_url = await self.fetch_image(ctx, "slap")
       if image_url:
           embed = discord.Embed(description=description, color=RandomColor())
@@ -505,9 +505,9 @@ class Fun(commands.Cog):
   async def tickle(self, ctx, user: discord.Member = None):
       if user is None:
           user = ctx.author
-          description = f"{ctx.author.mention} tickles themselves 🤪"
+          description = f"{ctx.author.mention} tickles themselves 馃お"
       else:
-          description = f"{ctx.author.mention} tickles {user.mention} 😆"
+          description = f"{ctx.author.mention} tickles {user.mention} 馃槅"
 
       image_url = await self.fetch_image(ctx, "tickle")
       if image_url:
@@ -525,9 +525,9 @@ class Fun(commands.Cog):
             return
       if user is None:
           user = ctx.author
-          description = f"{ctx.author.mention} spanked themselves 😵‍💫"
+          description = f"{ctx.author.mention} spanked themselves 馃樀鈥嶐煉�"
       else:
-          description = f"{ctx.author.mention} spanked {user.mention} 😹"
+          description = f"{ctx.author.mention} spanked {user.mention} 馃樄"
 
       image_url = await self.fetch_image(ctx, "spank")
       if image_url:
@@ -544,7 +544,7 @@ class Fun(commands.Cog):
           await ctx.send(f"{ctx.author.mention}, you can't kill the air! Find someone to kill.")
           return
 
-      description = f"{ctx.author.mention} kills {user.mention} ☠️"
+      description = f"{ctx.author.mention} kills {user.mention} 鈽狅笍"
       image_url = await self.fetch_action_image("kill")
       if image_url:
           embed = discord.Embed(description=description, color=discord.Color.random())
@@ -580,7 +580,7 @@ class Fun(commands.Cog):
               data = await response.json()
               if "response" in data:
                   embed = discord.Embed(
-                      description=f"🎱 {data['response']}",
+                      description=f"馃幈 {data['response']}",
                       color=discord.Color.random()
                   )
                   if "url" in data:
@@ -666,7 +666,7 @@ class Fun(commands.Cog):
       response = requests.get(base_url, params=params)
       if response.status_code == 200:
         translation = response.json()[0][0][0]
-        embed = discord.Embed(title="<:GoogleTranslate:1257101053489578096> **Translation Result:**", color=0x000000)
+        embed = discord.Embed(title="<:GoogleTranslate:1368453927699353713> **Translation Result:**", color=0x000000)
         embed.add_field(name="__Original:__", value=message, inline=False)
         embed.add_field(name="__Translated:__", value=translation, inline=False)
         embed.set_footer(text=f"Requested By {ctx.author}",
@@ -681,8 +681,8 @@ class Fun(commands.Cog):
       await processing_message.delete()
 
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh 
+    + Discord: aadarshhhhh 
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

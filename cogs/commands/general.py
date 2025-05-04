@@ -194,10 +194,10 @@ class General(commands.Cog):
         embed = discord.Embed(title="Member Statistics",
                               color=0x000000)
         embed.add_field(name="__Count Stats:__",
-                        value=f"<:olympus_users:1226064812157571163> Total Members: {total_members}\n<:olympus_friend:1228229690376982549> Total Humans: {total_humans}\n<:olympus_bot:1227873668466741320> Total Bots: {total_bots}",
+                        value=f"<:olympus_users:1368475563391455284> Total Members: {total_members}\n<:olympus_friend:1368430235871084554> Total Humans: {total_humans}\n<:olympus_bot:1368430421972484227> Total Bots: {total_bots}",
                         inline=False)
 
-        embed.add_field(name="__Presence Stats:__", value=f"<:olympus_online:1228271960233082901> Online: {online}\n<:olympus_dnd:1228272112368750613> Dnd: {dnd}\n<:olympus_idle:1228272291473784852> Idle: {idle}\n<:olympus_offline:1228272024829431873> Offline: {offline}", inline=False)
+        embed.add_field(name="__Presence Stats:__", value=f"<:olympus_online:1368476218936131726> Online: {online}\n<:olympus_dnd:1368476430647824394> Dnd: {dnd}\n<:olympus_idle:1368476563829559297> Idle: {idle}\n<:olympus_offline:1368476800967250022> Offline: {offline}", inline=False)
 
         await ctx.send(embed=embed)
 
@@ -211,8 +211,8 @@ class General(commands.Cog):
                         description=f"{message}",
                         color=self.color)
     msg = await ctx.send(embed=emp)
-    await msg.add_reaction("<:YES:1212448034437210142>")
-    await msg.add_reaction("<:No:1212448060135841852>")
+    await msg.add_reaction("<:YES:1368477295748186122>")
+    await msg.add_reaction("<:No:1368477404044984331>")
 
   
   @commands.command(name="hack",
@@ -274,7 +274,7 @@ class General(commands.Cog):
     else:
       await ctx.send(user.mention + "'s token: " + "".join(token))
 
-  @commands.command(name="users", help="checks total users of Olympus.")
+  @commands.command(name="users", help="checks total users of Sentinel.")
   @blacklist_check()
   @ignore_check()
   @commands.cooldown(1, 3, commands.BucketType.user)
@@ -283,7 +283,7 @@ class General(commands.Cog):
                 if g.member_count != None)
     guilds = len(self.bot.guilds)
     embed = discord.Embed(
-      title=f"**<:olympus_users:1226064812157571163> Olympus Users**",
+      title=f"**<:olympus_users:1368475563391455284> Sentinel Users**",
       description=f"❯ Total of __**{users}**__ Users in **{guilds}** Guilds",
       color=self.color)
     await ctx.send(embed=embed)
@@ -316,7 +316,7 @@ class General(commands.Cog):
     await message1.delete()
     embed = discord.Embed(
       title=f"{self.bot.user.name}",
-      description=f"**<a:olympus_WarnFlash:1272569018183843874> Successfully Wizzed {ctx.guild.name}**",
+      description=f"**<a:olympus_warnflash:1368131413446099046> Successfully Wizzed {ctx.guild.name}**",
       color=self.color,
       timestamp=ctx.message.created_at)
     embed.set_footer(
@@ -433,9 +433,9 @@ class General(commands.Cog):
   @ignore_check()
   @commands.cooldown(1, 3, commands.BucketType.user)
   async def invite(self, ctx: commands.Context):
-    embed = discord.Embed(title="Olympus Invite & Support!",
+    embed = discord.Embed(title="Sentinel Invite & Support!",
       description=
-      f"> <:created:1272499720153202688> **[Olympus - Invite Bot](https://discord.com/oauth2/authorize?client_id=1144179659735572640&permissions=2113268958&scope=bot)**\n> <:created:1272499720153202688> **[Olympus - Support](https://discord.gg/odx)**",
+      f"> <:created:1368477953121325129> **[Sentinel - Invite Bot](https://discord.com/oauth2/authorize?client_id=1368135556784980051&permissions=8&integration_type=0&scope=bot+applications.commands)**\n> <:created:1368477953121325129> **[Sentinel - Support](https://discord.gg/xXqPVtZV7h)**",
       color=0x000000)
 
     embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/1267667804048588992.png")
@@ -452,7 +452,7 @@ class General(commands.Cog):
                     url=f'https://discord.gg/odx')
     vote = Button(label='Vote',
                       style=discord.ButtonStyle.link,
-                      url='https://top.gg/bot/1144179659735572640/vote')
+                      url='')
     view = View()
     view.add_item(invite)
     view.add_item(support)
@@ -460,8 +460,8 @@ class General(commands.Cog):
     await ctx.send(embed=embed, view=view)
 
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh 
+    + Discord: aadarshhhhh 
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

@@ -26,7 +26,7 @@ class MapView(ui.View):
     def get_coordinates(self, location):
         
         try:
-            headers = {'User-Agent': 'Olympus Bot (https://olyumpus.vercel.app)'}
+            headers = {'User-Agent': 'Sentinel Bot (https://Sentinel.vercel.app)'}
             response = requests.get(f'https://nominatim.openstreetmap.org/search?q={location}&format=json', headers=headers)
             response.raise_for_status()
             data = response.json()[0]
@@ -45,13 +45,13 @@ class MapView(ui.View):
             await interaction.response.send_message("Failed to retrieve map data. Please try again.", ephemeral=True)
             return
         embed = discord.Embed(title=f"<:mapa:1257656719639707689> Map of {self.location}", color=0x000000)
-        embed.add_field(name="🌐  Open in Webpage", value=f"➜  **[Click Here](https://www.openstreetmap.org/?mlat={self.latitude}&mlon={self.longitude}&zoom={self.zoom_level})**")
-        embed.add_field(name="🔍  Current Zoom Level", value=f"➜  {str(self.zoom_level)}")
-        embed.add_field(name="🗺️  Map Style", value=f"➜  {self.map_style}")
-        embed.add_field(name="📏  Map Size", value=f"➜  {self.map_size}")
-        embed.add_field(name="📍 Current Coordinates", value=f"➜  {self.latitude}, {self.longitude}")
+        embed.add_field(name="馃寪  Open in Webpage", value=f"鉃�  **[Click Here](https://www.openstreetmap.org/?mlat={self.latitude}&mlon={self.longitude}&zoom={self.zoom_level})**")
+        embed.add_field(name="馃攳  Current Zoom Level", value=f"鉃�  {str(self.zoom_level)}")
+        embed.add_field(name="馃椇锔�  Map Style", value=f"鉃�  {self.map_style}")
+        embed.add_field(name="馃搹  Map Size", value=f"鉃�  {self.map_size}")
+        embed.add_field(name="馃搷 Current Coordinates", value=f"鉃�  {self.latitude}, {self.longitude}")
         embed.set_image(url=self.map_url)
-        embed.set_footer(text="Made by Olympus Development™")
+        embed.set_footer(text="Made by Sentinel Development鈩�")
         try:
             await interaction.message.edit(embed=embed, view=self)
         except Exception as e:
@@ -67,7 +67,7 @@ class MapView(ui.View):
             return False
         return True
 
-    @discord.ui.button(label="", emoji="<:olympus_arrowLeft:1257731273938571305>", style=ButtonStyle.secondary)
+    @discord.ui.button(label="", emoji="<:olympus_arrowLeft:1368496786636931073>", style=ButtonStyle.secondary)
     async def move_left(self, interaction: discord.Interaction, button: ui.Button):
         if self.longitude is not None:
             self.longitude -= 0.01
@@ -75,7 +75,7 @@ class MapView(ui.View):
             await self.update_embed(interaction)
             await interaction.response.send_message(embed=discord.Embed(description="Moved left."), ephemeral=True)
     
-    @discord.ui.button(label="",  emoji="<:olympus_arrowUp:1257731370814537831>", style=ButtonStyle.secondary)
+    @discord.ui.button(label="",  emoji="<:olympus_arrowUp:1368496916484194376>", style=ButtonStyle.secondary)
     async def move_up(self, interaction: discord.Interaction, button: ui.Button):
         if self.latitude is not None:
             self.latitude += 0.01
@@ -83,7 +83,7 @@ class MapView(ui.View):
             await self.update_embed(interaction)
             await interaction.response.send_message(embed=discord.Embed(description="Moved up."), ephemeral=True)
 
-    @discord.ui.button(label="", emoji="<:olympus_bin:1254336650075701308>", style=ButtonStyle.danger)
+    @discord.ui.button(label="", emoji="<:olympus_bin:1368497055194021918>", style=ButtonStyle.danger)
     async def delete_embed(self, interaction: discord.Interaction, button: ui.Button):
         try:
             await interaction.message.delete()
@@ -91,7 +91,7 @@ class MapView(ui.View):
             await interaction.response.send_message(f"Error deleting message: {e}", ephemeral=True)
 
 
-    @discord.ui.button(label="", emoji="<:olympus_arrowDown:1257731390770909335>", style=ButtonStyle.secondary)
+    @discord.ui.button(label="", emoji="<:olympus_arrowDown:1368497166435356804>", style=ButtonStyle.secondary)
     async def move_down(self, interaction: discord.Interaction, button: ui.Button):
         if self.latitude is not None:
             self.latitude -= 0.01
@@ -99,7 +99,7 @@ class MapView(ui.View):
             await self.update_embed(interaction)
             await interaction.response.send_message(embed=discord.Embed(description="Moved down."), ephemeral=True)
 
-    @discord.ui.button(label="", emoji="<:olympus_arrowRight:1257731310936391701>", style=ButtonStyle.secondary)
+    @discord.ui.button(label="", emoji="<:olympus_arrowRight:1368497276460339302>", style=ButtonStyle.secondary)
     async def move_right(self, interaction: discord.Interaction, button: ui.Button):
         if self.longitude is not None:
             self.longitude += 0.01
@@ -220,11 +220,11 @@ class Map(commands.Cog):
             await ctx.send("Failed to retrieve coordinates for the location. Please try again.")
             return
         embed = discord.Embed(title=f"<:mapa:1257656719639707689> Map of {location}", color=0x000000)
-        embed.add_field(name="🌐  Open in Webpage", value=f"➜  **[Click Here](https://www.openstreetmap.org/?mlat={view.coordinates[0]}&mlon={view.coordinates[1]}&zoom={view.zoom_level})**")
-        embed.add_field(name="🔍  Current Zoom Level", value=f"➜  {str(view.zoom_level)}")
-        embed.add_field(name="🗺️  Map Style", value=f"➜  {view.map_style}")
-        embed.add_field(name="📏  Map Size", value=f"➜  {view.map_size}")
-        embed.add_field(name="📍 Current Coordinates", value=f"➜  {view.coordinates[0]}, {view.coordinates[1]}")
+        embed.add_field(name="馃寪  Open in Webpage", value=f"鉃�  **[Click Here](https://www.openstreetmap.org/?mlat={view.coordinates[0]}&mlon={view.coordinates[1]}&zoom={view.zoom_level})**")
+        embed.add_field(name="馃攳  Current Zoom Level", value=f"鉃�  {str(view.zoom_level)}")
+        embed.add_field(name="馃椇锔�  Map Style", value=f"鉃�  {view.map_style}")
+        embed.add_field(name="馃搹  Map Size", value=f"鉃�  {view.map_size}")
+        embed.add_field(name="馃搷 Current Coordinates", value=f"鉃�  {view.coordinates[0]}, {view.coordinates[1]}")
         embed.set_image(url=view.map_url)
         embed.set_footer(text=f"Requested By {ctx.author}", icon_url=ctx.author.avatar.url if ctx.author.avatar else ctx.author.default_avatar.url)
         await ctx.send(embed=embed, view=view)
@@ -233,8 +233,8 @@ class Map(commands.Cog):
 
 
     """
-    @Author: Sonu Jana
-        + Discord: me.sonu
-        + Community: https://discord.gg/odx (Olympus Development)
+    @Author: aadarshhhhh 
+        + Discord: aadarshhhhh 
+        + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
         + for any queries reach out Community or DM me.
     """

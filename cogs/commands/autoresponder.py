@@ -46,21 +46,21 @@ class AutoResponder(commands.Cog):
             async with db.execute("SELECT COUNT(*) FROM autoresponses WHERE guild_id = ?", (ctx.guild.id,)) as cursor:
                 count = (await cursor.fetchone())[0]
                 if count >= 20:
-                    return await ctx.reply(embed=discord.Embed(title="<:olympus_cross:1227866668152393789> Error!",
+                    return await ctx.reply(embed=discord.Embed(title="<:olympus_cross:1368120655643414548> Error!",
                         description=f"You can't add more than 20 autoresponses in {ctx.guild.name}",
                         color=0x000000
                     ))
 
             async with db.execute("SELECT 1 FROM autoresponses WHERE guild_id = ? AND LOWER(name) = ?", (ctx.guild.id, name_lower)) as cursor:
                 if await cursor.fetchone():
-                    return await ctx.reply(embed=discord.Embed(title="<:olympus_cross:1227866668152393789> Error!",
+                    return await ctx.reply(embed=discord.Embed(title="<:olympus_cross:1368120655643414548> Error!",
                         description=f"The autoresponse with the name `{name}` already exists in {ctx.guild.name}",
                         color=0x000000
                     ))
 
             await db.execute("INSERT INTO autoresponses (guild_id, name, message) VALUES (?, ?, ?)", (ctx.guild.id, name_lower, message))
             await db.commit()
-            await ctx.reply(embed=discord.Embed(title="<:olympus_tick:1227866641027698792> Success",
+            await ctx.reply(embed=discord.Embed(title="<:olympus_tick:1368119361440845824> Success",
                 description=f"Created autoresponder `{name}` in {ctx.guild.name}",
                 color=0x000000
             ))
@@ -75,14 +75,14 @@ class AutoResponder(commands.Cog):
         async with aiosqlite.connect(DB_PATH) as db:
             async with db.execute("SELECT 1 FROM autoresponses WHERE guild_id = ? AND LOWER(name) = ?", (ctx.guild.id, name_lower)) as cursor:
                 if not await cursor.fetchone():
-                    return await ctx.reply(embed=discord.Embed(title="<:olympus_cross:1227866668152393789> Error!",
+                    return await ctx.reply(embed=discord.Embed(title="<:olympus_cross:1368120655643414548> Error!",
                         description=f"No autoresponder found with the name `{name}` in {ctx.guild.name}",
                         color=0x000000
                     ))
 
             await db.execute("DELETE FROM autoresponses WHERE guild_id = ? AND LOWER(name) = ?", (ctx.guild.id, name_lower))
             await db.commit()
-            await ctx.reply(embed=discord.Embed(title="<:olympus_tick:1227866641027698792> Success",
+            await ctx.reply(embed=discord.Embed(title="<:olympus_tick:1368119361440845824> Success",
                 description=f"Deleted autoresponder `{name}` in {ctx.guild.name}",
                 color=0x000000
             ))
@@ -97,14 +97,14 @@ class AutoResponder(commands.Cog):
         async with aiosqlite.connect(DB_PATH) as db:
             async with db.execute("SELECT 1 FROM autoresponses WHERE guild_id = ? AND LOWER(name) = ?", (ctx.guild.id, name_lower)) as cursor:
                 if not await cursor.fetchone():
-                    return await ctx.reply(embed=discord.Embed(title="<:olympus_cross:1227866668152393789> Error!",
+                    return await ctx.reply(embed=discord.Embed(title="<:olympus_cross:1368120655643414548> Error!",
                         description=f"No autoresponder found with the name `{name}` in {ctx.guild.name}",
                         color=0x000000
                     ))
 
             await db.execute("UPDATE autoresponses SET message = ? WHERE guild_id = ? AND LOWER(name) = ?", (message, ctx.guild.id, name_lower))
             await db.commit()
-            await ctx.reply(embed=discord.Embed(title="<:olympus_tick:1227866641027698792> Success",
+            await ctx.reply(embed=discord.Embed(title="<:olympus_tick:1368119361440845824> Success",
                 description=f"Edited autoresponder `{name}` in {ctx.guild.name}",
                 color=0x000000
             ))
@@ -121,7 +121,7 @@ class AutoResponder(commands.Cog):
 
         if not autoresponses:
             return await ctx.reply(embed=discord.Embed(
-                description=f"<:olympus_notify:1227866804630720565> | There are no autoresponders in {ctx.guild.name}",
+                description=f"<:olympus_notify:1368120990097473566> | There are no autoresponders in {ctx.guild.name}",
                 color=0x000000
             ))
 
@@ -148,8 +148,8 @@ async def setup(bot):
 
 
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh
+    + Discord: aadarshhhhh 
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out support or DM me.
 """
