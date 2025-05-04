@@ -1,5 +1,5 @@
 from __future__ import annotations
-from core import Olympus
+from core import Sentinel
 from colorama import Fore, Style, init
 
 
@@ -62,19 +62,19 @@ from .events.autoreact import AutoReactListener
 #from .events.topgg import TopGG
 
 ########-------HELP-------########
-from .olympus.antinuke import _antinuke
-from .olympus.extra import _extra
-from .olympus.general import _general
-from .olympus.automod import _automod 
-from .olympus.moderation import _moderation
-from .olympus.music import _music
-from .olympus.fun import _fun
-from .olympus.games import _games
-from .olympus.ignore import _ignore
-from .olympus.server import _server
-from .olympus.voice import _voice 
-from .olympus.welcome import _welcome 
-from .olympus.giveaway import _giveaway
+from .Sentinel.antinuke import _antinuke
+from .Sentinel.extra import _extra
+from .Sentinel.general import _general
+from .Sentinel.automod import _automod 
+from .Sentinel.moderation import _moderation
+from .Sentinel.music import _music
+from .Sentinel.import _fun
+from .Sentinel.games import _games
+from .Sentinel.ignore import _ignore
+from .Sentinel.server import _server
+from .Sentinel.voice import _voice 
+from .Sentinel.welcome import _welcome 
+from .Sentinel.giveaway import _giveaway
 
 
 #########ANTINUKE#########
@@ -131,7 +131,7 @@ from .moderation.topcheck import TopCheck
 from .moderation.snipe import Snipe
 
 
-async def setup(bot: Olympus):
+async def setup(bot: Sentinel):
   cogs_to_load = [
         Help, General, Moderation, Automod, Welcomer, Fun, Games, Extra,
         Voice, Owner, Customrole, afk, Embed, Media, Ignore,
