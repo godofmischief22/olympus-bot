@@ -30,7 +30,7 @@ class TimeoutView(ui.View):
         modal = ReasonModal(user=self.user, author=self.author, view=self)
         await interaction.response.send_modal(modal)
 
-    @ui.button(style=discord.ButtonStyle.gray, emoji="<:olympus_bin:1254336650075701308>")
+    @ui.button(style=discord.ButtonStyle.gray, emoji="<:olympus_bin:1368497055194021918>")
     async def delete(self, interaction: discord.Interaction, button: discord.ui.Button):
         await interaction.message.delete()
 
@@ -61,7 +61,7 @@ class AlreadyTimedoutView(ui.View):
         modal = ReasonModal(user=self.user, author=self.author, view=self)
         await interaction.response.send_modal(modal)
 
-    @ui.button(style=discord.ButtonStyle.gray, emoji="<:olympus_bin:1254336650075701308>")
+    @ui.button(style=discord.ButtonStyle.gray, emoji="<:olympus_bin:1368497055194021918>")
     async def delete(self, interaction: discord.Interaction, button: discord.ui.Button):
         await interaction.message.delete()
 
@@ -84,9 +84,9 @@ class ReasonModal(ui.Modal):
         except discord.HTTPException:
             dm_status = "No"
 
-        embed = discord.Embed(description=f"**<:olympusUser:1294654665895579721> Target User:** [{self.user}](https://discord.com/users/{self.user.id})\n<:olympusMention:1294654604998475856> **User Mention:** {self.user.mention}\n**<:olympusDM:1295595078122999915> DM Sent:** {dm_status}\n**<:olympusReason:1295595129809141812> Reason:** {reason}", color=0x000000)
+        embed = discord.Embed(description=f"**<:olympusUser:1368520117582823424> Target User:** [{self.user}](https://discord.com/users/{self.user.id})\n<:olympusMention:1368521612865044541> **User Mention:** {self.user.mention}\n**<:olympusDM:1368554618551795794> DM Sent:** {dm_status}\n**<:olympusReason:1368554945649053737> Reason:** {reason}", color=0x000000)
         embed.set_author(name=f"Successfully Unmuted {self.user.name}", icon_url=self.user.avatar.url if self.user.avatar else self.user.default_avatar.url)
-        embed.add_field(name="<:olympusMod:1295601558985379852> Moderator:", value=interaction.user.mention, inline=False)
+        embed.add_field(name="<:olympusMod:1368524371823562753> Moderator:", value=interaction.user.mention, inline=False)
         embed.set_footer(text=f"Requested by {self.author}", icon_url=self.author.avatar.url if self.author.avatar else self.author.default_avatar.url)
         embed.timestamp = discord.utils.utcnow()
 
@@ -169,7 +169,7 @@ class Mute(commands.Cog):
             return await ctx.send(embed=error)
 
         try:
-            await user.send(f"<a:olympus_WarnFlash:1272569018183843874> You have been muted in **{ctx.guild.name}** by **{ctx.author}** for {duration_text}. Reason: {reason or 'None'}")
+            await user.send(f"<a:olympus_warnflash:1368131413446099046> You have been muted in **{ctx.guild.name}** by **{ctx.author}** for {duration_text}. Reason: {reason or 'None'}")
             dm_status = "Yes"
         except discord.Forbidden:
             dm_status = "No"
@@ -179,14 +179,14 @@ class Mute(commands.Cog):
         await user.edit(timed_out_until=discord.utils.utcnow() + time_delta, reason=f"Muted by {ctx.author} for {duration_text}. Reason: {reason or 'None'}")
 
 
-        embed = discord.Embed(description=f"**<:olympusUser:1294654665895579721> Target User:** [{user}](https://discord.com/users/{user.id})\n"
-                                          f"<:olympusMention:1294654604998475856> **User Mention:** {user.mention}\n"
-                                          f"<:olympusDM:1295595078122999915> **DM Sent:** {dm_status}\n"
-                                          f"**<:olympusReason:1295595129809141812> Reason:** {reason or 'None'}\n"
-                                          f"**<:olympusTime:1294654567539277824> Duration:** {duration_text}",
+        embed = discord.Embed(description=f"**<:olympusUser:1368520117582823424> Target User:** [{user}](https://discord.com/users/{user.id})\n"
+                                          f"<:olympusMention:1368521612865044541> **User Mention:** {user.mention}\n"
+                                          f"<:olympusDM:1368554618551795794> **DM Sent:** {dm_status}\n"
+                                          f"**<:olympusReason:1368554945649053737> Reason:** {reason or 'None'}\n"
+                                          f"**<:olympusTime:1368522292044496988> Duration:** {duration_text}",
                               color=self.color)
         embed.set_author(name=f"Successfully Muted {user.name}", icon_url=self.get_user_avatar(user))
-        embed.add_field(name="<:olympusMod:1295601558985379852> Moderator:", value=ctx.author.mention, inline=False)
+        embed.add_field(name="<:olympusMod:1368524371823562753> Moderator:", value=ctx.author.mention, inline=False)
         embed.set_footer(text=f"Requested by {ctx.author}", icon_url=self.get_user_avatar(ctx.author))
         embed.timestamp = discord.utils.utcnow()
 
@@ -199,19 +199,19 @@ class Mute(commands.Cog):
     async def mute_error(self, ctx, error):
         
         if isinstance(error, commands.BotMissingPermissions):
-            embed = discord.Embed(title="<:Denied:1294218790082711553> Access Denied", description="I don't have permission to mute members.", color=self.color)
+            embed = discord.Embed(title="<:Denied:1368234342945394769> Access Denied", description="I don't have permission to mute members.", color=self.color)
             await ctx.send(embed=embed)
         elif isinstance(error, discord.Forbidden):
-            embed = discord.Embed(title="<:Denied:1294218790082711553> Missing Permissions", description="I can't mute this user as they might have higher privileges (e.g., Admin).", color=self.color)
+            embed = discord.Embed(title="<:Denied:1368234342945394769> Missing Permissions", description="I can't mute this user as they might have higher privileges (e.g., Admin).", color=self.color)
             await ctx.send(embed=embed)
             
         else:
-            embed = discord.Embed(title="<:Denied:1294218790082711553> Unexpected Error", description=str(error), color=self.color)
+            embed = discord.Embed(title="<:Denied:1368234342945394769> Unexpected Error", description=str(error), color=self.color)
             await ctx.send(embed=embed)
 
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh 
+    + Discord: aadarshhhhh 
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

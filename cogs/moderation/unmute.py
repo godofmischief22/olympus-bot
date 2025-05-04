@@ -38,7 +38,7 @@ class MuteUnmuteView(ui.View):
                 item.disabled = True
         await self.message.edit(view=self)
 
-    @ui.button(style=discord.ButtonStyle.gray, emoji="<:olympus_bin:1254336650075701308>")
+    @ui.button(style=discord.ButtonStyle.gray, emoji="<:olympus_bin:1368497055194021918>")
     async def delete(self, interaction: discord.Interaction, button: discord.ui.Button):
         await interaction.message.delete()
 
@@ -71,7 +71,7 @@ class MuteReasonModal(ui.Modal):
 
         
         try:
-            await self.user.send(f"<a:olympus_WarnFlash:1272569018183843874> You have been muted in **{interaction.guild.name}** for {time_str}. Reason: {reason}")
+            await self.user.send(f"<a:olympus_warnflash:1368131413446099046> You have been muted in **{interaction.guild.name}** for {time_str}. Reason: {reason}")
             dm_status = "Yes"
         except discord.Forbidden:
             dm_status = "No"
@@ -79,11 +79,11 @@ class MuteReasonModal(ui.Modal):
             dm_status = "No"
 
         success_embed = discord.Embed(
-            description=f"**<:olympusUser:1294654665895579721> Target User:** [{self.user}](https://discord.com/users/{self.user.id})\n<:olympusMention:1294654604998475856> **User Mention:** {self.user.mention}\n**<:olympusReason:1295595129809141812> Reason:** {reason}\n<:olympusDM:1295595078122999915> **DM Sent:** {dm_status}", 
+            description=f"**<:olympusUser:1368520117582823424> Target User:** [{self.user}](https://discord.com/users/{self.user.id})\n<:olympusMention:1368521612865044541> **User Mention:** {self.user.mention}\n**<:olympusReason:1368554945649053737> Reason:** {reason}\n<:olympusDM:1368554618551795794> **DM Sent:** {dm_status}", 
             color=discord.Color.red()
         )
         success_embed.set_author(name=f"Muted {self.user.name}", icon_url=self.user.avatar.url if self.user.avatar else self.user.default_avatar.url)
-        success_embed.add_field(name="<:olympusMod:1295601558985379852> Moderator:", value=self.author.mention, inline=False)
+        success_embed.add_field(name="<:olympusMod:1368524371823562753> Moderator:", value=self.author.mention, inline=False)
         success_embed.add_field(name="Duration", value=f"{time_str}", inline=False)
         success_embed.set_footer(text=f"Requested by {self.author}", icon_url=self.author.avatar.url if self.author.avatar else self.author.default_avatar.url)
         success_embed.timestamp = discord.utils.utcnow()
@@ -168,11 +168,11 @@ class Unmute(commands.Cog):
             return await ctx.send(embed=error)
 
         embed = discord.Embed(
-            description=f"**<:olympusUser:1294654665895579721> Target User:** [{user}](https://discord.com/users/{user.id})\n**<:olympusMention:1294654604998475856> User Mention:** {user.mention}\n<:olympusDM:1295595078122999915> **DM Sent:** {dm_status}",
+            description=f"**<:olympusUser:1368520117582823424> Target User:** [{user}](https://discord.com/users/{user.id})\n**<:olympusMention:1368521612865044541> User Mention:** {user.mention}\n<:olympusDM:1368554618551795794> **DM Sent:** {dm_status}",
             color=self.color
         )
         embed.set_author(name=f"Successfully Unmuted {user.name}", icon_url=self.get_user_avatar(user))
-        embed.add_field(name="<:olympusMod:1295601558985379852> Moderator:", value=ctx.author.mention, inline=False)
+        embed.add_field(name="<:olympusMod:1368524371823562753> Moderator:", value=ctx.author.mention, inline=False)
         embed.set_footer(text=f"Requested by {ctx.author}", icon_url=self.get_user_avatar(ctx.author))
         embed.timestamp = discord.utils.utcnow()
 
@@ -182,8 +182,8 @@ class Unmute(commands.Cog):
 
 
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh 
+    + Discord: aadarshhhhh 
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

@@ -63,7 +63,7 @@ async def do_removal(ctx, limit, predicate, *, before=None, after=None):
 
     spammers = Counter(m.author.display_name for m in deleted)
     deleted = len(deleted)
-    messages = [f'<:olympus_tick:1227866641027698792> | {deleted} message{" was" if deleted == 1 else "s were"} removed.']
+    messages = [f'<:olympus_tick:1368119361440845824> | {deleted} message{" was" if deleted == 1 else "s were"} removed.']
     if deleted:
         messages.append("")
         spammers = sorted(spammers.items(), key=lambda t: t[1], reverse=True)
@@ -72,7 +72,7 @@ async def do_removal(ctx, limit, predicate, *, before=None, after=None):
     to_send = "\n".join(messages)
 
     if len(to_send) > 2000:
-        await ctx.send(f"<:olympus_tick:1227866641027698792> | Successfully removed {deleted} messages.", delete_after=7)
+        await ctx.send(f"<:olympus_tick:1368119361440845824> | Successfully removed {deleted} messages.", delete_after=7)
     else:
         await ctx.send(to_send, delete_after=7)
 
@@ -125,10 +125,10 @@ class Moderation(commands.Cog):
       if ctx.author == ctx.guild.owner or ctx.author.top_role.position > ctx.guild.me.top_role.position:
           button = Button(label="Confirm",
                     style=discord.ButtonStyle.green,
-                    emoji="<:olympus_tick:1227866641027698792>")
+                    emoji="<:olympus_tick:1368119361440845824>")
           button1 = Button(label="Cancel",
                      style=discord.ButtonStyle.red,
-                     emoji="<:olympus_cross:1227866668152393789>")
+                     emoji="<:olympus_cross:1368120655643414548>")
           async def button_callback(interaction: discord.Interaction):
               a = 0
               if interaction.user == ctx.author:
@@ -149,12 +149,12 @@ class Moderation(commands.Cog):
                           except Exception as e:
                               print(e)
                       await interaction.channel.send(
-                              content=f"<:olympus_tick:1227866641027698792> | Successfully Unlocked {a} Channels")   
+                              content=f"<:olympus_tick:1368119361440845824> | Successfully Unlocked {a} Channels")   
                       return
                   else:
                     await interaction.response.edit_message(
                          content=
-                           "<:olympus_notify:1227866804630720565> | It seems I'm missing the necessary permissions. Please grant me the `manage roles` permissions and try again.",
+                           "<:olympus_notify:1368120990097473566> | It seems I'm missing the necessary permissions. Please grant me the `manage roles` permissions and try again.",
                               embed=None,
                                   view=None)
               else:
@@ -210,10 +210,10 @@ class Moderation(commands.Cog):
       if ctx.author == ctx.guild.owner or ctx.author.top_role.position > ctx.guild.me.top_role.position:
           button = Button(label="Confirm",
                     style=discord.ButtonStyle.green,
-                    emoji="<:olympus_tick:1227866641027698792>")
+                    emoji="<:olympus_tick:1368119361440845824>")
           button1 = Button(label="Cancel",
                      style=discord.ButtonStyle.red,
-                     emoji="<:olympus_cross:1227866668152393789>")
+                     emoji="<:olympus_cross:1368120655643414548>")
           async def button_callback(interaction: discord.Interaction):
               a = 0
               if interaction.user == ctx.author:
@@ -234,7 +234,7 @@ class Moderation(commands.Cog):
                           except Exception as e:
                               print(e)
                       await interaction.channel.send(
-                              content=f"<:olympus_tick:1227866641027698792> | Successfully locked {a} Channels")
+                              content=f"<:olympus_tick:1368119361440845824> | Successfully locked {a} Channels")
                       return
                   else:
                     await interaction.response.edit_message(
@@ -362,10 +362,10 @@ class Moderation(commands.Cog):
       if ctx.author == ctx.guild.owner or ctx.author.top_role.position > ctx.guild.me.top_role.position:
           button = Button(label="Confirm",
                     style=discord.ButtonStyle.green,
-                    emoji="<:olympus_tick:1227866641027698792>")
+                    emoji="<:olympus_tick:1368119361440845824>")
           button1 = Button(label="Cancel",
                      style=discord.ButtonStyle.red,
-                     emoji="<:olympus_cross:1227866668152393789>")
+                     emoji="<:olympus_cross:1368120655643414548>")
           async def button_callback(interaction: discord.Interaction):
               a = 0
               if interaction.user == ctx.author:
@@ -383,7 +383,7 @@ class Moderation(commands.Cog):
                           except Exception as e:
                               print(e)
                       await interaction.channel.send(
-                              content=f"<:olympus_tick:1227866641027698792> | Successfully Hidden {a} Channel(s) .")
+                              content=f"<:olympus_tick:1368119361440845824> | Successfully Hidden {a} Channel(s) .")
                       return
                   else:
                     await interaction.response.edit_message(
@@ -440,10 +440,10 @@ class Moderation(commands.Cog):
       if ctx.author == ctx.guild.owner or ctx.author.top_role.position > ctx.guild.me.top_role.position:
           button = Button(label="Confirm",
                     style=discord.ButtonStyle.green,
-                    emoji="<:olympus_tick:1227866641027698792>")
+                    emoji="<:olympus_tick:1368119361440845824>")
           button1 = Button(label="Cancel",
                      style=discord.ButtonStyle.red,
-                     emoji="<:olympus_cross:1227866668152393789>")
+                     emoji="<:olympus_cross:1368120655643414548>")
           async def button_callback(interaction: discord.Interaction):
               a = 0
               if interaction.user == ctx.author:
@@ -461,7 +461,7 @@ class Moderation(commands.Cog):
                           except Exception as e:
                               print(e)
                       await interaction.channel.send(
-                              content=f"<:olympus_tick:1227866641027698792> | Successfully Unhidden {a} Channel(s) .")
+                              content=f"<:olympus_tick:1368119361440845824> | Successfully Unhidden {a} Channel(s) .")
                       return
                   else:
                     await interaction.response.edit_message(
@@ -521,7 +521,7 @@ class Moderation(commands.Cog):
   @commands.guild_only()
   async def _prefix(self, ctx: commands.Context, prefix: str):
       if not prefix:
-          await ctx.reply(embed=discord.Embed(title="<:olympus_cross:1227866668152393789> Error",
+          await ctx.reply(embed=discord.Embed(title="<:olympus_cross:1368120655643414548> Error",
                 description="Prefix cannot be empty. Please provide a valid prefix.",
                 color=self.color
             ))
@@ -531,7 +531,7 @@ class Moderation(commands.Cog):
       if ctx.author == ctx.guild.owner or ctx.author.top_role.position > ctx.guild.me.top_role.position:
           data["prefix"] = str(prefix)
           await updateConfig(ctx.guild.id, data)
-          embed1=discord.Embed(title="<:olympus_tick:1227866641027698792> Success",
+          embed1=discord.Embed(title="<:olympus_tick:1368119361440845824> Success",
                 description=f"Changed Prefix For this guild to `{prefix}`\n\nNew Prefix for **{ctx.guild.name}** is : `{prefix}`\nUse `{prefix}help` For More.",
                 color=self.color
                              )
@@ -675,10 +675,10 @@ class Moderation(commands.Cog):
   async def _nuke(self, ctx: commands.Context):
     button = Button(label="Confirm",
                     style=discord.ButtonStyle.green,
-                    emoji="<:olympus_tick:1227866641027698792>")
+                    emoji="<:olympus_tick:1368119361440845824>")
     button1 = Button(label="Cancel",
                      style=discord.ButtonStyle.red,
-                     emoji="<:olympus_cross:1227866668152393789>")
+                     emoji="<:olympus_cross:1368120655643414548>")
 
     async def button_callback(interaction: discord.Interaction):
       if interaction.user == ctx.author:
@@ -841,7 +841,7 @@ class Moderation(commands.Cog):
                 except discord.Forbidden:
                     continue  
             await init_message.delete()
-            return await ctx.reply(f"<:olympus_tick:1227866641027698792> | Successfully deleted {delete_count}/{len(found_emojis)} emoji(s).")
+            return await ctx.reply(f"<:olympus_tick:1368119361440845824> | Successfully deleted {delete_count}/{len(found_emojis)} emoji(s).")
 
     
     await init_message.delete()
@@ -952,7 +952,7 @@ class Moderation(commands.Cog):
                 image_data = await r.read()
             await role.edit(display_icon=image_data)
             success_embed = discord.Embed(
-                description=f"<:olympus_tick:1227866641027698792> | Successfully changed the icon for {role.mention}.",
+                description=f"<:olympus_tick:1368119361440845824> | Successfully changed the icon for {role.mention}.",
                 color=self.color
             )
             return await ctx.reply(embed=success_embed, mention_author=False)
@@ -976,10 +976,10 @@ class Moderation(commands.Cog):
   async def unbanall(self, ctx):
     button = Button(label="Confirm",
                     style=discord.ButtonStyle.green,
-                    emoji="<:olympus_tick:1227866641027698792>")
+                    emoji="<:olympus_tick:1368119361440845824>")
     button1 = Button(label="Cancel",
                      style=discord.ButtonStyle.red,
-                     emoji="<:olympus_cross:1227866668152393789>")
+                     emoji="<:olympus_cross:1368120655643414548>")
 
     async def button_callback(interaction: discord.Interaction):
       a = 0
@@ -993,7 +993,7 @@ class Moderation(commands.Cog):
               reason="Unbanall Command Executed By: {}".format(ctx.author))
             a += 1
           await interaction.channel.send(
-            content=f"<:olympus_tick:1227866641027698792> Successfully Unbanned {a} Members")
+            content=f"<:olympus_tick:1368119361440845824> Successfully Unbanned {a} Members")
         else:
           await interaction.response.edit_message(
             content=
@@ -1059,8 +1059,8 @@ Reason: `{entry.reason}`\n\n''')
     await ctx.reply(embed=embed, mention_author=False)
       
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh 
+    + Discord: aadarshhhhh 
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

@@ -31,7 +31,7 @@ class BanView(ui.View):
         modal = ReasonModal(user=self.user, author=self.author, view=self)
         await interaction.response.send_modal(modal)
 
-    @ui.button(style=discord.ButtonStyle.gray, emoji="<:olympus_bin:1254336650075701308>")
+    @ui.button(style=discord.ButtonStyle.gray, emoji="<:olympus_bin:1368497055194021918>")
     async def delete(self, interaction: discord.Interaction, button: discord.ui.Button):
         await interaction.message.delete()
 
@@ -59,7 +59,7 @@ class AlreadyBannedView(ui.View):
         modal = ReasonModal(user=self.user, author=self.author, view=self)
         await interaction.response.send_modal(modal)
 
-    @ui.button(style=discord.ButtonStyle.gray, emoji="<:olympus_bin:1254336650075701308>")
+    @ui.button(style=discord.ButtonStyle.gray, emoji="<:olympus_bin:1368497055194021918>")
     async def delete(self, interaction: discord.Interaction, button: discord.ui.Button):
         await interaction.message.delete()
 
@@ -75,16 +75,16 @@ class ReasonModal(ui.Modal):
     async def on_submit(self, interaction: discord.Interaction):
         reason = self.reason_input.value or "No reason provided"
         try:
-            await self.user.send(f"<:Ztick:1222750301233090600> You have been Unbanned from **{self.author.guild.name}** by **{self.author}**. Reason: {reason or 'No reason provided'}")
+            await self.user.send(f"<:Ztick:1368444340015202435> You have been Unbanned from **{self.author.guild.name}** by **{self.author}**. Reason: {reason or 'No reason provided'}")
             dm_status = "Yes"
         except discord.Forbidden:
             dm_status = "No"
         except discord.HTTPException:
             dm_status = "No"
             
-        embed = discord.Embed(description=f"**<:olympusUser:1294654665895579721> Target User:** [{self.user}](https://discord.com/users/{self.user.id})\n<:olympusMention:1294654604998475856> **User Mention:** {self.user.mention}\n**<:olympusDM:1295595078122999915> DM Sent:** {dm_status}\n**<:olympusReason:1295595129809141812> Reason:** {reason}", color=0x000000)
+        embed = discord.Embed(description=f"**<:olympusUser:1368520117582823424> Target User:** [{self.user}](https://discord.com/users/{self.user.id})\n<:olympusMention:1368521612865044541> **User Mention:** {self.user.mention}\n**<:olympusDM:1368554618551795794> DM Sent:** {dm_status}\n**<:olympusReason:1368554945649053737> Reason:** {reason}", color=0x000000)
         embed.set_author(name=f"Successfully Unbanned {self.user.name}", icon_url=self.user.avatar.url if self.user.avatar else self.user.default_avatar.url)
-        embed.add_field(name="<:olympusMod:1295601558985379852> Moderator:", value=interaction.user.mention, inline=False)
+        embed.add_field(name="<:olympusMod:1368524371823562753> Moderator:", value=interaction.user.mention, inline=False)
         embed.set_footer(text=f"Requested by {self.author}", icon_url=self.author.avatar.url if self.author.avatar else self.author.default_avatar.url)
         embed.timestamp = discord.utils.utcnow()
 
@@ -175,7 +175,7 @@ class Ban(commands.Cog):
                     return await ctx.send(embed=error)
 
         try:
-            await user.send(f"<a:olympus_WarnFlash:1272569018183843874> You have been banned from **{ctx.guild.name}** by **{ctx.author}**. Reason: {reason or 'No reason provided'}")
+            await user.send(f"<a:olympus_warnflash:1368131413446099046> You have been banned from **{ctx.guild.name}** by **{ctx.author}**. Reason: {reason or 'No reason provided'}")
             dm_status = "Yes"
         except discord.Forbidden:
             dm_status = "No"
@@ -185,9 +185,9 @@ class Ban(commands.Cog):
         await ctx.guild.ban(user, reason=f"Ban requested by {ctx.author} for reason: {reason or 'No reason provided'}")
 
         reasonn = reason or "No reason provided"
-        embed = discord.Embed(description=f"**<:olympusUser:1294654665895579721> Target User:** [{user}](https://discord.com/users/{user.id})\n**<:olympusMention:1294654604998475856> User Mention:** {user.mention}\n**<:olympusDM:1295595078122999915> DM Sent:** {dm_status}\n**<:olympusReason:1295595129809141812> Reason:** {reasonn}", color=self.color)
+        embed = discord.Embed(description=f"**<:olympusUser:1368520117582823424> Target User:** [{user}](https://discord.com/users/{user.id})\n**<:olympusMention:1368521612865044541> User Mention:** {user.mention}\n**<:olympusDM:1368554618551795794> DM Sent:** {dm_status}\n**<:olympusReason:1368554945649053737> Reason:** {reasonn}", color=self.color)
         embed.set_author(name=f"Successfully Banned {user.name}", icon_url=self.get_user_avatar(user))
-        embed.add_field(name="<:olympusMod:1295601558985379852> Moderator:", value=ctx.author.mention, inline=False)
+        embed.add_field(name="<:olympusMod:1368524371823562753> Moderator:", value=ctx.author.mention, inline=False)
         embed.set_footer(text=f"Requested by {ctx.author}", icon_url=self.get_user_avatar(ctx.author))
         embed.timestamp = discord.utils.utcnow()
 
@@ -198,8 +198,8 @@ class Ban(commands.Cog):
 
 
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh 
+    + Discord: aadarshhhhh 
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

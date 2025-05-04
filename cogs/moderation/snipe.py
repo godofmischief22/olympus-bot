@@ -25,17 +25,17 @@ class SnipeView(discord.ui.View):
         uid = snipe['author_id']
         display_name = snipe['author_name']
         embed.description = (
-            f"<:olympusUser:1294654665895579721> **Author:** **[{display_name}](https://discord.com/users/{uid})**\n"
-            f"<:olympusID:1294654633821863967> **Author ID:** `{snipe['author_id']}`\n"
-            f"<:olympusMention:1294654604998475856> **Author Mention:** <@{snipe['author_id']}>\n"
-            f"<:olympusTime:1294654567539277824> **Deleted:** <t:{snipe['deleted_at']}:R>\n"
+            f"<:olympusUser:1368520117582823424> **Author:** **[{display_name}](https://discord.com/users/{uid})**\n"
+            f"<:olympusID:1368565315818229874> **Author ID:** `{snipe['author_id']}`\n"
+            f"<:olympusMention:1368521612865044541> **Author Mention:** <@{snipe['author_id']}>\n"
+            f"<:olympusTime:1368522292044496988> **Deleted:** <t:{snipe['deleted_at']}:R>\n"
         )
 
         if snipe['content']:
-            embed.add_field(name="<:olympus_bin:1254336650075701308> **Content:**", value=snipe['content'])
+            embed.add_field(name="<:olympus_bin:1368497055194021918> **Content:**", value=snipe['content'])
         if snipe['attachments']:
             attachment_links = "\n".join([f"[{attachment['name']}]({attachment['url']})" for attachment in snipe['attachments']])
-            embed.add_field(name="<:olympusMedia:1294574309565534229> **Attachments:**", value=attachment_links)
+            embed.add_field(name="<:olympusMedia:1368565892388094073> **Attachments:**", value=attachment_links)
 
         embed.set_footer(text=f"Total Deleted Messages: {len(self.snipes)} | Requested by {interaction.user}", icon_url=interaction.user.avatar.url)
         await interaction.response.edit_message(embed=embed, view=self)
@@ -43,31 +43,31 @@ class SnipeView(discord.ui.View):
     async def interaction_check(self, interaction: discord.Interaction) -> bool:
         return interaction.user.id == self.user_id
 
-    @discord.ui.button(emoji="<:olympus_first:1254347208254558279>", style=discord.ButtonStyle.secondary, custom_id="first")
+    @discord.ui.button(emoji="<:olympus_first:1368566038849130609>", style=discord.ButtonStyle.secondary, custom_id="first")
     async def first_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.index = 0
         self.update_buttons()
         await self.send_snipe_embed(interaction)
 
-    @discord.ui.button(emoji="<:olympus_backward:1254314965351923795>", style=discord.ButtonStyle.secondary, custom_id="previous")
+    @discord.ui.button(emoji="<:olympus_backward:1368566136412835950>", style=discord.ButtonStyle.secondary, custom_id="previous")
     async def prev_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         if self.index > 0:
             self.index -= 1
         self.update_buttons()
         await self.send_snipe_embed(interaction)
 
-    @discord.ui.button(emoji="<:olympus_bin:1254336650075701308>", style=discord.ButtonStyle.danger, custom_id="delete")
+    @discord.ui.button(emoji="<:olympus_bin:1368497055194021918>", style=discord.ButtonStyle.danger, custom_id="delete")
     async def delete_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         await interaction.message.delete()
 
-    @discord.ui.button(emoji="<:olympus_forward:1254314940668317717>", style=discord.ButtonStyle.secondary, custom_id="next")
+    @discord.ui.button(emoji="<:olympus_forward:1368566384933470370>", style=discord.ButtonStyle.secondary, custom_id="next")
     async def next_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         if self.index < len(self.snipes) - 1:
             self.index += 1
         self.update_buttons()
         await self.send_snipe_embed(interaction)
 
-    @discord.ui.button(emoji="<:olympus_last:1254347295122526208>", style=discord.ButtonStyle.secondary, custom_id="last")
+    @discord.ui.button(emoji="<:olympus_last:1368566482400837633>", style=discord.ButtonStyle.secondary, custom_id="last")
     async def last_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.index = len(self.snipes) - 1
         self.update_buttons()
@@ -123,17 +123,17 @@ class Snipe(commands.Cog):
         uid = first_snipe['author_id']
         display_name = first_snipe['author_name']
         embed.description = (
-            f"<:olympusUser:1294654665895579721> **Author:** **[{display_name}](https://discord.com/users/{uid})**\n"
-            f"<:olympusID:1294654633821863967> **Author ID:** `{first_snipe['author_id']}`\n"
-            f"<:olympusMention:1294654604998475856> **Author Mention:** <@{first_snipe['author_id']}>\n"
-            f"<:olympusTime:1294654567539277824> **Deleted:** <t:{first_snipe['deleted_at']}:R>\n"
+            f"<:olympusUser:1368520117582823424> **Author:** **[{display_name}](https://discord.com/users/{uid})**\n"
+            f"<:olympusID:1368565315818229874> **Author ID:** `{first_snipe['author_id']}`\n"
+            f"<:olympusMention:1368521612865044541> **Author Mention:** <@{first_snipe['author_id']}>\n"
+            f"<:olympusTime:1368522292044496988> **Deleted:** <t:{first_snipe['deleted_at']}:R>\n"
         )
 
         if first_snipe['content']:
-            embed.add_field(name="<:olympus_bin:1254336650075701308> **Content:**", value=first_snipe['content'])
+            embed.add_field(name="<:olympus_bin:1368497055194021918> **Content:**", value=first_snipe['content'])
         if first_snipe['attachments']:
             attachment_links = "\n".join([f"[{attachment['name']}]({attachment['url']})" for attachment in first_snipe['attachments']])
-            embed.add_field(name="<:olympusMedia:1294574309565534229> **Attachments:**", value=attachment_links)
+            embed.add_field(name="<:olympusMedia:1368565892388094073> **Attachments:**", value=attachment_links)
 
         embed.set_footer(text=f"Total Deleted Messages: {len(channel_snipes)} | Requested by {ctx.author}", icon_url=ctx.author.avatar.url)
 
@@ -151,8 +151,8 @@ class Snipe(commands.Cog):
             view.message = message
 
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh 
+    + Discord: aadarshhhhh 
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

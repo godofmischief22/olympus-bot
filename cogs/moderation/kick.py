@@ -21,7 +21,7 @@ class KickView(ui.View):
             except Exception:
                 pass
 
-    @ui.button(style=discord.ButtonStyle.gray, emoji="<:olympus_bin:1254336650075701308>")
+    @ui.button(style=discord.ButtonStyle.gray, emoji="<:olympus_bin:1368497055194021918>")
     async def delete(self, interaction: discord.Interaction, button: discord.ui.Button):
         await interaction.message.delete()
 
@@ -86,15 +86,15 @@ class Kick(commands.Cog):
         
         embed = discord.Embed(
             description=(
-                f"**<:olympusUser:1294654665895579721> Target User:** [{member}](https://discord.com/users/{member.id})\n"
-                f"<:olympusMention:1294654604998475856> **User Mention:** {member.mention}\n"
-                f"<:olympus_reason:1295595129809141812> **Reason:** {reason}\n"
-                f"<:olympusDM:1295595078122999915> **DM Sent:** {dm_status}"
+                f"**<:olympusUser:1368520117582823424> Target User:** [{member}](https://discord.com/users/{member.id})\n"
+                f"<:olympusMention:1368521612865044541> **User Mention:** {member.mention}\n"
+                f"<:olympusReason:1368554945649053737> **Reason:** {reason}\n"
+                f"<:olympusDM:1368554618551795794> **DM Sent:** {dm_status}"
             ),
             color=self.color
         )
         embed.set_author(name=f"Successfully Kicked {member.name}", icon_url=member.avatar.url if member.avatar else member.default_avatar.url)
-        embed.add_field(name="<:olympusMod:1295601558985379852> Moderator:", value=ctx.author.mention, inline=False)
+        embed.add_field(name="<:olympusMod:1368524371823562753> Moderator:", value=ctx.author.mention, inline=False)
         embed.set_footer(text=f"Requested by {ctx.author}", icon_url=ctx.author.avatar.url if ctx.author.avatar else ctx.author.default_avatar.url)
         embed.timestamp = discord.utils.utcnow()
 
@@ -104,8 +104,8 @@ class Kick(commands.Cog):
 
 
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh 
+    + Discord: aadarshhhhh 
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

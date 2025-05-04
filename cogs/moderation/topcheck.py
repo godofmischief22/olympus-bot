@@ -46,7 +46,7 @@ class TopCheck(commands.Cog):
         embed = discord.Embed(title="Top Check System",
                               description=(
         "This system ensures that the bot’s role is positioned higher than the user’s top role before executing specific commands.\n\n"
-        "When topcheck is enabled, only users with roles above the bot's (Olympus) role can perform certain moderation actions. "
+        "When topcheck is enabled, only users with roles above the bot's (Sentinel) role can perform certain moderation actions. "
         "If topcheck is disabled, any user with the required permissions for a command can execute it.\n\n"
         "**Moderation actions affected by topcheck:**\n"
         "- BAN\n"
@@ -68,11 +68,11 @@ class TopCheck(commands.Cog):
     @commands.guild_only()
     async def topcheck_enable(self, ctx):
         if ctx.author.id != ctx.guild.owner_id:
-            return await ctx.reply("<:Denied:1294218790082711553> Only the **Server Owner** can enable topcheck.")
+            return await ctx.reply("<:Denied:1368234342945394769> Only the **Server Owner** can enable topcheck.")
         if await self.is_topcheck_enabled(ctx.guild.id):
-            return await ctx.reply("<:Denied:1294218790082711553> Topcheck is already enabled for this server.")
+            return await ctx.reply("<:Denied:1368234342945394769> Topcheck is already enabled for this server.")
         await self.enable_topcheck(ctx.guild.id)
-        await ctx.reply("<:Ztick:1222750301233090600> Topcheck has been Successfully enabled for this server.")
+        await ctx.reply("<:Ztick:1368444340015202435>Topcheck has been Successfully enabled for this server.")
 
     @topcheck.command(
         name="disable",
@@ -82,13 +82,13 @@ class TopCheck(commands.Cog):
         if ctx.author.id != ctx.guild.owner_id:
             return await ctx.reply("Only the **Server Owner** can disable topcheck.")
         if not await self.is_topcheck_enabled(ctx.guild.id):
-            return await ctx.reply("<:Denied:1294218790082711553> Topcheck is not enabled for this server.")
+            return await ctx.reply("<:Denied:1368234342945394769> Topcheck is not enabled for this server.")
         await self.disable_topcheck(ctx.guild.id)
-        await ctx.reply("<:Ztick:1222750301233090600> Topcheck has been Successfully disabled for this server.")
+        await ctx.reply("<:Ztick:1368444340015202435>Topcheck has been Successfully disabled for this server.")
 
 """
-@Author: Sonu Jana
-    + Discord: me.sonu
-    + Community: https://discord.gg/odx (Olympus Development)
+@Author: aadarshhhhh 
+    + Discord: aadarshhhhh 
+    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
     + for any queries reach out Community or DM me.
 """
