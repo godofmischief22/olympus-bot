@@ -68,7 +68,7 @@ from .Sentinel.general import _general
 from .Sentinel.automod import _automod 
 from .Sentinel.moderation import _moderation
 from .Sentinel.music import _music
-from .Sentinel.import _fun
+from .Sentinel.fun import _fun
 from .Sentinel.games import _games
 from .Sentinel.ignore import _ignore
 from .Sentinel.server import _server
