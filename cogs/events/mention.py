@@ -55,9 +55,9 @@ class Mention(commands.Cog):
                 embed.set_footer(text="Powered by Olympus Development™", icon_url=self.bot.user.avatar.url)
 
                 buttons = [
-                    discord.ui.Button(label="Invite", style=discord.ButtonStyle.link, url="https://discord.com/oauth2/authorize?client_id=1144179659735572640&permissions=2113268958&scope=bot"),
-                    discord.ui.Button(label="Web", style=discord.ButtonStyle.link, url="https://olyumpus.vercel.app/"),
-                    discord.ui.Button(label="Support", style=discord.ButtonStyle.link, url="https://discord.com/invite/odx"),
+                    discord.ui.Button(label="Invite", style=discord.ButtonStyle.link, url="https://discord.com/oauth2/authorize?client_id=1368135556784980051&permissions=8&integration_type=0&scope=bot+applications.commands"),
+                    discord.ui.Button(label="Web", style=discord.ButtonStyle.link, url="https://Sentinel.vercel.app/"),
+                    discord.ui.Button(label="Support", style=discord.ButtonStyle.link, url="https://discord.gg/xXqPVtZV7h"),
                 ]
 
                 view = discord.ui.View()

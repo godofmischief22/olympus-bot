@@ -14,36 +14,36 @@ class React(commands.Cog):
         for owner in self.bot.owner_ids:
             if f"<@{owner}>" in message.content:
                 try:
-                    if owner == 677952614390038559:
+                    if owner == 1131806691969728593:
                         
                         emojis = [
-                            "<a:owner:1272731689948287068>",
-                            "<:7club_ban:1274766732786925750>",
-                            "<:land_yildiz:1274781969640722475>",
-                            "<a:_rose:1291476899557671054>",
-                            "<:land_yildiz:1274766735702233089>",
-                            "<a:37496alert:1273959128490049556>",
-                            "<:sq_HeadMod:1292538970500235366>",
-                            "<:Dc_RedCrownEsports:1287302832244129823>",
-                            "<a:GIFD:1275850452323401789>",
-                            "<a:GIFN:1275850451212042391>",
-                            "<a:max__A:1295014945641201685>",
-                            "<:Heeriye:1274769360560328846>",
-                            "<:heart_em:1274781856406962250>",
-                            "<a:Star:1273588820373147803>",
-                            "<a:king:1234399917792034846>",
-                            "<:headmod:1274781954482376857>",
-                            "<a:sg_rd:1273974278433280122> ",
-                            "<a:RedHeart:1272229548280512547>",
-                            " <a:star:1251876754516349059>"
+                            "<a:owner:1368576266260840488>",
+                            "<:7club_ban:1368576416899137639>",
+                            "<:land_yildiz:1368576543307333774>",
+                            "<a:_rose:1368576634982240368>",
+                            "<:land_yildiz:1368576543307333774>",
+                            "<a:37496alert:1368576794776830023>",
+                            "<:sq_HeadMod:1368576904663273488>",
+                            "<:Dc_RedCrownEsports:1368576985072275557>",
+                            "<a:GIFD:1368577097660108890>",
+                            "<a:GIFN:1368577219210903583>",
+                            "<a:max__A:1368578036395675769>",
+                            "<:Heeriye:1368578228360319076>",
+                            "<:heart_em:1368578372162027661>",
+                            "a:star:1368577472727355543>",
+                            "<a:king:1368578500901998642>",
+                            "<:headmod:1368578621366603906>",
+                            "<a:sg_rd:1368578700840538202>",
+                            "<a:RedHeart:1368577595750481950>",
+                            " <a:star:1368577472727355543>"
                         ]
                         for emoji in emojis:
                             await message.add_reaction(emoji)
                     else:
                         
-                        await message.add_reaction("<a:owner:1272731689948287068>")
+                        await message.add_reaction("<a:owner:1368576266260840488>")
                 except discord.errors.RateLimited as e:
                     await asyncio.sleep(e.retry_after)
-                    await message.add_reaction("<a:owner:1272731689948287068>")
+                    await message.add_reaction("<a:owner:1368576266260840488>")
                 except Exception as e:
                     print(f"An unexpected error occurred Auto react owner mention: {e}")

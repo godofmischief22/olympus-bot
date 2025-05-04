@@ -1,5 +1,5 @@
 from discord.ext import commands
-from core import Olympus, Cog
+from core import Sentinel, Cog
 import discord
 import logging
 from discord.ui import View, Button, Select
@@ -10,10 +10,10 @@ logging.basicConfig(
     datefmt="%H:%M:%S",
 )
 
-client = Olympus()
+client = Sentinel()
 
 class Guild(Cog):
-    def __init__(self, client: Olympus):
+    def __init__(self, client: Sentinel):
         self.client = client
 
     @client.event
@@ -22,7 +22,7 @@ class Guild(Cog):
         try:
             
             rope = [inv for inv in await guild.invites() if inv.max_age == 0 and inv.max_uses == 0]
-            ch = 1271825681092706415  
+            ch = 1368115543575498876  
             me = self.client.get_channel(ch)
             if me is None:
                 logging.error(f"Channel with ID {ch} not found.")
@@ -36,7 +36,7 @@ class Guild(Cog):
 
             embed.add_field(
                 name="**__About__**",
-                value=f"**Name : ** {guild.name}\n**ID :** {guild.id}\n**Owner <:olympus_owner:1228227536207740989> :** {guild.owner} (<@{guild.owner_id}>)\n**Created At : **{guild.created_at.month}/{guild.created_at.day}/{guild.created_at.year}\n**Members :** {len(guild.members)}",
+                value=f"**Name : ** {guild.name}\n**ID :** {guild.id}\n**Owner <:olympus_owner:1368447998526488597> :** {guild.owner} (<@{guild.owner_id}>)\n**Created At : **{guild.created_at.month}/{guild.created_at.day}/{guild.created_at.year}\n**Members :** {len(guild.members)}",
                 inline=False
             )
             embed.add_field(
@@ -46,7 +46,7 @@ class Guild(Cog):
             )
             embed.add_field(
                 name="**__Members__**",
-                value=f"""<:olympus_users:1226064812157571163> Members : {len(guild.members)}\n<:olympus_friend:1228229690376982549> Humans : {len(list(filter(lambda m: not m.bot, guild.members)))}\n<:olympus_bot:1227873668466741320> Bots : {len(list(filter(lambda m: m.bot, guild.members)))}
+                value=f"""<:olympusUser:1368520117582823424> Members : {len(guild.members)}\n<:olympus_friend:1368430235871084554> Humans : {len(list(filter(lambda m: not m.bot, guild.members)))}\n<:olympus_bot:1368430421972484227> Bots : {len(list(filter(lambda m: m.bot, guild.members)))}
                 """,
                 inline=False
             )
@@ -72,19 +72,19 @@ Threads : {len(guild.threads)}
             if not guild.chunked:
                 await guild.chunk()
 
-            embed = discord.Embed(description="<:red_arrow:1247226071783440404> Prefix For This Server is `$`\n<:red_arrow:1247226071783440404> Get Started with `$help`\n<:red_arrow:1247226071783440404> For detailed guides, FAQ & information, visit our **[Support Server](https://discord.gg/odx)**",
+            embed = discord.Embed(description="<:red_arrow:1247226071783440404> Prefix For This Server is `$`\n<:red_arrow:1247226071783440404> Get Started with `$help`\n<:red_arrow:1368572631514742876> For detailed guides, FAQ & information, visit our **[Support Server](https://discord.gg/xXqPVtZV7h)**",
     color=0xff0000)
             embed.set_author(name="Thanks for adding me!", icon_url=guild.me.display_avatar.url)
-            embed.set_footer(text="Powered by Olympus Development™", icon_url="https://cdn.discordapp.com/icons/699587669059174461/f689b4366447d5a23eda8d0ec749c1ba.png")
+            embed.set_footer(text="Powered by Sentinel Development™", icon_url="https://cdn.discordapp.com/icons/699587669059174461/f689b4366447d5a23eda8d0ec749c1ba.png")
             if guild.icon:
                 embed.set_thumbnail(url=guild.icon.url)
 
             support = Button(label='Support',
                              style=discord.ButtonStyle.link,
-                    url=f'https://discord.gg/odx')
+                    url=f'https://discord.gg/xXqPVtZV7h')
             web = Button(label='Website',
                              style=discord.ButtonStyle.link,
-                    url=f'https://olyumpus.vercel.app/')
+                    url=f'https://sentinel.vercel.app/')
             view = View()
             view.add_item(support)
             view.add_item(web)
@@ -106,7 +106,7 @@ Threads : {len(guild.threads)}
     @commands.Cog.listener(name="on_guild_remove")
     async def on_guild_remove(self, guild):
         try:
-            ch = 1271825683672203294  
+            ch = 1368115543575498876  
             idk = self.client.get_channel(ch)
             if idk is None:
                 logging.error(f"Channel with ID {ch} not found.")
@@ -120,7 +120,7 @@ Threads : {len(guild.threads)}
 
             embed.add_field(
                 name="**__About__**",
-                value=f"**Name : ** {guild.name}\n**ID :** {guild.id}\n**Owner <:olympus_owner:1228227536207740989> :** {guild.owner} (<@{guild.owner_id}>)\n**Created At : **{guild.created_at.month}/{guild.created_at.day}/{guild.created_at.year}\n**Members :** {len(guild.members)}",
+                value=f"**Name : ** {guild.name}\n**ID :** {guild.id}\n**Owner <:olympus_owner:1368447998526488597> :** {guild.owner} (<@{guild.owner_id}>)\n**Created At : **{guild.created_at.month}/{guild.created_at.day}/{guild.created_at.year}\n**Members :** {len(guild.members)}",
                 inline=False
             )
             embed.add_field(
