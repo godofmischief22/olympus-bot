@@ -24,7 +24,7 @@ async def setup_database():
 
 @app.route('/')
 async def index():
-    return {'webhook': 'olympus'}
+    return {'webhook': 'sentinel'}
 
 async def get_user_avatar(user_id):
     url = f"https://discord.com/api/v10/users/{user_id}"
@@ -104,18 +104,18 @@ async def topgg():
     footer_time = footer_time_india.strftime('%d/%m/%Y %I:%M %p')
 
     webhook_data = {
-        "username": "Olympus",
+        "username": "Sentinel",
         "content": f"<@{user_id}> voted for <@1144179659735572640>!",
         "embeds": [
             {
-                "description": "**[Voted Olympus](https://top.gg/bot/1144179659735572640)**\n💖 Thank you for voting for Olympus on Top.gg, your support means everything to us!\n",
+                "description": "**[Voted Sentinel](https://top.gg/bot/1144179659735572640)**\n馃挅 Thank you for voting for Sentinel on Top.gg, your support means everything to us!\n",
                 "fields": [
-                    {"name": "⏰ Time left to vote again:", "value": f"<t:{int(timestamp)}:R>\n‎ \n", "inline": True},
-                    {"name": "📊 Total votes:", "value": f"{total_votes}", "inline": True},
-                    {"name": "🏆 Current Streak:", "value": f"{streak}", "inline": True},
+                    {"name": "鈴� Time left to vote again:", "value": f"<t:{int(timestamp)}:R>\n鈥� \n", "inline": True},
+                    {"name": "馃搳 Total votes:", "value": f"{total_votes}", "inline": True},
+                    {"name": "馃弳 Current Streak:", "value": f"{streak}", "inline": True},
                 ],
                 "footer": {
-                    "text": f"Voter ID: {user_id} | Olympus Development™ | {footer_time}",
+                    "text": f"Voter ID: {user_id} | Sentinel Development鈩� | {footer_time}",
                     "icon_url": "https://cdn.discordapp.com/icons/699587669059174461/f689b4366447d5a23eda8d0ec749c1ba.png?size=1024"
                 },
                 "thumbnail": {
