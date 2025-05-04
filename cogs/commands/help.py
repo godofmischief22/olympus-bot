@@ -181,34 +181,38 @@ await ok.edit(embed=embed, view=view)
 
 
   
-  async def send_command_help(self, command):
-    ctx = self.context
-    check_ignore = await ignore_check().predicate(ctx)
-    check_blacklist = await blacklist_check().predicate(ctx)
+    async def send_command_help(self, command):
+      ctx = self.context
+      check_ignore = await ignore_check().predicate(ctx)
+      check_blacklist = await blacklist_check().predicate(ctx)
 
-    if not check_blacklist:
-      return
+      if not check_blacklist:
+          return
 
-    if not check_ignore:
-      await self.send_ignore_message(ctx, "command")
-      return
-    
-    sonu = f">>> {command.help}" if command.help else '>>> No Help Provided...'
-    embed = discord.Embed(
-        description=
-        f"""```xml
-<[] = optional | 鈥光€� = required\nDon't type these while using Commands>```\n{sonu}""",
-        color=color)
-    alias = ' | '.join(command.aliases)
+      if not check_ignore:
+          await self.send_ignore_message(ctx, "command")
+          return
+      
+      sonu = f">>> {command.help}" if command.help else '>>> No Help Provided...'
+      embed = discord.Embed(
+          description=(
+              "```xml\n"
+              "<[] = optional | <> = required\nDon't type these while using Commands>```\n"
+              f"{sonu}"
+          ),
+          color=color
+      )
+      alias = ' | '.join(command.aliases)
 
-    embed.add_field(name="**Aliases**",
+      embed.add_field(name="**Aliases**",
                       value=f"{alias}" if command.aliases else "No Aliases",
                       inline=False)
-    embed.add_field(name="**Usage**",
+      embed.add_field(name="**Usage**",
                       value=f"`{self.context.prefix}{command.signature}`\n")
-    embed.set_author(name=f"{command.qualified_name.title()} Command",
+      embed.set_author(name=f"{command.qualified_name.title()} Command",
                        icon_url=self.context.bot.user.display_avatar.url)
-    await self.context.reply(embed=embed, mention_author=False)
+      await self.context.reply(embed=embed, mention_author=False)
+
 
   def get_command_signature(self, command: commands.Command) -> str:
     parent = command.full_parent_name
