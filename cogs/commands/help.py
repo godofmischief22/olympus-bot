@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
-from discord import app\_commands, Interaction
-from difflib import get\_close\_matches
+from discord import app_commands, Interaction
+from difflib import get_close_matches
 from contextlib import suppress
 from core import Context
 from core.Sentinenl import Sentinel
@@ -13,7 +13,7 @@ from utils import help as vhelp
 from utils import Paginator, DescriptionEmbedPaginator, FieldPagePaginator, TextPaginator
 import asyncio
 from utils.config import serverLink
-from utils.Tools import \*
+from utils.Tools import *
 
 color = 0x000000
 client = Sentinel()
