@@ -161,13 +161,15 @@ embed.set_footer(
 embed.set_author(name=self.context.author, icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
 )
 
-    #embed.timestamp = discord.utils.utcnow()
-    view = vhelp.View(mapping=mapping,
-                          ctx=self.context,
-                          homeembed=embed,
-                          ui=2)
-    await asyncio.sleep(0.5)
-    await ok.edit(embed=embed,view=view)
+    # embed.timestamp = discord.utils.utcnow()
+view = vhelp.View(
+    mapping=mapping,
+    ctx=self.context,
+    homeembed=embed,
+    ui=2
+)
+await asyncio.sleep(0.5)
+await ok.edit(embed=embed, view=view)
 
 
 
