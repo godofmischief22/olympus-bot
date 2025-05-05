@@ -107,11 +107,11 @@ class HelpCommand(commands.HelpCommand):
     embed.add_field(
     name="**Bot Overview:**",
     value=(
-        "```ansi\n"
-        "<:prefix:1368486105275564083> : Server Prefix: **{prefix}**\n"
-        "<:Commands:1368486421446393896> : Total Commands: **{len(set(self.context.bot.walk_commands()))}** | Slash: **{slash}**\n"
-        "<:links:1368487179541549137> : *[Get Sentinel](https://discord.com/oauth2/authorize?client_id=1368135556784980051&permissions=8&integration_type=0&scope=bot+applications.commands)** | **[Support](https://discord.gg/xXqPVtZV7h)**\n"
-        "```"
+        f"```ansi\n"
+        f"<:prefix:1368486105275564083> : Server Prefix: **{prefix}**\n"
+        f"<:Commands:1368486421446393896> : Total Commands: **{len(set(self.context.bot.walk_commands()))}** | Slash: **{slash}**\n"
+        f"<:links:1368487179541549137> : *[Get Sentinel](https://discord.com/oauth2/authorize?client_id=1368135556784980051&permissions=8&integration_type=0&scope=bot+applications.commands)** | **[Support](https://discord.gg/xXqPVtZV7h)**\n"
+        f"```"
     ),
     inline=False
 )
