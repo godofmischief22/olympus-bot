@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import os
-from core import Cog, Olympus, Context
+from core import Cog, Sentinel, Context
 import games as games
 from utils.Tools import *
 from games import button_games as btn
