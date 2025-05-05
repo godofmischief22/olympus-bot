@@ -154,7 +154,7 @@ embed.add_field(
     text="**Use buttons to swap pages & menu to select help pages. Need help? [Contact Support.](https://discord.gg/xXqPVtZV7h)**"
 )
 
-    embed.set_footer(
+embed.set_footer(
       text=f"Requested By {self.context.author}",
       icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
     )
