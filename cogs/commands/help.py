@@ -158,7 +158,8 @@ embed.set_footer(
       text=f"Requested By {self.context.author}",
       icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
     )
-    embed.set_author(name=self.context.author, icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url)
+embed.set_author(name=self.context.author, icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
+)
 
     #embed.timestamp = discord.utils.utcnow()
     view = vhelp.View(mapping=mapping,
