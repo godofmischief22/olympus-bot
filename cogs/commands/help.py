@@ -157,10 +157,10 @@ embed.add_field(
     inline=False
 )
 
-    embed.set_footer(
+embed.set_footer(
       text=f"Requested By {self.context.author}",
       icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
-    )
+)
 embed.set_author(
     name=str(self.context.author),
     icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
