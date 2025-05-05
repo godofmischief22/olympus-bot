@@ -171,9 +171,6 @@ view = vhelp.View(
 await asyncio.sleep(0.5)
 await ok.edit(embed=embed, view=view)
 
-
-
-  
   async def send_command_help(self, command):
     ctx = self.context
     check_ignore = await ignore_check().predicate(ctx)
