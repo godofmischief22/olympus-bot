@@ -75,6 +75,7 @@ class HelpCommand(commands.HelpCommand):
 
     await ctx.reply(embed=embed)
 
+
   
   async def send_bot_help(self, mapping):
     ctx = self.context
