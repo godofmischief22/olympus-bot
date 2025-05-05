@@ -150,33 +150,34 @@ embed.add_field(
     ),
     inline=False
 )
-
 embed.add_field(
-        name="\u200b",
-        value="**Use buttons to swap pages & menu to select help pages. Need help? [Contact Support.](https://discord.gg/xXqPVtZV7h)**",
+    name="Need Help?",
+    value="**Use buttons to swap pages & menu to select help pages. Need help? [Contact Support.](https://discord.gg/xXqPVtZV7h)**",
     inline=False
 )
 
 embed.set_footer(
-    text=f"Requested By {self.context.author}",
-    icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
+    text=f"Requested By {self.context.author}",
+    icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
 )
+
 embed.set_author(
-    name=str(self.context.author),
-    icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
+    name=str(self.context.author),
+    icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
 )
 
-    # embed.timestamp = discord.utils.utcnow()
-    view = vhelp.View(mapping=mapping,
-                      ctx=self.context,
-                      homeembed=embed,
-                      ui=2)
-    await asyncio.sleep(0.5)
-    await ok.edit(embed=embed, view=view)
+# Optional: Uncomment to add timestamp
+# embed.timestamp = discord.utils.utcnow()
 
+view = vhelp.View(
+    mapping=mapping,
+    ctx=self.context,
+    homeembed=embed,
+    ui=2
+)
 
-
-
+await asyncio.sleep(0.5)
+await ok.edit(embed=embed, view=view)
   
   async def send_command_help(self, command):
     ctx = self.context
