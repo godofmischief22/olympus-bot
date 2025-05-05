@@ -6,7 +6,7 @@ import typing
 import typing as t
 from typing import *
 from utils.Tools import *
-from core import Cog, Olympus, Context
+from core import Cog, Sentinel, Context
 from discord.ext.commands import Converter
 from discord.ext import commands, tasks
 from discord.ui import Button, View
