@@ -147,8 +147,8 @@ class Emergency(commands.Cog):
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     @commands.guild_only()
     async def disable(self, ctx):
-        Olympus = ['1131806691969728593']
-        if ctx.author.id != ctx.guild.owner_id and str(ctx.author.id) not in Olympus:
+        Sentinel = ['1131806691969728593']
+        if ctx.author.id != ctx.guild.owner_id and str(ctx.author.id) not in Sentinel:
             embed = discord.Embed(title="<:olympus_cross:1368120655643414548> Error", description="Only the server owner can disable emergency mode.", color=0x000000)
             return await ctx.reply(embed=embed)
 
@@ -495,7 +495,7 @@ class Emergency(commands.Cog):
     @commands.guild_only()
     @commands.bot_has_permissions(manage_roles=True)
     async def emergencyrestore(self, ctx):
-        Sentinel = ['1131806691969728593
+        Sentinel = ['1131806691969728593']
         if ctx.author.id != ctx.guild.owner_id and str(ctx.author.id) not in Sentinel:
             return await ctx.reply(embed=discord.Embed(
                 title="<:Denied:1368234342945394769> Access Denied", 
