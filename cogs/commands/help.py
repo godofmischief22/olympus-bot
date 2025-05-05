@@ -96,7 +96,8 @@ class HelpCommand(commands.HelpCommand):
         embed = discord.Embed(title="", color=0x000000)
         embed.add_field(
             name="**Bot Overview:**",
-            value=f"""```ansi
+            value=(
+        "```ansi\n"
 <:prefix:1368486105275564083> : Server Prefix: **{prefix}**
 <:Commands:1368486421446393896> : Total Commands: **{total_cmds}** | Slash: **{slash}**
 <:links:1368487179541549137> : [Get Sentinel](https://discord.com/oauth2/authorize?client_id=1368135556784980051&permissions=8&integration_type=0&scope=bot+applications.commands) | [Support](https://discord.gg/xXqPVtZV7h)
@@ -113,25 +114,7 @@ Example: .help mute
         )
         embed.add_field(
             name="**Main Modules:**",
-            value="""```ansi
-<:olympus_mod:1368122008381948008> : Security
-<:olympus_automode:1368489521502486610> : Emergency
-<:olympus_staff:1368489097689042964> : Moderation
-<:olympus_utility:1368489251439902801> : Utility
-<:olympus_raidmode:1368489502787502161> : Automod
-<:olympus_welcome:1368489606479220849> : Welcoming
-<:olympus_autorespond:1368489881981948024> : Customroles
-<:olympus_music:1368489805968838688> : Music
-<:olympus_giveaways:1368490008339681280> : Giveaway
-<:Camera:1368490184970338385> : Camera Enforcement
-<:Star:1368492678270156911> : Boycott/VcBan
-<:olympus_verification:1368490595525464135> : Auto Roles
-<:olympus_fun:1368490615712776233> : Fun
-<:olympus_mic:1368448688346759249> : Voice
-<:olympus_settings:1368131873951318056> : Ignore Commands
-```""",
-            inline=False
-        )
+            
         embed.add_field(
             name="**Support:**",
             value="Use buttons to swap pages & menu to select help pages. Need help? [Contact Support.](https://discord.gg/xXqPVtZV7h)",
@@ -142,7 +125,29 @@ Example: .help mute
             icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
         )
         embed.set_author(
-            name=str(self.context.author),
+    value=(
+        "```ansi\n"
+        "<:olympus_mod:1368122008381948008> : Security\n"
+        "<:olympus_automode:1368489521502486610> : Emergency\n"
+        "<:olympus_staff:1368489097689042964> : Moderation\n"
+        "<:olympus_utility:1368489251439902801> : Utility\n"
+        "<:olympus_raidmode:1368489502787502161> : Automod\n"
+        "<:olympus_welcome:1368489606479220849> : Welcoming\n"
+        "<:olympus_autorespond:1368489881981948024> : Customroles\n"
+        "<:olympus_music:1368489805968838688> : Music\n"
+        "<:olympus_giveaways:1368490008339681280> : Giveaway\n"
+        "<:Camera:1368490184970338385> : Camera Enforcement\n"
+        "<:Star:1368492678270156911> : Boycott/VcBan\n"
+        "<:olympus_verification:1368490595525464135> : Auto Roles\n"
+        "<:olympus_fun:1368490615712776233> : Fun\n"
+        "<:olympus_mic:1368448688346759249> : Voice\n"
+        "<:olympus_settings:1368131873951318056> : Ignore Commands\n"
+        "```"
+    ),
+    inline=False 
+    )
+    
+         name=str(self.context.author),
             icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
         )
 
