@@ -8,7 +8,7 @@ import os
 from discord.ext import commands
 from random import randint
 from utils.Tools import *
-from core import Cog, Olympus, Context
+from core import Cog, Sentinel, Context
 from utils.config import *
 from pathlib import Path
 import json
