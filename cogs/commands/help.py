@@ -152,7 +152,9 @@ embed.add_field(
 )
 
 embed.add_field(
-    text="**Use buttons to swap pages & menu to select help pages. Need help? [Contact Support.](https://discord.gg/xXqPVtZV7h)**"
+    name="\u200b",
+    value="**Use buttons to swap pages & menu to select help pages. Need help? [Contact Support.](https://discord.gg/xXqPVtZV7h)**",
+    inline=False
 )
 
     embed.set_footer(
