@@ -819,7 +819,7 @@ class Music(commands.Cog):
         if vc:
             if 1 <= level <= 150:
                 await vc.set_volume(level)
-                await ctx.send(embed=discord.Embed(description=fVoice:1368515089099001856> Volume set to {level}% by {ctx.author.mention}.", color=0x000000))
+                await ctx.send(embed=discord.Embed(description=f"<Voice:1368515089099001856> Volume set to {level}% by {ctx.author.mention}.", color=0x000000))
             else:
                 await ctx.send(embed=discord.Embed(description="<a:Warning:1368436682495365171> Volume must be between 1 and 150.", color=0xFF0000))
         else:
