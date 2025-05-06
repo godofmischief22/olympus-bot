@@ -103,7 +103,7 @@ class HelpCommand(commands.HelpCommand):
     embed = discord.Embed(
       title="", color=0x000000)
 
-    embed.add_field(name="**__Bot Overview:__**", value= f" <:prefix:1368486105275564083> Server Prefix:  **{prefix}** \n <:Commands:1368486421446393896> Total Commands: **{len(set(self.context.bot.walk_commands()))}** | Total Slash Commands: **{slash}**\n <:links:1368487179541549137> **[Get Sentinel](https://discord.com/oauth2/authorize?client_id=1368135556784980051&permissions=2113268958&scope=bot)** | **[Support](https://discord.gg/xXqPVtZV7h)**\n\n__"**How do you use me?**__\n```{prefix}help <command/module> to get more info regarding that command/module\nFor example: {prefix}help antinuke\n\n```")
+    embed.add_field(name="**__Bot Overview:__**", value= f" <:prefix:1368486105275564083> Server Prefix:  **{prefix}** \n <:Commands:1368486421446393896> Total Commands: **{len(set(self.context.bot.walk_commands()))}** | Total Slash Commands: **{slash}**\n <:links:1368487179541549137> **[Get Sentinel](https://discord.com/oauth2/authorize?client_id=1368135556784980051&permissions=2113268958&scope=bot)** | **[Support](https://discord.gg/xXqPVtZV7h)**\n\n__"**How do you use me?**__\n```{prefix}help <command/module> to get more info regarding that command/module\nFor example: {prefix}help antinuke\n\n```)"
 
     embed.add_field(
     name="**__Main Modules:__**",
