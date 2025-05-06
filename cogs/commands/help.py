@@ -103,10 +103,13 @@ class HelpCommand(commands.HelpCommand):
     embed = discord.Embed(
       title="", color=0x000000)
 
-    embed.add_field(name="**__Bot Overview:__**", value= f"<:prefix:1368486105275564083> Server Prefix: **{prefix}**\n<:Commands:1368486421446393896> Total Commands: **{len(set(self.context.bot.walk_commands()))}**\n馃敶 Total Slash Commands: **{slash}**\n<:links:1368487179541549137> **[Get Sentinel](https://discord.com/oauth2/authorize?client_id=1368135556784980051&permissions=2113268958&scope=bot)** | **[Support](https://discord.gg/xXqPVtZV7h)**\n\n__**How do you use me?**__\n`{prefix}help <command/module> to get more info regarding that command/module\nFor example: `{prefix}help antinuke`\n\n")
+    embed.add_field(name="**__Bot Overview:__**", value= f" <:prefix:1368486105275564083> Server Prefix:  **{prefix}** \n <:Commands:1368486421446393896> Total Commands: **{len(set(self.context.bot.walk_commands()))}** | Total Slash Commands: **{slash}**\n <:links:1368487179541549137> **[Get Sentinel](https://discord.com/oauth2/authorize?client_id=1368135556784980051&permissions=2113268958&scope=bot)** | **[Support](https://discord.gg/xXqPVtZV7h)**\n\n__**How do you use me?**__\n```{prefix}help <command/module> to get more info regarding that command/module\nFor example: {prefix}help antinuke\n\n")```
 
-    embed.add_field(name="__**Main Modules**__", value=f">>> **<:olympus_mod:1368122008381948008> Security\n 馃毃 Automoderation\n 馃敡 Utility\n 馃幍 Music\n 馃洜锔� Moderation\n 馃З Customrole\n 馃帀 Giveaway\n 馃帣锔� Voice\n 馃幃 Games\n 馃憢 Welcomer\n 馃 Autoreact & responder\n 馃搵 Autorole & Invc\n 馃幁 Fun & AI Image Gen\n   And much more!...")
-    embed.add_field(name="鉃★笍 __**How to get help?**__", value=">>> 鈾笍 Use the Buttons, to swap the Pages\n鈾笍 Use the Menu to select all Help Pages, you want to display\n鈾笍 For any queries/help Contact the **[Support Team](https://discord.com/invite/odx).**")
+    embed.add_field(
+    name="**__Main Modules:__**",
+    value=f">>>"<:olympus_mod:1368122008381948008> : Security\n <:olympus_automode:1368489521502486610> : Emergency\n <:olympus_staff:1368489097689042964> : Moderation\n <:olympus_utility:1368489251439902801> : Utility\n <:olympus_raidmode:1368489502787502161> : Automod\n <:olympus_welcome:1368489606479220849> : Welcoming\n <:olympus_autorespond:1368489881981948024> : Customroles\n <:olympus_music:1368489805968838688> : Music\n <:olympus_giveaways:1368490008339681280> : Giveaway\n <:Camera:1368490184970338385> : Camera Enforcement\n <:Star:1368492678270156911> : Boycott/VcBan\n <:olympus_verification:1368490595525464135> : Auto Roles\n <:olympus_fun:1368490615712776233> : Fun\n <:olympus_mic:1368448688346759249> : Voice\n <:olympus_settings:1368131873951318056> : Ignore Commands")
+
+    embed.add_field(name="__**How to get help?**__", value=">>> 鈾笍 **Use the Buttons, to swap the Pages & Menu to select Help Pages, For any queries/help Contact the **[Support Team](https://discord.com/invite/odx).**")
     embed.set_footer(
       text=f"Requested By {self.context.author}",
       icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
@@ -250,6 +253,3 @@ class Help(Cog, name="help"):
 
   async def cog_unload(self):
     self.help_command = self._original_help_command
-
-
-    
