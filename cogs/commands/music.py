@@ -199,13 +199,13 @@ class MusicControlView(View):
         if self.player.paused:
             await self.player.pause(False)
 
-            await self.player.channel.edit(status=f"<:gvMusic:1368510958493896719> Playing: {self.player.current.title}")
+            await self.player.channel.edit(status=f"<a:music_2:1373928600713298001> Playing: {self.player.current.title}")
             button.emoji = "<:o_pause:1368510835776950323>" 
             await interaction.response.edit_message(view=self)
 
         elif self.player.playing:
             await self.player.pause(True)
-            await self.player.channel.edit(status=f"<:gvMusic:1368510958493896719> Paused: {self.player.current.title}")
+            await self.player.channel.edit(status=f"<a:music_2:1373928600713298001> Paused: {self.player.current.title}")
             button.emoji = "<:o_resume:1368511238740639746>"
             await interaction.response.edit_message(view=self)
 
@@ -324,7 +324,7 @@ class Music(commands.Cog):
                     ended.set_footer(text="Thanks for choosing Sentinel!")
                     support = Button(label='Support',
                                  style=discord.ButtonStyle.link,
-                        url=f'https://discord.gg/xXqPVtZV7h')
+                        url=f'https://discord.gg/6xyJzcMXRA')
                     vote = Button(label='Vote',
                                  style=discord.ButtonStyle.link,
                         url=f'')
@@ -412,7 +412,7 @@ class Music(commands.Cog):
                 ended.set_author(name="Queue Ended", icon_url=self.client.user.avatar.url)
                 support = Button(label='Support',
                              style=discord.ButtonStyle.link,
-                    url=f'https://discord.gg/xXqPVtZV7h')
+                    url=f'https://discord.gg/6xyJzcMXRA')
                 vote = Button(label='Vote',
                              style=discord.ButtonStyle.link,
                     url=f'https://top.gg/bot/1144179659735572640/vote')
@@ -458,7 +458,7 @@ class Music(commands.Cog):
 
         if isinstance(tracks, wavelink.Playlist):
             await vc.queue.put_wait(tracks.tracks)
-            await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added playlist [{tracks.name}](https://discord.gg/xXqPVtZV7h) with **{len(tracks.tracks)} songs** to the queue.", color=0x000000))
+            await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added playlist [{tracks.name}](https://discord.gg/6xyJzcMXRA) with **{len(tracks.tracks)} songs** to the queue.", color=0x000000))
             if not vc.playing:
                 track = await vc.queue.get_wait()
                 await vc.play(track)
@@ -466,7 +466,7 @@ class Music(commands.Cog):
         else:
             track = tracks[0]
             await vc.queue.put_wait(track)
-            await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added [{track.title}](https://discord.gg/xXqPVtZV7h) to the queue.", color=0x000000))
+            await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added [{track.title}](https://discord.gg/6xyJzcMXRA) to the queue.", color=0x000000))
             if not vc.playing:
                 await vc.play(await vc.queue.get_wait())
                 await self.display_player_embed(vc, track, ctx)
@@ -495,7 +495,7 @@ class Music(commands.Cog):
 
                 track = search_results[0]
                 await vc.queue.put_wait(track)
-                await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added [{track.title}](https://discord.gg/xXqPVtZV7h) to the queue.", color=0x000000))
+                await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added [{track.title}](https://discord.gg/6xyJzcMXRA) to the queue.", color=0x000000))
                 if not vc.playing:
                     await vc.play(track)
                     await self.display_player_embed(vc, track, ctx)
@@ -526,7 +526,7 @@ class Music(commands.Cog):
                         c += 1
                         await ctx.message.add_reaction("✅")
 
-                await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added **{c}** of **{playlist_length}** tracks from **playlist** **[{playlist_info['name']}](https://discord.gg/xXqPVtZV7h)** to the queue.", color=0x000000))
+                await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added **{c}** of **{playlist_length}** tracks from **playlist** **[{playlist_info['name']}](https://discord.gg/6xyJzcMXRA)** to the queue.", color=0x000000))
                 await lmao.delete()
                 
                 if not vc.playing:
@@ -554,7 +554,7 @@ class Music(commands.Cog):
                     if track_results:
                         await vc.queue.put_wait(track_results[0])
 
-                await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added all tracks from album **[{album_info['name']}](https://discord.gg/xXqPVtZV7h)** to the queue.", color=0x000000))
+                await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added all tracks from album **[{album_info['name']}](https://discord.gg/6xyJzcMXRA)** to the queue.", color=0x000000))
                 if not vc.playing:
                     next_track = await vc.queue.get_wait()
                     await vc.play(next_track)
@@ -707,7 +707,7 @@ class Music(commands.Cog):
 
         if vc and vc.playing and not vc.paused:
             await vc.pause(True)
-            await vc.channel.edit(status=f"<:gvMusic:1368510958493896719> Paused: {vc.current.title}")
+            await vc.channel.edit(status=f"<a:music_2:1373928600713298001> Paused: {vc.current.title}")
             await ctx.send(embed=discord.Embed(description=f"Paused by {ctx.author.mention}.", color=0x000000))
         else:
             await ctx.send(embed=discord.Embed(description="<a:Warning:1368436682495365171> Nothing is playing or already paused.", color=0xFF0000))
@@ -728,7 +728,7 @@ class Music(commands.Cog):
 
         if vc and vc.paused:
             await vc.pause(False)
-            await vc.channel.edit(status=f"<:gvMusic:1368510958493896719> Playing: {vc.current.title}")
+            await vc.channel.edit(status=f"<a:music_2:1373928600713298001> Playing: {vc.current.title}")
             await ctx.send(embed=discord.Embed(description=f"Resumed by {ctx.author.mention}.", color=0x000000))
         else:
             await ctx.send(embed=discord.Embed(description="Player is not paused.", color=0xFF0000))
@@ -956,7 +956,7 @@ class Music(commands.Cog):
 
         voice_channel = player.channel
         if voice_channel:
-            await voice_channel.edit(status=f"<:gvMusic:1368510958493896719> Playing: {track.title}")  # type: ignore
+            await voice_channel.edit(status=f"<a:music_2:1373928600713298001> Playing: {track.title}")  # type: ignore
 
         if guild_id not in track_histories:
             track_histories[guild_id] = []
@@ -981,6 +981,6 @@ class Music(commands.Cog):
 """
 @Author: aadarshhhhh 
     + Discord: aadarshhhhh 
-    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
+    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

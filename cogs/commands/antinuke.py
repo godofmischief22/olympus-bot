@@ -224,6 +224,6 @@ class Antinuke(commands.Cog):
 """
 @Author: aadarshhhhh
     + Discord: me.aadarshhhhh
-    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
+    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

@@ -188,7 +188,7 @@ class Whitelist(commands.Cog):
                     title=ctx.guild.name,
                     color=0x000000,
                     description=(
-                        f"<:antinuke_cross1:1368123277867745382><:antinuke_tick1:1368241332807794719> : **Ban**\n"
+                        f"<:antinuke_cross2:1368236964893036654><:antinuke_tick1:1368241332807794719> : **Ban**\n"
                         f"<:antinuke_cross2:1368236964893036654><:antinuke_tick1:1368241332807794719> : **Kick**\n"
                         f"<:antinuke_cross2:1368236964893036654><:antinuke_tick1:1368241332807794719> : **Prune**\n"
                         f"<:antinuke_cross2:1368236964893036654><:antinuke_tick1:1368241332807794719> : **Bot Add**\n"
@@ -407,6 +407,6 @@ class Whitelist(commands.Cog):
 """
 @Author: aadarshhhhh
     + Discord: aadarshhhhh
-    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
+    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
     + for any queries reach out Community or DM me.
 """

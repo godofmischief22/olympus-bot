@@ -199,6 +199,6 @@ class Embed(commands.Cog):
 """
 @Author: aadarshhhhh 
     + Discord: aadarshhhhh 
-    + Community: https://discord.gg/xXqPVtZV7h (Sentinel Development)
+    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
     + for any queries reach out support or DM me.
 """
