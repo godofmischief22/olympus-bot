@@ -93,7 +93,7 @@ class View(discord.ui.View):
 
         options.append(
             discord.SelectOption(label="Home",
-                                 emoji='🏠', description=""))
+                                 emoji='<:olympus_home:1374029394250698815>', description=""))
         embeds.append(self.home)
         total_pages += 1
 
@@ -148,3 +148,4 @@ class View(discord.ui.View):
 
     async def set_last_page(self, interaction: discord.Interaction):
         await self.set_page(len(self.options) - 1, interaction)
+        
