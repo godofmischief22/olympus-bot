@@ -9,7 +9,7 @@ class Mention(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.color = 0xdc143c
-        self.bot_name = "Olympus"
+        self.bot_name = "Sentinel"
 
     async def is_blacklisted(self, message):
         async with aiosqlite.connect("db/block.db") as db:
@@ -49,15 +49,15 @@ class Mention(commands.Cog):
                 embed = discord.Embed(
                     title=f"{message.guild.name}",
                     color=self.color,
-                    description=f"Hey {message.author.mention},\nPrefix For This Server is `{prefix}`\nServer ID: {message.guild.id}\n\nType `{prefix}help` for more information."
+                    description=f"<a:rd_red_dot:1373638926723711038>Hey {message.author.mention},\n<a:rd_red_dot:1373638926723711038>Prefix For This Server is `{prefix}`\n<a:rd_red_dot:1373638926723711038>Server ID: {message.guild.id}\n\n<a:rd_red_dot:1373638926723711038>Type `{prefix}help` for more information."
                 )
                 embed.set_thumbnail(url=self.bot.user.avatar.url)
-                embed.set_footer(text="Powered by Olympus Development™", icon_url=self.bot.user.avatar.url)
+                embed.set_footer(text="Powered by Sentinel Development™", icon_url=self.bot.user.avatar.url)
 
                 buttons = [
                     discord.ui.Button(label="Invite", style=discord.ButtonStyle.link, url="https://discord.com/oauth2/authorize?client_id=1368135556784980051&permissions=8&integration_type=0&scope=bot+applications.commands"),
                     discord.ui.Button(label="Web", style=discord.ButtonStyle.link, url="https://Sentinel.vercel.app/"),
-                    discord.ui.Button(label="Support", style=discord.ButtonStyle.link, url="https://discord.gg/xXqPVtZV7h"),
+                    discord.ui.Button(label="Support", style=discord.ButtonStyle.link, url="https://discord.gg/6xyJzcMXRA"),
                 ]
 
                 view = discord.ui.View()
