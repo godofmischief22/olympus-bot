@@ -111,9 +111,8 @@ class HelpCommand(commands.HelpCommand):
 
     embed.add_field(
     name="**__Fear the Watcher. Trust The Shield...__**",
-    value="[Click Here](https://cdn.discordapp.com/attachments/1368114611995541567/1374033081446436925/ezgif-8dadcabb8b0fd6.gif?ex=682c9386&is=682b4206&hm=bf02cb1340f092572e71f86320f5178b31be231631d02d7434df7d7930e73fd6&)",
-    inline=False
     )
+    embed.set_image(url="https://cdn.discordapp.com/attachments/1368114611995541567/1374033081446436925/ezgif-8dadcabb8b0fd6.gif?ex=682c9386&is=682b4206&hm=bf02cb1340f092572e71f86320f5178b31be231631d02d7434df7d7930e73fd6&")
     
     embed.set_footer(
       text=f"Requested By {self.context.author}",
@@ -128,10 +127,7 @@ class HelpCommand(commands.HelpCommand):
                           ui=2)
     await asyncio.sleep(0.5)
     await ok.edit(embed=embed,view=view)
-
-
-
-  
+    
   async def send_command_help(self, command):
     ctx = self.context
     check_ignore = await ignore_check().predicate(ctx)
@@ -258,4 +254,3 @@ class Help(Cog, name="help"):
 
   async def cog_unload(self):
     self.help_command = self._original_help_command
-    
