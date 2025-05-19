@@ -108,12 +108,12 @@ class HelpCommand(commands.HelpCommand):
     embed.add_field(
     name="**__Main Modules:__**",
     value=f">>> <:olympus_mod:1368122008381948008> : Security\n <:olympus_automode:1368489521502486610> : Emergency\n <:olympus_staff:1368489097689042964> : Moderation\n <:olympus_utility:1368489251439902801> : Utility\n <:olympus_raidmode:1368489502787502161> : Automod\n <:olympus_welcome:1368489606479220849> : Welcoming\n <:olympus_autorespond:1368489881981948024> : Customroles\n <:olympus_music:1368489805968838688> : Music\n <:olympus_giveaways:1368490008339681280> : Giveaway\n <:olympus_verification:1368490595525464135> : Auto Roles\n <:olympus_fun:1368490615712776233> : Fun\n <:olympus_mic:1368448688346759249> : Voice\n <:olympus_settings:1368131873951318056> : Ignore Commands")
-
-    embed.add_field(
-    name="**__Fear the Watcher. Trust The Shield...__**",
-    )
-    embed.set_image(url="https://cdn.discordapp.com/attachments/1368114611995541567/1374033081446436925/ezgif-8dadcabb8b0fd6.gif?ex=682c9386&is=682b4206&hm=bf02cb1340f092572e71f86320f5178b31be231631d02d7434df7d7930e73fd6&")
     
+    embed.add_field(
+    name="**__Fear the Watcher. Trust Tej Shield...__**",
+    value="https://cdn.discordapp.com/attachments/1368114611995541567/1374033081446436925/ezgif-8dadcabb8b0fd6.gif?ex=682c9386&is=682b4206&hm=bf02cb1340f092572e71f86320f5178b31be231631d02d7434df7d7930e73fd6&",
+    inline=False
+)
     embed.set_footer(
       text=f"Requested By {self.context.author}",
       icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
