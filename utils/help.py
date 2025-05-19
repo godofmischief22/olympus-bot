@@ -64,11 +64,11 @@ class View(discord.ui.View):
             self.add_item(Dropdown(ctx=self.ctx, options=self.options))
 
     def add_buttons(self):
-        self.homeB = Button(label="", style=discord.ButtonStyle.secondary, emoji="⏪", command=self.set_page, args=0, ctx=self.ctx)
-        self.backB = Button(label="", style=discord.ButtonStyle.secondary, emoji="◀️", command=self.to_page, args=-1, ctx=self.ctx)
-        self.quitB = Button(label="", style=discord.ButtonStyle.danger, emoji="🔲", command=self.quit, ctx=self.ctx)
-        self.nextB = Button(label="", style=discord.ButtonStyle.secondary, emoji="▶️", command=self.to_page, args=1, ctx=self.ctx)
-        self.lastB = Button(label="", style=discord.ButtonStyle.secondary, emoji="⏩", command=self.set_last_page, ctx=self.ctx)
+        self.homeB = Button(label="", style=discord.ButtonStyle.secondary, emoji="<:VisonBackward:1373925053724364882>", command=self.set_page, args=0, ctx=self.ctx)
+        self.backB = Button(label="", style=discord.ButtonStyle.secondary, emoji="<:rayon_backward:1373925141133660201>", command=self.to_page, args=-1, ctx=self.ctx)
+        self.quitB = Button(label="", style=discord.ButtonStyle.danger, emoji="<:icon_delete:1372144823653502996>", command=self.quit, ctx=self.ctx)
+        self.nextB = Button(label="", style=discord.ButtonStyle.secondary, emoji="<:rayon_forward:1373925279562600530>", command=self.to_page, args=1, ctx=self.ctx)
+        self.lastB = Button(label="", style=discord.ButtonStyle.secondary, emoji="<:VisonForward:1373924964792664108>", command=self.set_last_page, ctx=self.ctx)
 
         buttons = [self.homeB, self.backB, self.quitB, self.nextB, self.lastB]
         for button in buttons:
