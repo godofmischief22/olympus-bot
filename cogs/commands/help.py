@@ -103,14 +103,18 @@ class HelpCommand(commands.HelpCommand):
     embed = discord.Embed(
       title="", color=0x000000)
 
-    embed.add_field(name="# **__Bot Overview:__**", value= f"<:prefix:1368486105275564083> Server Prefix:  **{prefix}** \n <:Commands:1368486421446393896> Total Commands: **{len(set(self.context.bot.walk_commands()))}** | Slash : **{slash}**\n <:links:1368487179541549137> **[Get Sentinel](https://discord.com/oauth2/authorize?client_id=1368135556784980051&permissions=2113268958&scope=bot)** | **[Support](https://discord.gg/6xyJzcMXRA)**\n\n<a:quest_fa:1374020077057347656>__**How do you use me?**__\n ```{prefix}help <command/module> to get more info regarding that command/module\nFor example: {prefix}help antinuke```\n\n")
+    embed.add_field(name="**__Bot Overview:__**", value= f"<:prefix:1368486105275564083> Server Prefix:  **{prefix}** \n <:Commands:1368486421446393896> Total Commands: **{len(set(self.context.bot.walk_commands()))}** | Slash : **{slash}**\n <:links:1368487179541549137> **[Get Sentinel](https://discord.com/oauth2/authorize?client_id=1368135556784980051&permissions=2113268958&scope=bot)** | **[Support](https://discord.gg/6xyJzcMXRA)**\n\n__**How do you use me?**__\n ```{prefix}help <command/module> to get more info regarding that command/module\nFor example: {prefix}help antinuke```\n\n")
 
     embed.add_field(
-    name="# **__Main Modules:__**",
-    value=f">>> <:olympus_mod:1368122008381948008> : Security\n <:olympus_automode:1368489521502486610> : Emergency\n <:olympus_staff:1368489097689042964> : Moderation\n <:olympus_utility:1368489251439902801> : Utility\n <:olympus_raidmode:1368489502787502161> : Automod\n <:olympus_welcome:1368489606479220849> : Welcoming\n <:olympus_autorespond:1368489881981948024> : Customroles\n <:olympus_music:1368489805968838688> : Music\n <:olympus_giveaways:1368490008339681280> : Giveaway\n <:olympus_fun:1368490615712776233> : Fun\n <:olympus_mic:1368448688346759249> : Voice\n <:olympus_settings:1368131873951318056> : Ignore Commands")
+    name="**__Main Modules:__**",
+    value=f">>> <:olympus_mod:1368122008381948008> : Security\n <:olympus_automode:1368489521502486610> : Emergency\n <:olympus_staff:1368489097689042964> : Moderation\n <:olympus_utility:1368489251439902801> : Utility\n <:olympus_raidmode:1368489502787502161> : Automod\n <:olympus_welcome:1368489606479220849> : Welcoming\n <:olympus_autorespond:1368489881981948024> : Customroles\n <:olympus_music:1368489805968838688> : Music\n <:olympus_giveaways:1368490008339681280> : Giveaway\n <:olympus_verification:1368490595525464135> : Auto Roles\n <:olympus_fun:1368490615712776233> : Fun\n <:olympus_mic:1368448688346759249> : Voice\n <:olympus_settings:1368131873951318056> : Ignore Commands")
 
-    embed.add_field(name="**Use the Buttons, to swap the Pages & Menu to select Help Pages.Need Help?**[Support](https://discord.gg/6xyJzcMXRA).**")
-    embed.add_field(name="")
+    embed.add_field(
+    name="**__Fear the Watcher. Trust The Shield...__**",
+    value="[Click Here](https://cdn.discordapp.com/attachments/1368114611995541567/1374033081446436925/ezgif-8dadcabb8b0fd6.gif?ex=682c9386&is=682b4206&hm=bf02cb1340f092572e71f86320f5178b31be231631d02d7434df7d7930e73fd6&)",
+    inline=False
+    )
+    
     embed.set_footer(
       text=f"Requested By {self.context.author}",
       icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
