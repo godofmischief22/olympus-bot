@@ -114,7 +114,7 @@ from .automod.anti_mass_mention import AntiMassMention
 from .automod.anti_emoji_spam import AntiEmojiSpam
 
 ############## STICKY #################
-from .sticky.sticky import Sticky
+from .sticky.sticky import sticky
 
 
 from .moderation.ban import Ban
