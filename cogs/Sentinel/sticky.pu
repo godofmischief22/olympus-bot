@@ -1,0 +1,5 @@
+class Sticky(commands.Cog):
+    """Sticky messages that stay visible by resending."""
+
+    def __init__(self, bot):
+        self.bot = bot
