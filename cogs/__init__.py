@@ -47,6 +47,7 @@ from .commands.status import Status
 from .commands.np import NoPrefix
 from .commands.filters import FilterCog
 from .commands.owner2 import Global
+from .command .sticky import Sticky
 #from .commands.activity import Activity
 #____________ Events _____________
 
@@ -75,7 +76,7 @@ from .Sentinel.server import _server
 from .Sentinel.voice import _voice 
 from .Sentinel.welcome import _welcome 
 from .Sentinel.giveaway import _giveaway
-
+from .Sentinel.sticky import _sticky
 
 #########ANTINUKE#########
 
@@ -112,10 +113,6 @@ from .automod.antilink import AntiLink
 from .automod.anti_invites import AntiInvite
 from .automod.anti_mass_mention import AntiMassMention
 from .automod.anti_emoji_spam import AntiEmojiSpam
-
-############## STICKY #################
-from .sticky.sticky import sticky
-
 
 from .moderation.ban import Ban
 from .moderation.unban import Unban
