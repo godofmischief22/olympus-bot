@@ -58,8 +58,8 @@ class Sentinel(commands.AutoShardedBot):
     async def on_connect(self):
         await self.change_presence(status=discord.Status.do_not_disturb,
                                    activity=discord.Activity(
-                                       type=discord.ActivityType.playing,
-                                       name='$help | .gg/odx'))
+                                       type=discord.ActivityType.watching,
+                                       name='$help | $antinuke'))
 
     async def send_raw(self, channel_id: int, content: str,
                        **kwargs) -> typing.Optional[discord.Message]:
