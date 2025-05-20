@@ -16,5 +16,5 @@ class Sticky(commands.Cog):
               return emoji, label, description
 
     @commands.group()
-    async def __Ignore__(self, ctx: commands.Context):
+    async def __sticky__(self, ctx: commands.Context):
         """`stickyadd` , `stickyremove` , `stickyedit`"""
