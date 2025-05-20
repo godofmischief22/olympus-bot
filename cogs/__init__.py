@@ -47,7 +47,6 @@ from .commands.status import Status
 from .commands.np import NoPrefix
 from .commands.filters import FilterCog
 from .commands.owner2 import Global
-from .commands .sticky import Sticky
 #from .commands.activity import Activity
 #____________ Events _____________
 
@@ -76,7 +75,6 @@ from .Sentinel.server import _server
 from .Sentinel.voice import _voice 
 from .Sentinel.welcome import _welcome 
 from .Sentinel.giveaway import _giveaway
-from .Sentinel.sticky import _sticky
 
 #########ANTINUKE#########
 
@@ -167,7 +165,6 @@ async def setup(bot: Sentinel):
   await bot.add_cog(Steal(bot))
   await bot.add_cog(Ship(bot))
   await bot.add_cog(Timer(bot))
-  await bot.add_cog(Sticky(bot))
   await bot.add_cog(Blacklist(bot))
   await bot.add_cog(Block(bot))
   await bot.add_cog(Nightmode(bot))
