@@ -113,6 +113,9 @@ from .automod.anti_invites import AntiInvite
 from .automod.anti_mass_mention import AntiMassMention
 from .automod.anti_emoji_spam import AntiEmojiSpam
 
+############## STICKY #################
+from .sticky.sticky import Sticky
+
 
 from .moderation.ban import Ban
 from .moderation.unban import Unban
@@ -167,6 +170,7 @@ async def setup(bot: Sentinel):
   await bot.add_cog(Steal(bot))
   await bot.add_cog(Ship(bot))
   await bot.add_cog(Timer(bot))
+  await bot.add_cog(Sticky(bot))
   await bot.add_cog(Blacklist(bot))
   await bot.add_cog(Block(bot))
   await bot.add_cog(Nightmode(bot))
@@ -282,3 +286,4 @@ async def setup(bot: Sentinel):
   for cog in cogs_to_load:
     print(Fore.GREEN + Style.BRIGHT + f"Loaded cog: {cog.__name__}")
   print(Fore.GREEN + Style.BRIGHT + "All cogs loaded successfully.")
+  
