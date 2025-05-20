@@ -47,7 +47,7 @@ from .commands.status import Status
 from .commands.np import NoPrefix
 from .commands.filters import FilterCog
 from .commands.owner2 import Global
-from .command .sticky import Sticky
+from .commands .sticky import Sticky
 #from .commands.activity import Activity
 #____________ Events _____________
 
