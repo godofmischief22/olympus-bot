@@ -1,3 +1,3 @@
-from .Sentinel import Sentinel
+from .Sentinel import Bitzxier
 from .Context import Context
 from .Cog import Cog

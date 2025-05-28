@@ -125,5 +125,5 @@ class Sentinel(commands.AutoShardedBot):
 
 def setup_bot():
     intents = discord.Intents.all()
-    bot = Sentinel(intents=intents)
+    bot = Bitzxier(intents=intents)
     return bot
