@@ -93,6 +93,6 @@ class Unhide(commands.Cog):
 """
 @Author: Sonu Jana
     + Discord: me.sonu
-    + Community: https://discord.gg/6xyJzcMXRA (Olympus Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Olympus Development)
     + for any queries reach out Community or DM me.
 """

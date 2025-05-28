@@ -1061,6 +1061,6 @@ Reason: `{entry.reason}`\n\n''')
 """
 @Author: aadarshhhhh 
     + Discord: aadarshhhhh 
-    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
     + for any queries reach out Community or DM me.
 """
