@@ -1,5 +1,5 @@
 from __future__ import annotations
-from discord.ext import commands
+from discord.ext import commands, tasks
 import discord
 import aiohttp
 import json
@@ -11,7 +11,6 @@ import aiosqlite
 from utils.config import OWNER_IDS
 from utils import getConfig, updateConfig
 from .Context import Context
-from discord.ext import commands, tasks
 from colorama import Fore, Style, init
 import importlib
 import inspect
@@ -40,38 +39,41 @@ class Bitzxier(commands.AutoShardedBot):
                          sync_commands=True,
                          shard_count=2)
 
+        # Rotating presence
+        self.presences = [
+            discord.Activity(type=discord.ActivityType.watching, name="Bitzxier Dominance"),
+            discord.Game(name="Protecting Servers"),
+            discord.Activity(type=discord.ActivityType.listening, name="Commands"),
+            discord.Streaming(name="Fear The Watcher. Trust The Shield 🛡️", url="https://m.twitch.tv/discord/home")
+        ]
+        self.presence_index = 0
+        self.rotate_presence.start()
+
     async def setup_hook(self):
-        await self.load_extensions() 
+        await self.load_extensions()
 
     async def load_extensions(self):
         for extension in extensions:
             try:
-                await self.load_extension(extension) 
+                await self.load_extension(extension)
                 print(Fore.GREEN + Style.BRIGHT + f"Loaded extension: {extension}")
             except Exception as e:
-                print(
-                    f"{Fore.RED}{Style.BRIGHT}Failed to load extension {extension}. {e}"
-                )
+                print(f"{Fore.RED}{Style.BRIGHT}Failed to load extension {extension}. {e}")
         print(Fore.GREEN + Style.BRIGHT + "*" * 20)
 
-    
-    async def on_connect(self):
-        await self.change_presence(status=discord.Status.do_not_disturb,
-                                   activity=discord.Activity(
-                                       type=discord.ActivityType.watching,
-                                       name='$help | $antinuke'))
+    @tasks.loop(seconds=10)
+    async def rotate_presence(self):
+        activity = self.presences[self.presence_index]
+        await self.change_presence(status=discord.Status.online, activity=activity)
+        self.presence_index = (self.presence_index + 1) % len(self.presences)
 
-    async def send_raw(self, channel_id: int, content: str,
-                       **kwargs) -> typing.Optional[discord.Message]:
+    async def send_raw(self, channel_id: int, content: str, **kwargs) -> typing.Optional[discord.Message]:
         await self.http.send_message(channel_id, content, **kwargs)
 
     async def invoke_help_command(self, ctx: Context) -> None:
-        """Invoke the help command or default help command if help extensions is not loaded."""
         return await ctx.send_help(ctx.command)
 
-    async def fetch_message_by_channel(
-            self, channel: discord.TextChannel,
-            messageID: int) -> typing.Optional[discord.Message]:
+    async def fetch_message_by_channel(self, channel: discord.TextChannel, messageID: int) -> typing.Optional[discord.Message]:
         async for msg in channel.history(
                 limit=1,
                 before=discord.Object(messageID + 1),
@@ -85,27 +87,20 @@ class Bitzxier(commands.AutoShardedBot):
             async with aiosqlite.connect('db/np.db') as db:
                 async with db.execute("SELECT id FROM np WHERE id = ?", (message.author.id,)) as cursor:
                     row = await cursor.fetchone()
+                    data = await getConfig(guild_id)
+                    prefix = data["prefix"]
                     if row:
-                        data = await getConfig(guild_id)
-                        prefix = data["prefix"]
-                        # Np user
                         return commands.when_mentioned_or(prefix, '')(self, message)
                     else:
-                        # non np
-                        data = await getConfig(guild_id)
-                        prefix = data["prefix"]
                         return commands.when_mentioned_or(prefix)(self, message)
         else:
             async with aiosqlite.connect('db/np.db') as db:
                 async with db.execute("SELECT id FROM np WHERE id = ?", (message.author.id,)) as cursor:
                     row = await cursor.fetchone()
                     if row:
-                        #NO user (Dms)
                         return commands.when_mentioned_or('$', '')(self, message)
                     else:
-                        #Non Np user (DMs)
                         return commands.when_mentioned_or('')(self, message)
-
 
     async def on_message_edit(self, before, after):
         ctx: Context = await self.get_context(after, cls=Context)
@@ -117,11 +112,6 @@ class Bitzxier(commands.AutoShardedBot):
             if type(ctx.channel) == "public_thread":
                 return
             await self.invoke(ctx)
-        else:
-            return
-
-
-
 
 def setup_bot():
     intents = discord.Intents.all()
