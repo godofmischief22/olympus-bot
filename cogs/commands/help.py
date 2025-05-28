@@ -189,7 +189,7 @@ class HelpCommand(commands.HelpCommand):
 
     entries = [
         (
-            f"鉃� `{self.context.prefix}{cmd.qualified_name}`\n",
+            f"➜ `{self.context.prefix}{cmd.qualified_name}`\n",
             f"{cmd.short_doc if cmd.short_doc else ''}\n\u200b"
         )
         for cmd in group.commands
@@ -221,7 +221,7 @@ class HelpCommand(commands.HelpCommand):
 
 
     entries = [(
-      f"鉃� `{self.context.prefix}{cmd.qualified_name}`",
+      f"➜ `{self.context.prefix}{cmd.qualified_name}`",
       f"{cmd.short_doc if cmd.short_doc else ''}"
       f"\n\u200b",
     ) for cmd in cog.get_commands()]

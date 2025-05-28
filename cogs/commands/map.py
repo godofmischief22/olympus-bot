@@ -221,9 +221,9 @@ class Map(commands.Cog):
             return
         embed = discord.Embed(title=f"<:mapa:1377154890526232647> Map of {location}", color=0x000000)
         embed.add_field(name="Open in Webpage", value=f"**[Click Here](https://www.openstreetmap.org/?mlat={view.coordinates[0]}&mlon={view.coordinates[1]}&zoom={view.zoom_level})**")
-        embed.add_field(name="Current Zoom Level", value=f"鉃�  {str(view.zoom_level)}")
+        embed.add_field(name="Current Zoom Level", value=f"➜  {str(view.zoom_level)}")
         embed.add_field(name="Map Style", value=f"{view.map_style}")
-        embed.add_field(name="Map Size", value=f"鉃�  {view.map_size}")
+        embed.add_field(name="Map Size", value=f"➜  {view.map_size}")
         embed.add_field(name="Current Coordinates", value=f"{view.coordinates[0]}, {view.coordinates[1]}")
         embed.set_image(url=view.map_url)
         embed.set_footer(text=f"Requested By {ctx.author}", icon_url=ctx.author.avatar.url if ctx.author.avatar else ctx.author.default_avatar.url)
