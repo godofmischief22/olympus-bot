@@ -6,7 +6,7 @@ from discord.ui import Button, View
 import wavelink
 from wavelink.enums import TrackSource
 from utils import Paginator, DescriptionEmbedPaginator
-from core import Cog, Sentinel, Context
+from core import Cog, Bitzxier, Context
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 import io
 import aiohttp
@@ -280,7 +280,7 @@ class MusicControlView(View):
 
 
 class Music(commands.Cog):
-    def __init__(self, client: Sentinel):
+    def __init__(self, client: Bitzxier):
         self.client = client
         self.client.loop.create_task(self.connect_nodes())
         self.client.loop.create_task(self.monitor_inactivity())
@@ -321,10 +321,10 @@ class Music(commands.Cog):
                 try:
                     ended = discord.Embed(description="Bot has been disconnected due to inactivity (being idle in Voice Channel) for more than 2 minutes." , color=0xFF0000)
                     ended.set_author(name="Inactive Timeout", icon_url=self.client.user.avatar.url)
-                    ended.set_footer(text="Thanks for choosing Sentinel!")
+                    ended.set_footer(text="Thanks for choosing Bitzxier!")
                     support = Button(label='Support',
                                  style=discord.ButtonStyle.link,
-                        url=f'https://discord.gg/6xyJzcMXRA')
+                        url=f'https://discord.gg/6ffb6TpMH3')
                     vote = Button(label='Vote',
                                  style=discord.ButtonStyle.link,
                         url=f'')
@@ -412,10 +412,10 @@ class Music(commands.Cog):
                 ended.set_author(name="Queue Ended", icon_url=self.client.user.avatar.url)
                 support = Button(label='Support',
                              style=discord.ButtonStyle.link,
-                    url=f'https://discord.gg/6xyJzcMXRA')
+                    url=f'https://discord.gg/6ffb6TpMH3')
                 vote = Button(label='Vote',
                              style=discord.ButtonStyle.link,
-                    url=f'https://top.gg/bot/1144179659735572640/vote')
+                    url=f'https://top.gg/bot/1375072186351485029/vote')
                 view = View()
                 view.add_item(support)
                 view.add_item(vote)
@@ -458,7 +458,7 @@ class Music(commands.Cog):
 
         if isinstance(tracks, wavelink.Playlist):
             await vc.queue.put_wait(tracks.tracks)
-            await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added playlist [{tracks.name}](https://discord.gg/6xyJzcMXRA) with **{len(tracks.tracks)} songs** to the queue.", color=0x000000))
+            await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added playlist [{tracks.name}](https://discord.gg/6ffb6TpMH3) with **{len(tracks.tracks)} songs** to the queue.", color=0x000000))
             if not vc.playing:
                 track = await vc.queue.get_wait()
                 await vc.play(track)
@@ -466,7 +466,7 @@ class Music(commands.Cog):
         else:
             track = tracks[0]
             await vc.queue.put_wait(track)
-            await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added [{track.title}](https://discord.gg/6xyJzcMXRA) to the queue.", color=0x000000))
+            await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added [{track.title}](https://discord.gg/6ffb6TpMH3) to the queue.", color=0x000000))
             if not vc.playing:
                 await vc.play(await vc.queue.get_wait())
                 await self.display_player_embed(vc, track, ctx)
@@ -495,7 +495,7 @@ class Music(commands.Cog):
 
                 track = search_results[0]
                 await vc.queue.put_wait(track)
-                await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added [{track.title}](https://discord.gg/6xyJzcMXRA) to the queue.", color=0x000000))
+                await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added [{track.title}](https://discord.gg/6ffb6TpMH3) to the queue.", color=0x000000))
                 if not vc.playing:
                     await vc.play(track)
                     await self.display_player_embed(vc, track, ctx)
@@ -526,7 +526,7 @@ class Music(commands.Cog):
                         c += 1
                         await ctx.message.add_reaction("✅")
 
-                await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added **{c}** of **{playlist_length}** tracks from **playlist** **[{playlist_info['name']}](https://discord.gg/6xyJzcMXRA)** to the queue.", color=0x000000))
+                await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added **{c}** of **{playlist_length}** tracks from **playlist** **[{playlist_info['name']}](https://discord.gg/6ffb6TpMH3)** to the queue.", color=0x000000))
                 await lmao.delete()
                 
                 if not vc.playing:
@@ -554,7 +554,7 @@ class Music(commands.Cog):
                     if track_results:
                         await vc.queue.put_wait(track_results[0])
 
-                await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added all tracks from album **[{album_info['name']}](https://discord.gg/6xyJzcMXRA)** to the queue.", color=0x000000))
+                await ctx.send(embed=discord.Embed(description=f"<:add_white:1368513284571140116> Added all tracks from album **[{album_info['name']}](https://discord.gg/6ffb6TpMH3)** to the queue.", color=0x000000))
                 if not vc.playing:
                     next_track = await vc.queue.get_wait()
                     await vc.play(next_track)
@@ -981,6 +981,6 @@ class Music(commands.Cog):
 """
 @Author: aadarshhhhh 
     + Discord: aadarshhhhh 
-    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
     + for any queries reach out Community or DM me.
 """

@@ -26,7 +26,7 @@ class MapView(ui.View):
     def get_coordinates(self, location):
         
         try:
-            headers = {'User-Agent': 'Sentinel Bot (https://Sentinel.vercel.app)'}
+            headers = {'User-Agent': 'Bitzxier Bot (https://Bitzxier.vercel.app)'}
             response = requests.get(f'https://nominatim.openstreetmap.org/search?q={location}&format=json', headers=headers)
             response.raise_for_status()
             data = response.json()[0]
@@ -44,14 +44,14 @@ class MapView(ui.View):
         if self.latitude is None or self.longitude is None:
             await interaction.response.send_message("Failed to retrieve map data. Please try again.", ephemeral=True)
             return
-        embed = discord.Embed(title=f"<:mapa:1257656719639707689> Map of {self.location}", color=0x000000)
-        embed.add_field(name="馃寪  Open in Webpage", value=f"鉃�  **[Click Here](https://www.openstreetmap.org/?mlat={self.latitude}&mlon={self.longitude}&zoom={self.zoom_level})**")
-        embed.add_field(name="馃攳  Current Zoom Level", value=f"鉃�  {str(self.zoom_level)}")
-        embed.add_field(name="馃椇锔�  Map Style", value=f"鉃�  {self.map_style}")
-        embed.add_field(name="馃搹  Map Size", value=f"鉃�  {self.map_size}")
-        embed.add_field(name="馃搷 Current Coordinates", value=f"鉃�  {self.latitude}, {self.longitude}")
+        embed = discord.Embed(title=f"<:mapa:1377154890526232647> Map of {self.location}", color=0x000000)
+        embed.add_field(name="Open in Webpage", value=f"**[Click Here](https://www.openstreetmap.org/?mlat={self.latitude}&mlon={self.longitude}&zoom={self.zoom_level})**")
+        embed.add_field(name="Current Zoom Level", value=f"{str(self.zoom_level)}")
+        embed.add_field(name="Map Style", value=f"{self.map_style}")
+        embed.add_field(name="Map Size", value=f"{self.map_size}")
+        embed.add_field(name="Current Coordinates", value=f"{self.latitude}, {self.longitude}")
         embed.set_image(url=self.map_url)
-        embed.set_footer(text="Made by Sentinel Development鈩�")
+        embed.set_footer(text="Made by Bitzxier Development")
         try:
             await interaction.message.edit(embed=embed, view=self)
         except Exception as e:
@@ -219,12 +219,12 @@ class Map(commands.Cog):
         if view.coordinates == (None, None):
             await ctx.send("Failed to retrieve coordinates for the location. Please try again.")
             return
-        embed = discord.Embed(title=f"<:mapa:1257656719639707689> Map of {location}", color=0x000000)
-        embed.add_field(name="馃寪  Open in Webpage", value=f"鉃�  **[Click Here](https://www.openstreetmap.org/?mlat={view.coordinates[0]}&mlon={view.coordinates[1]}&zoom={view.zoom_level})**")
-        embed.add_field(name="馃攳  Current Zoom Level", value=f"鉃�  {str(view.zoom_level)}")
-        embed.add_field(name="馃椇锔�  Map Style", value=f"鉃�  {view.map_style}")
-        embed.add_field(name="馃搹  Map Size", value=f"鉃�  {view.map_size}")
-        embed.add_field(name="馃搷 Current Coordinates", value=f"鉃�  {view.coordinates[0]}, {view.coordinates[1]}")
+        embed = discord.Embed(title=f"<:mapa:1377154890526232647> Map of {location}", color=0x000000)
+        embed.add_field(name="Open in Webpage", value=f"**[Click Here](https://www.openstreetmap.org/?mlat={view.coordinates[0]}&mlon={view.coordinates[1]}&zoom={view.zoom_level})**")
+        embed.add_field(name="Current Zoom Level", value=f"鉃�  {str(view.zoom_level)}")
+        embed.add_field(name="Map Style", value=f"{view.map_style}")
+        embed.add_field(name="Map Size", value=f"鉃�  {view.map_size}")
+        embed.add_field(name="Current Coordinates", value=f"{view.coordinates[0]}, {view.coordinates[1]}")
         embed.set_image(url=view.map_url)
         embed.set_footer(text=f"Requested By {ctx.author}", icon_url=ctx.author.avatar.url if ctx.author.avatar else ctx.author.default_avatar.url)
         await ctx.send(embed=embed, view=view)
@@ -235,6 +235,6 @@ class Map(commands.Cog):
     """
     @Author: aadarshhhhh 
         + Discord: aadarshhhhh 
-        + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+        + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
         + for any queries reach out Community or DM me.
     """

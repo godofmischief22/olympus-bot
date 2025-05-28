@@ -282,10 +282,10 @@ class Automod(commands.Cog):
 
             try:
                 for channel in interaction.guild.channels:
-                    if channel.name == "Sentinel-automod":
-                        await interaction.response.send_message(f"A logging channel with the name \"Sentinel-automod\" already exists.", ephemeral=True)
+                    if channel.name == "Bitzxier-automod":
+                        await interaction.response.send_message(f"A logging channel with the name \"Bitzxier-automod\" already exists.", ephemeral=True)
                         return
-                log_channel = await interaction.guild.create_text_channel("Sentinel-automod", overwrites=overwrites)
+                log_channel = await interaction.guild.create_text_channel("Bitzxier-automod", overwrites=overwrites)
                 guild_id = interaction.guild.id
 
                 async with aiosqlite.connect("db/automod.db") as db:
@@ -941,6 +941,6 @@ class Automod(commands.Cog):
 """
 @Author: aadarshhhhh 
     + Discord: aadarshhhhh 
-    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
     + for any queries reach out Community or DM me.
 """

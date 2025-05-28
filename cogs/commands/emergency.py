@@ -103,8 +103,8 @@ class Emergency(commands.Cog):
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     @commands.guild_only()
     async def enable(self, ctx):
-        Sentinel = ['1131806691969728593']
-        if ctx.author.id != ctx.guild.owner_id and str(ctx.author.id) not in Sentinel:
+        Bitzxier = ['1131806691969728593']
+        if ctx.author.id != ctx.guild.owner_id and str(ctx.author.id) not in Bitzxier:
             embed = discord.Embed(title="<:olympus_cross:1368120655643414548> Error", description="Only the server owner can enable emergency mode.", color=0x000000)
             return await ctx.reply(embed=embed)
 
@@ -147,8 +147,8 @@ class Emergency(commands.Cog):
     @commands.max_concurrency(1, per=commands.BucketType.default, wait=False)
     @commands.guild_only()
     async def disable(self, ctx):
-        Sentinel = ['1131806691969728593']
-        if ctx.author.id != ctx.guild.owner_id and str(ctx.author.id) not in Sentinel:
+        Bitzxier = ['1131806691969728593']
+        if ctx.author.id != ctx.guild.owner_id and str(ctx.author.id) not in Bitzxier:
             embed = discord.Embed(title="<:olympus_cross:1368120655643414548> Error", description="Only the server owner can disable emergency mode.", color=0x000000)
             return await ctx.reply(embed=embed)
 
@@ -358,10 +358,10 @@ class Emergency(commands.Cog):
     @commands.guild_only()
     @commands.bot_has_permissions(manage_roles=True)
     async def emergencysituation(self, ctx):
-        Sentinel = ['1131806691969728593']
+        Bitzxier = ['1131806691969728593']
         guild_id = ctx.guild.id
 
-        if not await self.is_guild_owner_or_authorised(ctx) and str(ctx.author.id) not in Sentinel:
+        if not await self.is_guild_owner_or_authorised(ctx) and str(ctx.author.id) not in Bitzxier:
             return await ctx.reply(embed=discord.Embed(
                 title="<:Denied:1368234342945394769> Access Denied", 
                 description="You are not authorised to execute the emergency situation.", 
@@ -495,8 +495,8 @@ class Emergency(commands.Cog):
     @commands.guild_only()
     @commands.bot_has_permissions(manage_roles=True)
     async def emergencyrestore(self, ctx):
-        Sentinel = ['1131806691969728593']
-        if ctx.author.id != ctx.guild.owner_id and str(ctx.author.id) not in Sentinel:
+        Bitzxier = ['1131806691969728593']
+        if ctx.author.id != ctx.guild.owner_id and str(ctx.author.id) not in Bitzxier:
             return await ctx.reply(embed=discord.Embed(
                 title="<:Denied:1368234342945394769> Access Denied", 
                 description="Only the server owner can execute the emergency restore command.", 
@@ -580,6 +580,6 @@ class Emergency(commands.Cog):
 """
 @Author: aadarshhhhh 
     + Discord: aadarshhhhh 
-    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
     + for any queries reach out Community or DM me.
 """

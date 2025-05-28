@@ -11,7 +11,7 @@ from typing import Optional
 from utils import Paginator, DescriptionEmbedPaginator, FieldPagePaginator, TextPaginator
 from utils.Tools import *
 from utils.config import OWNER_IDS
-from core import Cog, Sentinel, Context
+from core import Cog, Bitzxier, Context
 import sqlite3
 import os
 import requests
@@ -219,7 +219,7 @@ class Owner(commands.Cog):
                 member = await self.client.fetch_user(staff_id)
                 member_list.append(f"{member.name}#{member.discriminator} (ID: {staff_id})")
             staff_display = "\n".join(member_list)
-            sonu = discord.Embed(title="136848909768 Sentinel Staffs", description=f"\n{staff_display}", color=0x000000)
+            sonu = discord.Embed(title="<:olympus_staff:1368489097689042964> Bitzxier Staffs", description=f"\n{staff_display}", color=0x000000)
             await ctx.send(embed=sonu)
 
     @commands.command(name="slist")
@@ -233,7 +233,7 @@ class Owner(commands.Cog):
         embeds = DescriptionEmbedPaginator(
             entries=entries,
             description="",
-            title=f"Guild List of Sentinel [{len(self.client.guilds)}]",
+            title=f"Guild List of Bitzxier [{len(self.client.guilds)}]",
             color=0x000000,
             per_page=10).get_pages()
         paginator = Paginator(ctx, embeds)
@@ -353,10 +353,10 @@ class Owner(commands.Cog):
         else:
             await ctx.send("Invalid channel ID or bot has no access to the channel.")
             
-    @commands.command(name="Sentinel.restart", help="Restarts the client.")
+    @commands.command(name="Bitzxier.restart", help="Restarts the client.")
     @commands.is_owner()
     async def _restart(self, ctx: Context):
-        await ctx.reply("Restarting Sentinel...")
+        await ctx.reply("Restarting Bitzxier...")
         restart_program()
 
     @commands.command(name="sync", help="Syncs all database.")
@@ -394,7 +394,7 @@ class Owner(commands.Cog):
         ]
         embeds = DescriptionEmbedPaginator(
             entries=entries,
-            title=f"Sentinel Owners [{len(nplist)}]",
+            title=f"Bitzxier Owners [{len(nplist)}]",
             description="",
             per_page=10,
             color=0x000000).get_pages()
@@ -772,7 +772,7 @@ class Owner(commands.Cog):
     async def _owner_help(self, ctx):
         
         embed = Embed(title="Owner Commands",
-                      description="`staffadd` ,   `staffremove` ,   `stafflist` , `slist` ,   `getinvite <guild-id>` ,   `getguild <channel-id>` ,   `mutual <user>` ,   `guildban <guild_id> <user_id>` ,   `guildunban <guild_id> <user_id>` ,   `Sentinel.restart` ,   `servertour` ,   `forcepurgebots` , `forcepurgeuser` ,   `ownerban` , `bdg add <user> <badge>` ,   `bdg remove <user> <badge>` ,   `global <subcommand>` ,   `np <subcommand>` ,   `autonp <subcommand>`",
+                      description="`staffadd` ,   `staffremove` ,   `stafflist` , `slist` ,   `getinvite <guild-id>` ,   `getguild <channel-id>` ,   `mutual <user>` ,   `guildban <guild_id> <user_id>` ,   `guildunban <guild_id> <user_id>` ,   `Bitzxier.restart` ,   `servertour` ,   `forcepurgebots` , `forcepurgeuser` ,   `ownerban` , `bdg add <user> <badge>` ,   `bdg remove <user> <badge>` ,   `global <subcommand>` ,   `np <subcommand>` ,   `autonp <subcommand>`",
                       color=0x000000)
         await ctx.send(embed=embed)
 

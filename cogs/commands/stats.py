@@ -73,7 +73,7 @@ class Stats(commands.Cog):
     @ignore_check()
     @commands.cooldown(1, 7, commands.BucketType.user)
     async def stats(self, ctx):
-        processing_message = await ctx.send("<a:loading:1368441649235103794> Loading Sentinel information...")
+        processing_message = await ctx.send("<a:loading:1368441649235103794> Loading Bitzxier's information...")
         
         guild_count = len(self.bot.guilds)
         user_count = sum(g.member_count for g in self.bot.guilds if g.member_count is not None)
@@ -99,8 +99,8 @@ class Stats(commands.Cog):
         channels_connected = sum(1 for vc in self.bot.voice_clients if vc)
         playing_tracks = sum(1 for vc in self.bot.voice_clients if vc.playing)
 
-        embed = Embed(title="Sentinel Statistics: General", color=0x000000)
-        embed.add_field(name="<:channel:1204242537804734544> Channels", value=f"Total: **{channel_count}**\nText: **{text_channel_count}**   |   Voice: **{voice_channel_count}**   |   Category: **{category_channel_count}**", inline=False)
+        embed = Embed(title="Bitzxier Statistics: General", color=0x000000)
+        embed.add_field(name="<:channel:1377148015583694848> Channels", value=f"Total: **{channel_count}**\nText: **{text_channel_count}**   |   Voice: **{voice_channel_count}**   |   Category: **{category_channel_count}**", inline=False)
         embed.add_field(name="<:uptime:1368541060711710801> Uptime", value=f"{uptime}", inline=False)
         embed.add_field(name="<a:users:1368541179913699419> User Count", value=f"Humans: **{human_count}**   |   Bots: **{bot_count}**", inline=False)
         embed.add_field(name="<:Folders:1368541310264279152> Commands", value=f"Total: **{commands_count}**   |   Slash: **{slash_commands}**", inline=False)
@@ -108,12 +108,12 @@ class Stats(commands.Cog):
         embed.add_field(name="<:code:1368541499008094209> Codebase Stats", value=f"Total Python Files: **{total_files}**\nTotal Lines: **{total_lines}**\nTotal Words: **{total_words}**", inline=False)
         embed.add_field(
     name="<:gvMusic:1368510958493896719> Music Stats",
-    value=f"Currently Connected: **[{channels_connected}](https://discord.gg/6xyJzcMXRA)**\n"
-          f"Currently Playing: **[{playing_tracks}](https://discord.gg/6xyJzcMXRA)**\n"
-          f"Total Songs Played: **[{self.total_songs_played}](https://discord.gg/6xyJzcMXRA)**",
+    value=f"Currently Connected: **[{channels_connected}](https://discord.gg/6ffb6TpMH3)**\n"
+          f"Currently Playing: **[{playing_tracks}](https://discord.gg/6ffb6TpMH3)**\n"
+          f"Total Songs Played: **[{self.total_songs_played}](https://discord.gg/6ffb6TpMH3)**",
     inline=False
         )
-        embed.set_footer(text="Powered by Sentinel Developmentâ„¢", icon_url=self.bot.user.display_avatar.url)
+        embed.set_footer(text="Powered by Bitzxier Developmentâ", icon_url=self.bot.user.display_avatar.url)
 
         view = View()
         
@@ -128,13 +128,13 @@ class Stats(commands.Cog):
         system_button = Button(label="System", style=ButtonStyle.gray)
         async def system_button_callback(interaction):
             if interaction.user == ctx.author:
-                system_embed = Embed(title="Sentinel Statistics: System", color=0x000000)
+                system_embed = Embed(title="Bitzxier Statistics: System", color=0x000000)
 
                 system_embed.add_field(name="<:system:1368541989896851519> System Info", value=f"â€¢ Discord.py: **{discord.__version__}**\nâ€¢ Python: **{platform.python_version()}**\nâ€¢ Architecture: **{platform.machine()}**\nâ€¢ Platform: **{platform.system()}**", inline=False)
 
                 system_embed.add_field(name="<:memory_:1368542138249248779> Memory Info", value=f"â€¢ Total Memory: **{memory_info.total / (1024 ** 2):,.2f} MB**\nâ€¢ Memory Left: **{memory_info.available / (1024 ** 2):,.2f} MB**\nâ€¢ Heap Total: **{memory_info.used / (1024 ** 2):,.2f} MB**", inline=False)
                 system_embed.add_field(name="<:cpu:1368542240426692659> CPU Info", value=f"â€¢ CPU: **{psutil.cpu_freq().max}' GHz**\nâ€¢ CPU Usage: **{psutil.cpu_percent()}%**\nâ€¢ CPU Cores: **{psutil.cpu_count(logical=False)}**\nâ€¢ CPU Speed: **{cpu_info.current:.2f} MHz**", inline=False)
-                system_embed.set_footer(text="Powered by Sentinel Developmentâ„¢", icon_url=self.bot.user.display_avatar.url)
+                system_embed.set_footer(text="Powered by Bitzxier Developmentâ„¢", icon_url=self.bot.user.display_avatar.url)
                 
                 await interaction.response.edit_message(embed=system_embed, view=view)
         system_button.callback = system_button_callback
@@ -164,7 +164,7 @@ class Stats(commands.Cog):
                 ping_embed.add_field(name="<:pong:1368542370836119573> Bot Latency", value=f"{round(sh.latency * 800)} ms", inline=False)
                 ping_embed.add_field(name="<:websocket:1368542475106517075> Database Latency", value=f"{db_latency} ms", inline=False)
                 ping_embed.add_field(name="<:database:1368542568865988709> Websocket Latency", value=f"{wsping} ms", inline=False)
-                ping_embed.set_footer(text="Powered by Sentinel Developmentâ„¢", icon_url=self.bot.user.display_avatar.url)
+                ping_embed.set_footer(text="Powered by Bitzxier Developmentâ„¢", icon_url=self.bot.user.display_avatar.url)
                 await interaction.response.edit_message(embed=ping_embed, view=view)
         ping_button.callback = ping_button_callback
         view.add_item(ping_button)
@@ -174,13 +174,13 @@ class Stats(commands.Cog):
         """team_button = Button(label="Team", style=ButtonStyle.primary)
         async def team_button_callback(interaction):
             if interaction.user == ctx.author:
-                team_embed = Embed(title="Sentinel Team", color=0x000000)
+                team_embed = Embed(title="Bitzxier Team", color=0x000000)
                 team_embed.add_field(name="**<:olympus_owner:1368447998526488597>  Bot Owner(s)**", value=">>> **[aadarshhhhh](https://discord.com/users/1131806691969728593)**,   **[!GODOFMISCHIEF]**,
  inline=False)
 
-                .add_field(name="**<:olympus_team:1368540290717192192> Team(s)**", value="> **[Sentinel Developmentâ„¢](https://discord.gg/6xyJzcMXRA)**", online=false),
+                .add_field(name="**<:olympus_team:1368540290717192192> Team(s)**", value="> **[Bitzxier Developmentâ„¢](https://discord.gg/6ffb6TpMH3)**", online=false),
                 
-                 team_embed.set_footer(text="Powered by Sentinel Developmentâ„¢", icon_url=self.bot.user.display_avatar.url)
+                 team_embed.set_footer(text="Powered by Bitzxier Developmentâ„¢", icon_url=self.bot.user.display_avatar.url)
                 await interaction.response.edit_message(embed=team_embed, view=view)
         team_button.callback = team_button_callback
         view.add_item(team_button)"""
@@ -204,6 +204,6 @@ class Stats(commands.Cog):
 """
 @Author: aadarshhhhh 
     + Discord: aadarshhhhh 
-    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
     + for any queries reach out Community or DM me.
 """

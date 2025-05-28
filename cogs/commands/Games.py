@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import os
-from core import Cog, Sentinel, Context
+from core import Cog, Bitzxier, Context
 import games as games
 from utils.Tools import *
 from games import button_games as btn
@@ -11,9 +11,9 @@ import asyncio
 
 
 class Games(Cog):
-    """Sentinel Games"""
+    """Bitzxier Games"""
 
-    def __init__(self, client: Sentinel):
+    def __init__(self, client: Bitzxier):
         self.client = client
 
 
@@ -188,6 +188,6 @@ class Games(Cog):
 """
 @Author: aadarshhhhh 
     + Discord: aadarshhhhh 
-    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
     + for any queries reach out Community or DM me.
 """

@@ -125,7 +125,7 @@ class Giveaway(commands.Cog):
                     embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/1267699529130709075.png")
                     embed.set_footer(text=f"Ended at")
                     await message.edit(content="🎁 **GIVEAWAY ENDED** 🎁", embed=embed)
-                    await message.reply(f"💐 Congrats {winner}, you won **{giveaway[5]}!**, Hosted by <@{int(giveaway[3])}>")
+                    await message.reply(f"<a:Giveaways:1351861871690645505> Congrats {winner}, you won **{giveaway[5]}!**, Hosted by <@{int(giveaway[3])}>")
                     await self.cursor.execute("DELETE FROM Giveaway WHERE message_id = ? AND guild_id = ?", (message.id, message.guild.id))
                     await self.connection.commit()
 

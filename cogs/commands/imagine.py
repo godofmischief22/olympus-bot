@@ -140,7 +140,7 @@ class AiStuffCog(commands.Cog):
         embed.title = f"Generated Image by {interaction.user.display_name}"
         embed.add_field(name='Prompt', value=f'- {prompt}', inline=False)
         embed.add_field(name='Image Details', value=f"- **Model:** {model.value}\n- **Sampler:** {sampler.value}\n- **Seed:**{seed}", inline=True)
-        embed.set_footer(text=f"© Sentinel Development", icon_url=self.bot.user.avatar.url)
+        embed.set_footer(text=f"© Bitzxier Development", icon_url=self.bot.user.avatar.url)
         #embed.set_thumbnail(url=img_file)
         if negative:
             embed.add_field(name='Negative Prompt', value=f'- {negative}', inline=False)
@@ -155,6 +155,6 @@ class AiStuffCog(commands.Cog):
 """
 @Author: aadarshhhhh
     + Discord: aadarshhhhh 
-    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
     + for any queries reach out Community or DM me.
 """

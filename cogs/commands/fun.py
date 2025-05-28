@@ -8,7 +8,7 @@ import os
 from discord.ext import commands
 from random import randint
 from utils.Tools import *
-from core import Cog, Sentinel, Context
+from core import Cog, Bitzxier, Context
 from utils.config import *
 from pathlib import Path
 import json
@@ -200,7 +200,7 @@ class Fun(commands.Cog):
   async def tharki(self, ctx, *, person):
     embed = discord.Embed(title="<a:tharkinazar:1368452582992904323> About your Tharkipan", color=discord.Color.random())
     responses = random.randrange(1, 150)
-    embed.description = f'**Sala {person} to {responses}% Tharki Nikla** 馃槀'
+    embed.description = f'**Sala {person} to {responses}% Tharki Nikla**'
     embed.set_footer(text=f'How tharki are you? - {ctx.author.name}')
     await ctx.reply(embed=embed)
 
@@ -212,9 +212,9 @@ class Fun(commands.Cog):
   @ignore_check()
   @commands.cooldown(1, 3, commands.BucketType.user)
   async def horny(self, ctx, *, person):
-    embed = discord.Embed(title="<:hornymf:<:hornymf:1368452758906339448> About your horniness", color=discord.Color.random())
+    embed = discord.Embed(title="<:hornymf:1368452758906339448> About your horniness", color=discord.Color.random())
     responses = random.randrange(1, 150)
-    embed.description = f'**{person} is {responses}% Horny** 馃槼'
+    embed.description = f'**{person} is {responses}% Horny** '
     embed.set_footer(text=f'How horny are you? - {ctx.author.name}')
     await ctx.reply(embed=embed)
 
@@ -228,7 +228,7 @@ class Fun(commands.Cog):
   async def cute(self, ctx, *, person):
     embed = discord.Embed(title="<:cute:1368452903953502269> About your cuteness", color=discord.Color.random())
     responses = random.randrange(1, 150)
-    embed.description = f'**{person} is {responses}% Cute** 馃グ'
+    embed.description = f'**{person} is {responses}% Cute**'
     embed.set_footer(text=f'How cute are you? - {ctx.author.name}')
     await ctx.reply(embed=embed)
 
@@ -311,7 +311,7 @@ class Fun(commands.Cog):
             title=f"IP: {query}",
             description=(
               f"\n"
-              f"馃審 __**Location Info:**__ \n"
+              f"__**Location Info:**__ \n"
               f"IP: **{query}**\n"
               f"Continent: {continent} ({continent_code})\n"
               f"Country: {country} ({country_code})\n"
@@ -343,7 +343,7 @@ class Fun(commands.Cog):
           )
 
           embed.set_footer(
-            text=f'Made by Sentinel Development鈩�',
+            text=f'Made by Bitzxier Reborn',
             icon_url=self.bot.user.avatar
           )
 
@@ -385,7 +385,7 @@ class Fun(commands.Cog):
                       color=0x000000
                   )
                   weather_embed.add_field(name="Description", value=weather_desc.capitalize(), inline=False)
-                  weather_embed.add_field(name="Temperature (Celsius)", value=f"{temp_celsius:.2f} 掳C", inline=False)
+                  weather_embed.add_field(name="Temperature (Celsius)", value=f"{temp_celsius:.2f} C", inline=False)
                   weather_embed.add_field(name="Humidity", value=f"{humidity}%", inline=False)
                   weather_embed.add_field(name="Pressure", value=f"{pressure} hPa", inline=False)
                   weather_embed.set_footer(
@@ -421,7 +421,7 @@ class Fun(commands.Cog):
   async def hug(self, ctx, user: discord.Member = None):
       if user is None:
           user = ctx.author
-          description = f"{ctx.author.mention} hugged themselves 馃ズ"
+          description = f"{ctx.author.mention} hugged themselves "
       else:
           description = f"{ctx.author.mention} hugged {user.mention} 馃グ"
 
@@ -438,7 +438,7 @@ class Fun(commands.Cog):
   async def kiss(self, ctx, user: discord.Member = None):
       if user is None:
           user = ctx.author
-          description = f"{ctx.author.mention} kissed someone in their dream 馃拃"
+          description = f"{ctx.author.mention} kissed someone in their dream "
       else:
           description = f"{ctx.author.mention} kissed {user.mention} 馃槼"
 
@@ -474,7 +474,7 @@ class Fun(commands.Cog):
           user = ctx.author
           description = f"{ctx.author.mention} cuddles themselves 馃ズ"
       else:
-          description = f"{ctx.author.mention} cuddles {user.mention} 馃グ"
+          description = f"{ctx.author.mention} cuddles {user.mention} "
 
       image_url = await self.fetch_image(ctx, "cuddle")
       if image_url:
@@ -491,7 +491,7 @@ class Fun(commands.Cog):
           await ctx.reply(f"{ctx.author.mention}, you can't slap the air! Find someone to slap.")
           return
 
-      description = f"{ctx.author.mention} slaps {user.mention} 馃槨"
+      description = f"{ctx.author.mention} slaps {user.mention} "
       image_url = await self.fetch_image(ctx, "slap")
       if image_url:
           embed = discord.Embed(description=description, color=RandomColor())
@@ -505,7 +505,7 @@ class Fun(commands.Cog):
   async def tickle(self, ctx, user: discord.Member = None):
       if user is None:
           user = ctx.author
-          description = f"{ctx.author.mention} tickles themselves 馃お"
+          description = f"{ctx.author.mention} tickles themselves "
       else:
           description = f"{ctx.author.mention} tickles {user.mention} 馃槅"
 
@@ -525,9 +525,9 @@ class Fun(commands.Cog):
             return
       if user is None:
           user = ctx.author
-          description = f"{ctx.author.mention} spanked themselves 馃樀鈥嶐煉�"
+          description = f"{ctx.author.mention} spanked themselves"
       else:
-          description = f"{ctx.author.mention} spanked {user.mention} 馃樄"
+          description = f"{ctx.author.mention} spanked {user.mention} "
 
       image_url = await self.fetch_image(ctx, "spank")
       if image_url:
@@ -544,7 +544,7 @@ class Fun(commands.Cog):
           await ctx.send(f"{ctx.author.mention}, you can't kill the air! Find someone to kill.")
           return
 
-      description = f"{ctx.author.mention} kills {user.mention} 鈽狅笍"
+      description = f"{ctx.author.mention} kills {user.mention} "
       image_url = await self.fetch_action_image("kill")
       if image_url:
           embed = discord.Embed(description=description, color=discord.Color.random())
@@ -580,7 +580,7 @@ class Fun(commands.Cog):
               data = await response.json()
               if "response" in data:
                   embed = discord.Embed(
-                      description=f"馃幈 {data['response']}",
+                      description=f"{data['response']}",
                       color=discord.Color.random()
                   )
                   if "url" in data:
@@ -683,6 +683,6 @@ class Fun(commands.Cog):
 """
 @Author: aadarshhhhh 
     + Discord: aadarshhhhh 
-    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
     + for any queries reach out Community or DM me.
 """

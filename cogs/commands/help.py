@@ -4,7 +4,7 @@ from discord import app_commands, Interaction
 from difflib import get_close_matches
 from contextlib import suppress
 from core import Context
-from core.Sentinel import Sentinel
+from core.Bitzxier import Bitzxier
 from core.Cog import Cog
 from utils.Tools import getConfig
 from itertools import chain
@@ -16,7 +16,7 @@ from utils.config import serverLink
 from utils.Tools import *
 
 color = 0x000000
-client = Sentinel()
+client = Bitzxier()
 
 class HelpCommand(commands.HelpCommand):
 
@@ -103,13 +103,13 @@ class HelpCommand(commands.HelpCommand):
     embed = discord.Embed(
       title="", color=0x000000)
 
-    embed.add_field(name="**__Bot Overview:__**",value= f"<:prefix:1368486105275564083> Server Prefix:  **{prefix}** \n<:Commands:1368486421446393896> Total Commands: **{len(set(self.context.bot.walk_commands()))}** | Slash : **{slash}**\n<:links:1368487179541549137> **[Get Sentinel](https://discord.com/oauth2/authorize?client_id=1368135556784980051&permissions=2113268958&scope=bot)** | **[Support](https://discord.gg/6xyJzcMXRA)**\n<a:quest_fa:1374020077057347656>__**How do you use me?**__\n```{prefix}help <command/module> to get more info regarding that command/module\nFor example: {prefix}help antinuke```\n")
+    embed.add_field(name="**__Bot Overview:__**",value= f"<:prefix:1368486105275564083> Server Prefix:  **{prefix}** \n<:Commands:1368486421446393896> Total Commands: **{len(set(self.context.bot.walk_commands()))}** | Slash : **{slash}**\n<:links:1368487179541549137> **[Get Bitzxier](https://discord.com/oauth2/authorize?client_id=1375072186351485029&permissions=2113268958&scope=bot)** | **[Support](https://discord.gg/6ffb6TpMH3)**\n<a:quest_fa:1374020077057347656>__**How do you use me?**__\n```{prefix}help <command/module> to get more info regarding that command/module\nFor example: {prefix}help antinuke```\n")
 
     embed.add_field(
     name="**__Main Modules:__**",
     value=f">>> <:olympus_mod:1368122008381948008> : Security\n<:olympus_automode:1368489521502486610> : Emergency\n<:olympus_staff:1368489097689042964> : Moderation\n<:olympus_utility:1368489251439902801> : Utility\n<:olympus_raidmode:1368489502787502161> : Automod\n<:olympus_welcome:1368489606479220849> : Welcoming\n<:olympus_autorespond:1368489881981948024> : Customroles\n<:olympus_music:1368489805968838688> : Music\n<:olympus_giveaways:1368490008339681280> : Giveaway\n<:olympus_verification:1368490595525464135> : Auto Roles\n<:olympus_fun:1368490615712776233> : Fun\n<:olympus_mic:1368448688346759249> : Voice\n<:olympus_settings:1368131873951318056> : Ignore Commands")
 
-    embed.add_field(name="**Sentinel**",value="**Feat The Watcher. Trust The Shield!!**")
+    embed.add_field(name="**Bitzxier**",value="**Fear The Watcher. Trust The Shield!!**")
     embed.set_footer(
       text=f"Requested By {self.context.author}",
       icon_url=self.context.author.avatar.url if self.context.author.avatar else self.context.author.default_avatar.url
@@ -143,7 +143,7 @@ class HelpCommand(commands.HelpCommand):
     embed = discord.Embed(
         description=
         f"""```xml
-<[] = optional | 鈥光€� = required\nDon't type these while using Commands>```\n{sonu}""",
+<[] = optional | () = required\nDon't type these while using Commands>```\n{sonu}""",
         color=color)
     alias = ' | '.join(command.aliases)
 
@@ -237,7 +237,7 @@ class HelpCommand(commands.HelpCommand):
 
 class Help(Cog, name="help"):
 
-  def __init__(self, client: Sentinel):
+  def __init__(self, client: Bitzxier):
     self._original_help_command = client.help_command
     attributes = {
       'name':

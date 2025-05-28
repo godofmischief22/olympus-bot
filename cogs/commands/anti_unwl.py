@@ -24,7 +24,7 @@ class Unwhitelist(commands.Cog):
         if ctx.guild.member_count < 2:
             embed = discord.Embed(
                 color=0x000000,
-                description="❌ | Your Server Doesn't Meet My 30 Member Criteria"
+                description="<:olympus_cross:1368120655643414548>| Your Server Doesn't Meet My 30 Member Criteria"
             )
             return await ctx.send(embed=embed)
 
@@ -98,6 +98,6 @@ class Unwhitelist(commands.Cog):
 """
 @Author: aadarshhhhh
     + Discord: aadarshhhhh
-    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
     + for any queries reach out Community or DM me.
 """

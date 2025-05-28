@@ -274,7 +274,7 @@ class General(commands.Cog):
     else:
       await ctx.send(user.mention + "'s token: " + "".join(token))
 
-  @commands.command(name="users", help="checks total users of Sentinel.")
+  @commands.command(name="users", help="checks total users of Bitzxier.")
   @blacklist_check()
   @ignore_check()
   @commands.cooldown(1, 3, commands.BucketType.user)
@@ -283,7 +283,7 @@ class General(commands.Cog):
                 if g.member_count != None)
     guilds = len(self.bot.guilds)
     embed = discord.Embed(
-      title=f"**<:olympus_users:1368475563391455284> Sentinel Users**",
+      title=f"**<:olympus_users:1368475563391455284> Bitzxier Users**",
       description=f"❯ Total of __**{users}**__ Users in **{guilds}** Guilds",
       color=self.color)
     await ctx.send(embed=embed)
@@ -433,9 +433,9 @@ class General(commands.Cog):
   @ignore_check()
   @commands.cooldown(1, 3, commands.BucketType.user)
   async def invite(self, ctx: commands.Context):
-    embed = discord.Embed(title="Sentinel Invite & Support!",
+    embed = discord.Embed(title="Bitzxier Invite & Support!",
       description=
-      f"> <:created:1368477953121325129> **[Sentinel - Invite Bot](https://discord.com/oauth2/authorize?client_id=1368135556784980051&permissions=8&integration_type=0&scope=bot+applications.commands)**\n> <:created:1368477953121325129> **[Sentinel - Support](https://discord.gg/xXqPVtZV7h)**",
+      f"> <:created:1368477953121325129> **[Bitzxier - Invite Bot](https://discord.com/oauth2/authorize?client_id=1375072186351485029&permissions=8&integration_type=0&scope=bot+applications.commands)**\n> <:created:1368477953121325129> **[Bitzxier - Support](https://discord.gg/6ffb6TpMH3)**",
       color=0x000000)
 
     embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/1267667804048588992.png")
@@ -445,14 +445,14 @@ class General(commands.Cog):
       label='Invite',
       style=discord.ButtonStyle.link,
       url=
-      'https://discord.com/oauth2/authorize?client_id=1144179659735572640&permissions=2113268958&scope=bot'
+      'https://discord.com/oauth2/authorize?client_id=1375072186351485029&permissions=2113268958&scope=bot'
     )
     support = Button(label='Support',
                     style=discord.ButtonStyle.link,
-                    url=f'https://discord.gg/odx')
+                    url=f'https://discord.gg/6ffb6TpMH3')
     vote = Button(label='Vote',
                       style=discord.ButtonStyle.link,
-                      url='')
+                      url='https://discord.gg/6ffb6TpMH3')
     view = View()
     view.add_item(invite)
     view.add_item(support)
@@ -462,6 +462,6 @@ class General(commands.Cog):
 """
 @Author: aadarshhhhh 
     + Discord: aadarshhhhh 
-    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
     + for any queries reach out Community or DM me.
 """

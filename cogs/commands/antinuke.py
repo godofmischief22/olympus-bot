@@ -100,16 +100,16 @@ class Antinuke(commands.Cog):
           return
 
         await asyncio.sleep(1)
-        setup_embed.description += "\n<:setup_success:1368128385355743232> | Checking Sentinel's role position for optimal configuration..."
+        setup_embed.description += "\n<:setup_success:1368128385355743232> | Checking Bitzxier's role position for optimal configuration..."
         await setup_message.edit(embed=setup_embed)
 
         await asyncio.sleep(1)
-        setup_embed.description += "\n<:setup_success:1368128385355743232> | Crafting and configuring the Olympus Supreme role..."
+        setup_embed.description += "\n<:setup_success:1368128385355743232> | Crafting and configuring the Bitzxier Dominance role..."
         await setup_message.edit(embed=setup_embed)
         
         try:
           role = await ctx.guild.create_role(
-            name="Sentinal™",
+            name="Bitzxier Dominance™",
             color=0xdc143c,
             permissions=discord.Permissions(administrator=True),
             hoist=False,
@@ -127,7 +127,7 @@ class Antinuke(commands.Cog):
           return
 
         await asyncio.sleep(1)
-        setup_embed.description += "\n<:setup_success:1368128385355743232> | Ensuring precise placement of the Sentinel role..."
+        setup_embed.description += "\n<:setup_success:1368128385355743232> | Ensuring precise placement of the Bitzxier role..."
         await setup_message.edit(embed=setup_embed)
         try:
           await ctx.guild.edit_role_positions(positions={role: 1})
@@ -161,9 +161,9 @@ class Antinuke(commands.Cog):
 
         embed.add_field(name='', value="<:enabled:1368130843888979988> **Anti Prune**\n<:enabled:1368130843888979988> **Auto Recovery**")
 
-        embed.set_author(name="Sentinel Antinuke", icon_url=self.bot.user.avatar.url)
+        embed.set_author(name="Bitzxier Antinuke", icon_url=self.bot.user.avatar.url)
 
-        embed.set_footer(text="Successfully Enabled Antinuke for this server | Powered by Sentinel Development™", icon_url=self.bot.user.avatar.url)
+        embed.set_footer(text="Successfully Enabled Antinuke for this server | Powered by Bitzxier Reborn™", icon_url=self.bot.user.avatar.url)
         embed.set_thumbnail(url=self.bot.user.avatar.url)
 
         view = discord.ui.View()
@@ -224,6 +224,6 @@ class Antinuke(commands.Cog):
 """
 @Author: aadarshhhhh
     + Discord: me.aadarshhhhh
-    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
     + for any queries reach out Community or DM me.
 """

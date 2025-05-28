@@ -197,7 +197,7 @@ class Extra(commands.Cog):
       uptime_string = f"Up since {datetime.datetime.utcfromtimestamp(start_time).strftime('%Y-%m-%d %H:%M:%S')} UTC"
       uptime_duration_string = f"{uptime_timedelta.days} days, {uptime_timedelta.seconds // 3600} hours, {(uptime_timedelta.seconds // 60) % 60} minutes, {uptime_timedelta.seconds % 60} seconds"
 
-      embed = discord.Embed(title=f"Sentinel Uptime", color=self.color)
+      embed = discord.Embed(title=f"Bitzxier Uptime", color=self.color)
       embed.add_field(name="__UTC__", value=f"<:olympus_info:1368447508845428867> {uptime_string}\n\n", inline=False)
       embed.add_field(name="__Online Duration__", value=f"<:olympus_duration:1368447755067985950> {uptime_duration_string}", inline=False)
       embed.set_footer(text=f"Requested by {ctx.author}", icon_url=pfp)
@@ -1039,6 +1039,6 @@ class Extra(commands.Cog):
 """
 @Author: aadarshhhhh 
     + Discord: aadarshhhhh
-    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
     + for any queries reach out support or DM me.
 """

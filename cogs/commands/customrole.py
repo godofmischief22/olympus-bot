@@ -33,7 +33,7 @@ class Customrole(commands.Cog):
     async def add_role(self, *, role_id: int, member: discord.Member):
         if member.guild.me.guild_permissions.manage_roles:
             role = discord.Object(id=role_id)
-            await member.add_roles(role, reason="Sentinel Customrole | Role Added")
+            await member.add_roles(role, reason="Bitzxier Customrole | Role Added")
         else:
             raise discord.Forbidden("Bot does not have permission to manage roles.")
 
@@ -42,7 +42,7 @@ class Customrole(commands.Cog):
     async def remove_role(self, *, role_id: int, member: discord.Member):
         if member.guild.me.guild_permissions.manage_roles:
             role = discord.Object(id=role_id)
-            await member.remove_roles(role, reason="Sentinel Customrole | Role Removed")
+            await member.remove_roles(role, reason="Bitzxier Customrole | Role Removed")
         else:
             raise discord.Forbidden("Bot does not have permission to manage roles.")
             
@@ -51,12 +51,12 @@ class Customrole(commands.Cog):
     async def add_role2(self, *, role: int, member: discord.Member):
         if member.guild.me.guild_permissions.manage_roles:
             role = discord.Object(id=int(role))
-            await member.add_roles(role, reason="Sentinel Customrole | Role Added ")
+            await member.add_roles(role, reason="Bitzxier Customrole | Role Added ")
 
     async def remove_role2(self, *, role: int, member: discord.Member):
         if member.guild.me.guild_permissions.manage_roles:
             role = discord.Object(id=int(role))
-            await member.remove_roles(role, reason="Sentinel Customrole| Role Removed")
+            await member.remove_roles(role, reason="Bitzxier Customrole| Role Removed")
 
     
 
@@ -640,6 +640,6 @@ class Customrole(commands.Cog):
 """
 @Author: aadarshhhhh 
     + Discord: aadarshhhhh 
-    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
     + for any queries reach out support or DM me.
 """

@@ -50,7 +50,7 @@ class Whitelist(commands.Cog):
         if ctx.guild.member_count < 2:
             embed = discord.Embed(
                 color=0x000000,
-                description="❌ | Your Server Doesn't Meet My 30 Member Criteria"
+                description="<:olympus_cross:1368120655643414548>| Your Server Doesn't Meet My 30 Member Criteria"
             )
             return await ctx.send(embed=embed)
 
@@ -166,7 +166,7 @@ class Whitelist(commands.Cog):
         embed.add_field(name="**Executor**", value=f"<@!{ctx.author.id}>", inline=True)
         embed.add_field(name="**Target**", value=f"<@!{member.id}>", inline=True)
         embed.set_thumbnail(url=self.bot.user.avatar.url)
-        embed.set_footer(text=f"Developed by Sentinel Development™")
+        embed.set_footer(text=f"Developed by Bitzxier Reborn™")
 
         msg = await ctx.send(embed=embed, view=view)
 
@@ -208,7 +208,7 @@ class Whitelist(commands.Cog):
                 embed.add_field(name="**Executor**", value=f"<@!{ctx.author.id}>", inline=True)
                 embed.add_field(name="**Target**", value=f"<@!{member.id}>", inline=True)
                 embed.set_thumbnail(url=self.bot.user.avatar.url)
-                embed.set_footer(text=f"Developed by Sentinel Development™")
+                embed.set_footer(text=f"Developed by Bitzxier Reborn™")
 
                 await interaction.response.edit_message(embed=embed, view=None)
             else:
@@ -252,7 +252,7 @@ class Whitelist(commands.Cog):
                 embed.add_field(name="**Executor**", value=f"<@!{ctx.author.id}>", inline=True)
                 embed.add_field(name="**Target**", value=f"<@!{member.id}>", inline=True)
                 embed.set_thumbnail(url=self.bot.user.avatar.url)
-                embed.set_footer(text=f"Developed by Sentinel Development™")
+                embed.set_footer(text=f"Developed by Bitzxier Reborn™")
 
                 await interaction.response.edit_message(embed=embed, view=None)
         except TimeoutError:
@@ -407,6 +407,6 @@ class Whitelist(commands.Cog):
 """
 @Author: aadarshhhhh
     + Discord: aadarshhhhh
-    + Community: https://discord.gg/6xyJzcMXRA (Sentinel Development)
+    + Community: https://discord.gg/6ffb6TpMH3 (Bitzxier Reborn)
     + for any queries reach out Community or DM me.
 """
