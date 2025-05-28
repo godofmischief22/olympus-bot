@@ -13,7 +13,7 @@ from discord.ext import commands
 
 from core import Context
 from core.Cog import Cog
-from core.Sentinel import Sentinel
+from core.Bitzxier import Bitzxier 
 from utils.Tools import *
 from utils.config import *
 
@@ -65,7 +65,7 @@ async def on_ready():
 
 @client.event
 async def on_command_completion(context: commands.Context) -> None:
-    if context.author.id == 1070619070468214824:
+    if context.author.id == 1131806691969728593:
         return
 
     full_command_name = context.command.qualified_name
@@ -84,24 +84,24 @@ async def on_command_completion(context: commands.Context) -> None:
                     icon_url=avatar_url
                 )
                 embed.set_thumbnail(url=avatar_url)
-                embed.add_field(name="<:right:1244660443323306118> Command Name :",
+                embed.add_field(name="<:right:1377183613896097883> Command Name :",
                                 value=f"{executed_command}",
                                 inline=False)
                 embed.add_field(
-                    name="<:right:1244660443323306118> Command Executed By :",
+                    name="<:right:1377183613896097883> Command Executed By :",
                     value=f"{context.author} | ID: [{context.author.id}](https://discord.com/users/{context.author.id})",
                     inline=False)
                 embed.add_field(
-                    name="<:right:1244660443323306118> Command Executed In :",
+                    name="<:right:1377183613896097883> Command Executed In :",
                     value=f"{context.guild.name} | ID: [{context.guild.id}](https://discord.com/guilds/{context.guild.id})",
                     inline=False)
                 embed.add_field(
-                    name="<:right:1244660443323306118> Command Executed In Channel :",
+                    name="<:right:1377183613896097883> Command Executed In Channel :",
                     value=f"{context.channel.name} | ID: [{context.channel.id}](https://discord.com/channels/{context.guild.id}/{context.channel.id})",
                     inline=False)
 
                 embed.timestamp = discord.utils.utcnow()
-                embed.set_footer(text="Sentinel Development™ ❤️",
+                embed.set_footer(text="Bitzxier Reborn ™",
                                  icon_url=client.user.display_avatar.url)
 
                 
@@ -122,10 +122,10 @@ async def on_command_completion(context: commands.Context) -> None:
                                  value=f"{executed_command}",
                                  inline=False)
                 embed1.add_field(
-                    name="<:right:1368581994430070891> Command Executed By :",
+                    name="<:right:1377183613896097883> Command Executed By :",
                     value=f"{context.author} | ID: [{context.author.id}](https://discord.com/users/{context.author.id})",
                     inline=False)
-                embed1.set_footer(text=f"Powered by Sentinel Development™",
+                embed1.set_footer(text=f"Powered by Bitzxier Reborn™",
                                   icon_url=client.user.display_avatar.url)
                 print("Sending embed1 to webhook...")
                 await webhook.send(embed=embed1)
@@ -143,7 +143,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return f"© Sentinel Development 2025"
+    return f"© Bitzxier Reborn 2025"
 
 
 def run():
