@@ -129,7 +129,7 @@ class Welcomer(commands.Cog):
             inline=False
         )
         embed.add_field(
-            name="<:o_arrow:1306563809300844566> Embed",
+            name="<:o_arrow:1368546873169805334> Embed",
             value="Send a welcome message in an embed format. You can customize the embed with a title, description, image, etc.",
             inline=False
         )
