@@ -72,34 +72,34 @@ class Paginator(discord.ui.View):
         else:
             self.message = await self.ctx.send(embed=embed, view=self, ephemeral=ephemeral)
 
-    @discord.ui.button(emoji="⏪", style=ButtonStyle.secondary)
+    @discord.ui.button(emoji="<:VisonBackward:1373925053724364882>", style=ButtonStyle.secondary)
     async def first_page_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         """Navigates to the first page."""
         self.current_page = 0
         await self.update_page(interaction)
 
-    @discord.ui.button(emoji="◀️", style=ButtonStyle.secondary)
+    @discord.ui.button(emoji="<:rayon_backward:1373925141133660201>", style=ButtonStyle.secondary)
     async def previous_page_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         """Goes back one page."""
         if self.current_page > 0:
             self.current_page -= 1
             await self.update_page(interaction)
 
-    @discord.ui.button(emoji="🔲", style=ButtonStyle.danger)
+    @discord.ui.button(emoji="<:icon_delete:1372144823653502996>", style=ButtonStyle.danger)
     async def stop_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         """Stops the pagination session and deletes the message."""
         await interaction.response.defer()
         await self.message.delete()
         self.stop()
 
-    @discord.ui.button(emoji="▶️", style=ButtonStyle.secondary)
+    @discord.ui.button(emoji="<:rayon_forward:1373925279562600530>", style=ButtonStyle.secondary)
     async def next_page_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         """Goes forward one page."""
         if self.current_page < len(self.pages) - 1:
             self.current_page += 1
             await self.update_page(interaction)
 
-    @discord.ui.button(emoji="⏩", style=ButtonStyle.secondary)
+    @discord.ui.button(emoji="<:VisonForward:1373924964792664108>", style=ButtonStyle.secondary)
     async def last_page_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         """Goes to the last page."""
         self.current_page = len(self.pages) - 1
