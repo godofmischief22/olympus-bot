@@ -39,7 +39,7 @@ class Bitzxier(commands.AutoShardedBot):
                          sync_commands=True,
                          shard_count=2)
 
-        # Rotating presence
+        # Rotating presence setup
         self.presences = [
             discord.Activity(type=discord.ActivityType.watching, name="Bitzxier Dominance"),
             discord.Game(name="Protecting Servers"),
@@ -47,10 +47,10 @@ class Bitzxier(commands.AutoShardedBot):
             discord.Streaming(name="Fear The Watcher. Trust The Shield 🛡️", url="https://m.twitch.tv/discord/home")
         ]
         self.presence_index = 0
-        self.rotate_presence.start()
 
     async def setup_hook(self):
         await self.load_extensions()
+        self.rotate_presence.start()  #Start loop task here
 
     async def load_extensions(self):
         for extension in extensions:
@@ -117,3 +117,4 @@ def setup_bot():
     intents = discord.Intents.all()
     bot = Bitzxier(intents=intents)
     return bot
+    
