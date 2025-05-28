@@ -1,5 +1,5 @@
 from __future__ import annotations
-from core import Sentinel
+from core import Bitzxier
 from colorama import Fore, Style, init
 
 
@@ -62,19 +62,19 @@ from .events.autoreact import AutoReactListener
 #from .events.topgg import TopGG
 
 ########-------HELP-------########
-from .Sentinel.antinuke import _antinuke
-from .Sentinel.extra import _extra
-from .Sentinel.general import _general
-from .Sentinel.automod import _automod 
-from .Sentinel.moderation import _moderation
-from .Sentinel.music import _music
-from .Sentinel.fun import _fun
-from .Sentinel.games import _games
-from .Sentinel.ignore import _ignore
-from .Sentinel.server import _server
-from .Sentinel.voice import _voice 
-from .Sentinel.welcome import _welcome 
-from .Sentinel.giveaway import _giveaway
+from .Bitzxier.antinuke import _antinuke
+from .Bitzxier.extra import _extra
+from .Bitzxier.general import _general
+from .Bitzxier.automod import _automod 
+from .Bitzxier.moderation import _moderation
+from .Bitzxier.music import _music
+from .Bitzxier.fun import _fun
+from .Bitzxier.games import _games
+from .Bitzxier.ignore import _ignore
+from .Bitzxier.server import _server
+from .Bitzxier.voice import _voice 
+from .Bitzxier.welcome import _welcome 
+from .Bitzxier.giveaway import _giveaway
 
 #########ANTINUKE#########
 
@@ -129,7 +129,7 @@ from .moderation.topcheck import TopCheck
 from .moderation.snipe import Snipe
 
 
-async def setup(bot: Sentinel):
+async def setup(bot: Bitzxier):
   cogs_to_load = [
         Help, General, Moderation, Automod, Welcomer, Fun, Games, Extra,
         Voice, Owner, Customrole, afk, Embed, Media, Ignore,
