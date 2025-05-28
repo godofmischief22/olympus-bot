@@ -1,5 +1,5 @@
 from discord.ext import commands
-from core import Sentinel, Cog
+from core import Bitzxier, Cog
 import discord
 import logging
 from discord.ui import View, Button, Select
@@ -10,10 +10,10 @@ logging.basicConfig(
     datefmt="%H:%M:%S",
 )
 
-client = Sentinel()
+client = Bitzxier()
 
 class Guild(Cog):
-    def __init__(self, client: Sentinel):
+    def __init__(self, client: Bitzxier):
         self.client = client
 
     @client.event
@@ -22,7 +22,7 @@ class Guild(Cog):
         try:
             
             rope = [inv for inv in await guild.invites() if inv.max_age == 0 and inv.max_uses == 0]
-            ch = 1368115543575498876  
+            ch = 1376375277998837912  
             me = self.client.get_channel(ch)
             if me is None:
                 logging.error(f"Channel with ID {ch} not found.")
@@ -72,19 +72,19 @@ Threads : {len(guild.threads)}
             if not guild.chunked:
                 await guild.chunk()
 
-            embed = discord.Embed(description="<:red_arrow:1247226071783440404> Prefix For This Server is `$`\n<:red_arrow:1247226071783440404> Get Started with `$help`\n<:red_arrow:1368572631514742876> For detailed guides, FAQ & information, visit our **[Support Server](https://discord.gg/6xyJzcMXRA)**",
+            embed = discord.Embed(description="<:red_arrow:1368572631514742876> Prefix For This Server is `$`\n<:red_arrow:1368572631514742876> Get Started with `$help`\n<:red_arrow:1368572631514742876> For detailed guides, FAQ & information, visit our **[Support Server](https://discord.gg/6ffb6TpMH3)**",
     color=0xff0000)
             embed.set_author(name="Thanks for adding me!", icon_url=guild.me.display_avatar.url)
-            embed.set_footer(text="Powered by Sentinel Development™", icon_url="https://cdn.discordapp.com/icons/699587669059174461/f689b4366447d5a23eda8d0ec749c1ba.png")
+            embed.set_footer(text="Powered by Bitzxier Reborn™", icon_url="https://cdn.discordapp.com/icons/699587669059174461/f689b4366447d5a23eda8d0ec749c1ba.png")
             if guild.icon:
                 embed.set_thumbnail(url=guild.icon.url)
 
             support = Button(label='Support',
                              style=discord.ButtonStyle.link,
-                    url=f'https://discord.gg/6xyJzcMXRA')
+                    url=f'https://discord.gg/6ffb6TpMH3')
             web = Button(label='Website',
                              style=discord.ButtonStyle.link,
-                    url=f'https://sentinel.vercel.app/')
+                    url=f'https://Bitzxier.vercel.app/')
             view = View()
             view.add_item(support)
             view.add_item(web)
@@ -106,7 +106,7 @@ Threads : {len(guild.threads)}
     @commands.Cog.listener(name="on_guild_remove")
     async def on_guild_remove(self, guild):
         try:
-            ch = 1368115543575498876  
+            ch = 1376375279747858573  
             idk = self.client.get_channel(ch)
             if idk is None:
                 logging.error(f"Channel with ID {ch} not found.")

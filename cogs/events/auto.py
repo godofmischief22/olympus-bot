@@ -1,13 +1,13 @@
 import discord
 from discord.utils import *
-from core import Sentinel, Cog
+from core import Bitzxier, Cog
 from utils.Tools import *
 from utils.config import BotName, serverLink
 from discord.ext import commands
 from discord.ui import Button, View
 
 class Autorole(Cog):
-    def __init__(self, bot: Sentinel):
+    def __init__(self, bot: Bitzxier):
         self.bot = bot
 
 
@@ -16,14 +16,14 @@ class Autorole(Cog):
         async for entry in guild.audit_logs(limit=3):
             if entry.action == discord.AuditLogAction.bot_add:
                 embed = discord.Embed(
-                    description=f"<:mail:1368572514690793503> **Thanks for adding me.**\n\n<:red_arrow:1368572631514742876> My default prefix is `$`\n<:red_arrow:1368572631514742876> Use the `$help` command to see a list of commands\n<:red_arrow:1247226071783440404> For detailed guides, FAQ and information, visit our **[Support Server](https://discord.gg/6xyJzcMXRA)**",
+                    description=f"<:mail:1368572514690793503> **Thanks for adding me.**\n\n<:red_arrow:1368572631514742876> My default prefix is `$`\n<:red_arrow:1368572631514742876> Use the `$help` command to see a list of commands\n<:red_arrow:1368572631514742876> For detailed guides, FAQ and information, visit our **[Support Server](https://discord.gg/6ffb6TpMH3)**",
                     color=0xff0000
                 )
                 embed.set_thumbnail(url=entry.user.avatar.url if entry.user.avatar else entry.user.default_avatar.url)
                 embed.set_author(name=f"{guild.name}", icon_url=guild.me.display_avatar.url)
-                embed.set_footer(text="Powered by Sentinel Development™", icon_url="https://cdn.discordapp.com/icons/699587669059174461/f689b4366447d5a23eda8d0ec749c1ba.png")
-                website_button = Button(label='Website', style=discord.ButtonStyle.link, url='https://olyumpus.vercel.app/')
-                support_button = Button(label='Support', style=discord.ButtonStyle.link, url='https://discord.gg/6xyJzcMXRA')
+                embed.set_footer(text="Powered by Bitzxier Development™", icon_url="https://cdn.discordapp.com/icons/699587669059174461/f689b4366447d5a23eda8d0ec749c1ba.png")
+                website_button = Button(label='Website', style=discord.ButtonStyle.link, url='https://Bitzxier.vercel.app/')
+                support_button = Button(label='Support', style=discord.ButtonStyle.link, url='https://discord.gg/6ffb6TpMH3')
                 vote_button = Button(label='Vote for Me', style=discord.ButtonStyle.link, url=f'https://top.gg/bot/{self.bot.user.id}/vote')
                 view = View()
                 view.add_item(support_button)

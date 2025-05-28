@@ -4,13 +4,13 @@ import aiosqlite
 import asyncio
 import logging
 from discord.ext import commands
-from core import Sentinel, Cog
+from core import Bitzxier, Cog
 
 DATABASE_PATH = 'db/autorole.db'
 logger = logging.getLogger(__name__)
 
 class Autorole2(Cog):
-    def __init__(self, bot: Sentinel):
+    def __init__(self, bot: Bitzxier):
         self.bot = bot
         self.headers = {"Authorization": f"Bot {self.bot.http.token}"}
 
