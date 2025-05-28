@@ -10,14 +10,14 @@ AI_NSFW_CONTENT_FILTER: true
 LANGUAGE: en 
 DEFAULT_INSTRUCTION: soniye 
 
-Discord: https://discord.gg/odx
+Discord: https://discord.gg/6ffb6TpMH3
 Github: https://github.com/sonujana26/Discord-AI-Chatbot
 
 TRIGGER:
   - chatbot
-  - olympus
+  - Bitzxier
   - $
-  - olympus-ai
+  - Bitzxier-ai
   - soniye 
 
 AUTO_SHARDING: true
