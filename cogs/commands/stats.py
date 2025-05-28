@@ -113,7 +113,7 @@ class Stats(commands.Cog):
           f"Total Songs Played: **[{self.total_songs_played}](https://discord.gg/6ffb6TpMH3)**",
     inline=False
         )
-        embed.set_footer(text="Powered by Bitzxier Developmentâ", icon_url=self.bot.user.display_avatar.url)
+        embed.set_footer(text="Powered by Bitzxier Development", icon_url=self.bot.user.display_avatar.url)
 
         view = View()
         
@@ -130,11 +130,11 @@ class Stats(commands.Cog):
             if interaction.user == ctx.author:
                 system_embed = Embed(title="Bitzxier Statistics: System", color=0x000000)
 
-                system_embed.add_field(name="<:system:1368541989896851519> System Info", value=f"â€¢ Discord.py: **{discord.__version__}**\nâ€¢ Python: **{platform.python_version()}**\nâ€¢ Architecture: **{platform.machine()}**\nâ€¢ Platform: **{platform.system()}**", inline=False)
+                system_embed.add_field(name="<:system:1368541989896851519> System Info", value=f"• Discord.py: **{discord.__version__}**\n• Python: **{platform.python_version()}**\n• Architecture: **{platform.machine()}**\• Platform: **{platform.system()}**", inline=False)
 
-                system_embed.add_field(name="<:memory_:1368542138249248779> Memory Info", value=f"â€¢ Total Memory: **{memory_info.total / (1024 ** 2):,.2f} MB**\nâ€¢ Memory Left: **{memory_info.available / (1024 ** 2):,.2f} MB**\nâ€¢ Heap Total: **{memory_info.used / (1024 ** 2):,.2f} MB**", inline=False)
-                system_embed.add_field(name="<:cpu:1368542240426692659> CPU Info", value=f"â€¢ CPU: **{psutil.cpu_freq().max}' GHz**\nâ€¢ CPU Usage: **{psutil.cpu_percent()}%**\nâ€¢ CPU Cores: **{psutil.cpu_count(logical=False)}**\nâ€¢ CPU Speed: **{cpu_info.current:.2f} MHz**", inline=False)
-                system_embed.set_footer(text="Powered by Bitzxier Developmentâ„¢", icon_url=self.bot.user.display_avatar.url)
+                system_embed.add_field(name="<:memory_:1368542138249248779> Memory Info", value=f"• Total Memory: **{memory_info.total / (1024 ** 2):,.2f} MB**\n• Memory Left: **{memory_info.available / (1024 ** 2):,.2f} MB**\n• Heap Total: **{memory_info.used / (1024 ** 2):,.2f} MB**", inline=False)
+                system_embed.add_field(name="<:cpu:1368542240426692659> CPU Info", value=f"• CPU: **{psutil.cpu_freq().max}' GHz**\n• CPU Usage: **{psutil.cpu_percent()}%**\n• CPU Cores: **{psutil.cpu_count(logical=False)}**\n• CPU Speed: **{cpu_info.current:.2f} MHz**", inline=False)
+                system_embed.set_footer(text="Powered by Bitzxier Development", icon_url=self.bot.user.display_avatar.url)
                 
                 await interaction.response.edit_message(embed=system_embed, view=view)
         system_button.callback = system_button_callback
@@ -164,7 +164,7 @@ class Stats(commands.Cog):
                 ping_embed.add_field(name="<:pong:1368542370836119573> Bot Latency", value=f"{round(sh.latency * 800)} ms", inline=False)
                 ping_embed.add_field(name="<:websocket:1368542475106517075> Database Latency", value=f"{db_latency} ms", inline=False)
                 ping_embed.add_field(name="<:database:1368542568865988709> Websocket Latency", value=f"{wsping} ms", inline=False)
-                ping_embed.set_footer(text="Powered by Bitzxier Developmentâ„¢", icon_url=self.bot.user.display_avatar.url)
+                ping_embed.set_footer(text="Powered by Bitzxier Development", icon_url=self.bot.user.display_avatar.url)
                 await interaction.response.edit_message(embed=ping_embed, view=view)
         ping_button.callback = ping_button_callback
         view.add_item(ping_button)
@@ -178,15 +178,15 @@ class Stats(commands.Cog):
                 team_embed.add_field(name="**<:olympus_owner:1368447998526488597>  Bot Owner(s)**", value=">>> **[aadarshhhhh](https://discord.com/users/1131806691969728593)**,   **[!GODOFMISCHIEF]**,
  inline=False)
 
-                .add_field(name="**<:olympus_team:1368540290717192192> Team(s)**", value="> **[Bitzxier Developmentâ„¢](https://discord.gg/6ffb6TpMH3)**", online=false),
+                .add_field(name="**<:olympus_team:1368540290717192192> Team(s)**", value="> **[Bitzxier Development](https://discord.gg/6ffb6TpMH3)**", online=false),
                 
-                 team_embed.set_footer(text="Powered by Bitzxier Developmentâ„¢", icon_url=self.bot.user.display_avatar.url)
+                 team_embed.set_footer(text="Powered by Bitzxier Development", icon_url=self.bot.user.display_avatar.url)
                 await interaction.response.edit_message(embed=team_embed, view=view)
         team_button.callback = team_button_callback
         view.add_item(team_button)"""
 
         
-        delete_button = Button(label="ðŸ—‘ï¸", style=ButtonStyle.red)
+        delete_button = Button(label="<:icon_delete:1372144823653502996>", style=ButtonStyle.red)
         async def delete_button_callback(interaction):
             if interaction.user == ctx.author:
                 await interaction.message.delete()
