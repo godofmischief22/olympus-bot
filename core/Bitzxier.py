@@ -22,7 +22,7 @@ extensions: List[str] = [
     "cogs"
 ]
 
-class Sentinel(commands.AutoShardedBot):
+class Bitzxier(commands.AutoShardedBot):
 
     def __init__(self, *arg, **kwargs):
         intents = discord.Intents.all()
