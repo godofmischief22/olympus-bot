@@ -2,12 +2,31 @@ import discord
 from discord.ext import commands
 import sqlite3
 
+
 class Logging(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
     async def get_log_channel(self, guild):
         return discord.utils.get(guild.text_channels, name="veldrith-logs")
+
+    @commands.command(name="setuplogs")
+    @commands.has_permissions(manage_guild=True)
+    async def setuplogs(self, ctx):
+        """
+        Creates the 'veldrith-logs' channel if it doesn't already exist.
+        """
+        guild = ctx.guild
+        existing = discord.utils.get(guild.text_channels, name="veldrith-logs")
+        if existing:
+            await ctx.send("✅ The `veldrith-logs` channel already exists.")
+        else:
+            overwrites = {
+                guild.default_role: discord.PermissionOverwrite(read_messages=False),
+                guild.me: discord.PermissionOverwrite(read_messages=True)
+            }
+            await guild.create_text_channel("veldrith-logs", overwrites=overwrites)
+            await ctx.send("✅ Created `veldrith-logs` channel for logging.")
 
     @commands.Cog.listener()
     async def on_message_delete(self, message):
@@ -16,7 +35,7 @@ class Logging(commands.Cog):
         log_channel = await self.get_log_channel(message.guild)
         if log_channel:
             embed = discord.Embed(
-                title="馃棏锔� Message Deleted",
+                title="🗑️ Message Deleted",
                 description=f"**Author:** {message.author.mention}\n**Channel:** {message.channel.mention}\n**Content:** {message.content}",
                 color=discord.Color.red()
             )
@@ -29,7 +48,7 @@ class Logging(commands.Cog):
         log_channel = await self.get_log_channel(before.guild)
         if log_channel:
             embed = discord.Embed(
-                title="鉁忥笍 Message Edited",
+                title="✏️ Message Edited",
                 description=f"**Author:** {before.author.mention}\n**Channel:** {before.channel.mention}",
                 color=discord.Color.orange()
             )
@@ -42,7 +61,7 @@ class Logging(commands.Cog):
         log_channel = await self.get_log_channel(member.guild)
         if log_channel:
             embed = discord.Embed(
-                title="馃摜 Member Joined",
+                title="📥 Member Joined",
                 description=f"{member.mention} joined the server.",
                 color=discord.Color.green()
             )
@@ -53,7 +72,7 @@ class Logging(commands.Cog):
         log_channel = await self.get_log_channel(member.guild)
         if log_channel:
             embed = discord.Embed(
-                title="馃摛 Member Left",
+                title="📤 Member Left",
                 description=f"{member.mention} left or was kicked.",
                 color=discord.Color.dark_red()
             )
@@ -66,11 +85,11 @@ class Logging(commands.Cog):
             return
 
         if not before.channel and after.channel:
-            action = f"馃帳 {member.mention} **joined** voice channel {after.channel.mention}"
+            action = f"🎙️ {member.mention} **joined** voice channel {after.channel.mention}"
         elif before.channel and not after.channel:
-            action = f"馃攪 {member.mention} **left** voice channel {before.channel.mention}"
+            action = f"📴 {member.mention} **left** voice channel {before.channel.mention}"
         elif before.channel != after.channel:
-            action = f"馃攢 {member.mention} **moved** from {before.channel.mention} to {after.channel.mention}"
+            action = f"🔁 {member.mention} **moved** from {before.channel.mention} to {after.channel.mention}"
         else:
             return
 
@@ -81,7 +100,7 @@ class Logging(commands.Cog):
         log_channel = await self.get_log_channel(channel.guild)
         if log_channel:
             await log_channel.send(embed=discord.Embed(
-                title="馃摜 Channel Created",
+                title="📗 Channel Created",
                 description=f"**Name:** {channel.name} ({channel.mention})",
                 color=discord.Color.green()
             ))
@@ -91,7 +110,7 @@ class Logging(commands.Cog):
         log_channel = await self.get_log_channel(channel.guild)
         if log_channel:
             await log_channel.send(embed=discord.Embed(
-                title="馃棏锔� Channel Deleted",
+                title="🗑️ Channel Deleted",
                 description=f"**Name:** {channel.name}",
                 color=discord.Color.red()
             ))
@@ -101,7 +120,7 @@ class Logging(commands.Cog):
         log_channel = await self.get_log_channel(guild)
         if log_channel:
             await log_channel.send(embed=discord.Embed(
-                title="馃毃 Member Banned",
+                title="🔨 Member Banned",
                 description=f"{user.mention} was banned from the server.",
                 color=discord.Color.dark_red()
             ))
@@ -111,11 +130,12 @@ class Logging(commands.Cog):
         log_channel = await self.get_log_channel(role.guild)
         if log_channel:
             await log_channel.send(embed=discord.Embed(
-                title="鈿狅笍 Role Deleted",
+                title="❌ Role Deleted",
                 description=f"Role `{role.name}` was deleted.",
                 color=discord.Color.orange()
             ))
 
+
 async def setup(bot):
     await bot.add_cog(Logging(bot))
-  
+    
