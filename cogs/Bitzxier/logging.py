@@ -15,6 +15,6 @@ class _voice(commands.Cog):
 		      return emoji, label, description
 
     @commands.group()
-    async def __Loggging__(self, ctx: commands.Context):
+    async def __loggging__(self, ctx: commands.Context):
         """
         `setuplogs`"""
