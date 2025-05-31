@@ -244,11 +244,11 @@ async def setup(bot: Bitzxier):
 
 #Extra Optional Events 
 
-  await bot.add_cog(AntiEmojiCreate(bot))
-  await bot.add_cog(AntiEmojiDelete(bot))
-  await bot.add_cog(AntiEmojiUpdate(bot))
-  await bot.add_cog(AntiSticker(bot))
-  await bot.add_cog(AntiUnban(bot))
+  #await bot.add_cog(AntiEmojiCreate(bot))
+  #await bot.add_cog(AntiEmojiDelete(bot))
+  #await bot.add_cog(AntiEmojiUpdate(bot))
+  #await bot.add_cog(AntiSticker(bot))
+  #await bot.add_cog(AntiUnban(bot))
 
 
   await bot.add_cog(AntiSpam(bot))
