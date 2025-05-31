@@ -1,5 +1,5 @@
 from __future__ import annotations
-from core import VelDrith
+from core import Bitzxier
 from colorama import Fore, Style, init
 
 
@@ -62,20 +62,20 @@ from .events.react import React
 from .events.autoreact import AutoReactListener
 
 ########-------HELP-------########
-from .VelDrith.antinuke import _antinuke
-from .VelDrith.extra import _extra
-from .VelDrith.general import _general
-from .VelDrith.automod import _automod 
-from .VelDrith.moderation import _moderation
-from .VelDrith.music import _music
-from .VelDrith.fun import _fun
-from .VelDrith.games import _games
-from .VelDrith.ignore import _ignore
-from .VelDrith.server import _server
-from .VelDrith.voice import _voice 
-from .VelDrith.welcome import _welcome 
-from .VelDrith.giveaway import _giveaway
-from .VelDrith.logging import _logging
+from .Bitzxier.antinuke import _antinuke
+from .Bitzxier.extra import _extra
+from .Bitzxier.general import _general
+from .Bitzxier.automod import _automod 
+from .Bitzxier.moderation import _moderation
+from .Bitzxier.music import _music
+from .Bitzxier.fun import _fun
+from .Bitzxier.games import _games
+from .Bitzxier.ignore import _ignore
+from .Bitzxier.server import _server
+from .Bitzxier.voice import _voice 
+from .Bitzxier.welcome import _welcome 
+from .Bitzxier.giveaway import _giveaway
+from .Bitzxier.logging import _logging
 #########ANTINUKE#########
 
 from .antinuke.anti_member_update import AntiMemberUpdate
