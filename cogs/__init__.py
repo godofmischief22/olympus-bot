@@ -183,7 +183,7 @@ async def setup(bot: VelDrith):
   await bot.add_cog(FilterCog(bot))
   await bot.add_cog(Global(bot))
   await bot.add_cog(Map(bot))
-  await bot.load_cog("cogs.logging")
+  await bot.add_cog(logging(bot))
   #await bot.add_cog(Activity(bot))
 
 
