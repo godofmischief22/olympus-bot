@@ -47,8 +47,8 @@ from .commands.status import Status
 from .commands.np import NoPrefix
 from .commands.filters import FilterCog
 from .commands.owner2 import Global
-#from .commands.activity import Activity
-from .commands.logging import Logging 
+from .commands.logging import Logging
+#from .commands.activity import Activity 
 #____________ Events _____________
 
 from .events.autoblacklist import AutoBlacklist
@@ -129,14 +129,14 @@ from .moderation.topcheck import TopCheck
 from .moderation.snipe import Snipe
 
 
-async def setup(bot: VelDrith):
+async def setup(bot: Bitzxier):
   cogs_to_load = [
         Help, General, Moderation, Automod, Welcomer, Fun, Games, Extra,
         Voice, Owner, Customrole, afk, Embed, Media, Ignore,
         Invcrole, Steal, Ship, Timer,
         Blacklist, Block, Nightmode, AiStuffCog, Badges, Antinuke, Whitelist, 
         Unwhitelist, Extraowner, Map, Blackjack, Slots,
-        AutoBlacklist, logging, Guild, Errors, Autorole2, Autorole, greet, AutoResponder,
+        AutoBlacklist, Logging, Guild, Errors, Autorole2, Autorole, greet, AutoResponder,
         Mention, AutoRole, React, AntiMemberUpdate, AntiBan, AntiBotAdd,
         AntiChannelCreate, AntiChannelDelete, AntiChannelUpdate, AntiEveryone, AntiGuildUpdate,
         AntiIntegration, AntiKick, AntiPrune, AntiRoleCreate, AntiRoleDelete,
@@ -183,7 +183,7 @@ async def setup(bot: VelDrith):
   await bot.add_cog(FilterCog(bot))
   await bot.add_cog(Global(bot))
   await bot.add_cog(Map(bot))
-  await bot.add_cog(logging(bot))
+  await bot.add_cog(Logging(bot))
   #await bot.add_cog(Activity(bot))
 
 
