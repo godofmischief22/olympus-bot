@@ -1,5 +1,5 @@
 from __future__ import annotations
-from core import Bitzxier
+from core import VelDrith
 from colorama import Fore, Style, init
 
 
@@ -48,6 +48,7 @@ from .commands.np import NoPrefix
 from .commands.filters import FilterCog
 from .commands.owner2 import Global
 #from .commands.activity import Activity
+from .commands.logging import Logging 
 #____________ Events _____________
 
 from .events.autoblacklist import AutoBlacklist
@@ -59,23 +60,22 @@ from .events.greet2 import greet
 from .events.mention import Mention
 from .events.react import React
 from .events.autoreact import AutoReactListener
-#from .events.topgg import TopGG
 
 ########-------HELP-------########
-from .Bitzxier.antinuke import _antinuke
-from .Bitzxier.extra import _extra
-from .Bitzxier.general import _general
-from .Bitzxier.automod import _automod 
-from .Bitzxier.moderation import _moderation
-from .Bitzxier.music import _music
-from .Bitzxier.fun import _fun
-from .Bitzxier.games import _games
-from .Bitzxier.ignore import _ignore
-from .Bitzxier.server import _server
-from .Bitzxier.voice import _voice 
-from .Bitzxier.welcome import _welcome 
-from .Bitzxier.giveaway import _giveaway
-
+from .VelDrith.antinuke import _antinuke
+from .VelDrith.extra import _extra
+from .VelDrith.general import _general
+from .VelDrith.automod import _automod 
+from .VelDrith.moderation import _moderation
+from .VelDrith.music import _music
+from .VelDrith.fun import _fun
+from .VelDrith.games import _games
+from .VelDrith.ignore import _ignore
+from .VelDrith.server import _server
+from .VelDrith.voice import _voice 
+from .VelDrith.welcome import _welcome 
+from .VelDrith.giveaway import _giveaway
+from .VelDrith.logging import _logging
 #########ANTINUKE#########
 
 from .antinuke.anti_member_update import AntiMemberUpdate
@@ -98,11 +98,11 @@ from .antinuke.antiwebhookdl import AntiWebhookDelete
 
 #Extra Optional Events 
 
-#from .antinuke.antiemocr import AntiEmojiCreate
-#from .antinuke.antiemodl import AntiEmojiDelete
-#from .antinuke.antiemoup import AntiEmojiUpdate
-#from .antinuke.antisticker import AntiSticker
-#from .antinuke.antiunban import AntiUnban
+from .antinuke.antiemocr import AntiEmojiCreate
+from .antinuke.antiemodl import AntiEmojiDelete
+from .antinuke.antiemoup import AntiEmojiUpdate
+from .antinuke.antisticker import AntiSticker
+from .antinuke.antiunban import AntiUnban
 
 ############ AUTOMOD ############
 from .automod.antispam import AntiSpam
@@ -129,14 +129,14 @@ from .moderation.topcheck import TopCheck
 from .moderation.snipe import Snipe
 
 
-async def setup(bot: Bitzxier):
+async def setup(bot: VelDrith):
   cogs_to_load = [
         Help, General, Moderation, Automod, Welcomer, Fun, Games, Extra,
         Voice, Owner, Customrole, afk, Embed, Media, Ignore,
         Invcrole, Steal, Ship, Timer,
         Blacklist, Block, Nightmode, AiStuffCog, Badges, Antinuke, Whitelist, 
         Unwhitelist, Extraowner, Map, Blackjack, Slots,
-        AutoBlacklist, Guild, Errors, Autorole2, Autorole, greet, AutoResponder,
+        AutoBlacklist, logging, Guild, Errors, Autorole2, Autorole, greet, AutoResponder,
         Mention, AutoRole, React, AntiMemberUpdate, AntiBan, AntiBotAdd,
         AntiChannelCreate, AntiChannelDelete, AntiChannelUpdate, AntiEveryone, AntiGuildUpdate,
         AntiIntegration, AntiKick, AntiPrune, AntiRoleCreate, AntiRoleDelete,
@@ -183,7 +183,9 @@ async def setup(bot: Bitzxier):
   await bot.add_cog(FilterCog(bot))
   await bot.add_cog(Global(bot))
   await bot.add_cog(Map(bot))
+  await bot.load_cog("cogs.logging")
   #await bot.add_cog(Activity(bot))
+
 
 
 
@@ -242,11 +244,11 @@ async def setup(bot: Bitzxier):
 
 #Extra Optional Events 
 
-  #await bot.add_cog(AntiEmojiCreate(bot))
-  #await bot.add_cog(AntiEmojiDelete(bot))
-  #await bot.add_cog(AntiEmojiUpdate(bot))
-  #await bot.add_cog(AntiSticker(bot))
-  #await bot.add_cog(AntiUnban(bot))
+  await bot.add_cog(AntiEmojiCreate(bot))
+  await bot.add_cog(AntiEmojiDelete(bot))
+  await bot.add_cog(AntiEmojiUpdate(bot))
+  await bot.add_cog(AntiSticker(bot))
+  await bot.add_cog(AntiUnban(bot))
 
 
   await bot.add_cog(AntiSpam(bot))
@@ -280,4 +282,4 @@ async def setup(bot: Bitzxier):
   for cog in cogs_to_load:
     print(Fore.GREEN + Style.BRIGHT + f"Loaded cog: {cog.__name__}")
   print(Fore.GREEN + Style.BRIGHT + "All cogs loaded successfully.")
-  
+
