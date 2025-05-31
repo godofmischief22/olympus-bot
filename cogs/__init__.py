@@ -98,11 +98,11 @@ from .antinuke.antiwebhookdl import AntiWebhookDelete
 
 #Extra Optional Events 
 
-from .antinuke.antiemocr import AntiEmojiCreate
-from .antinuke.antiemodl import AntiEmojiDelete
-from .antinuke.antiemoup import AntiEmojiUpdate
-from .antinuke.antisticker import AntiSticker
-from .antinuke.antiunban import AntiUnban
+#from .antinuke.antiemocr import AntiEmojiCreate
+#from .antinuke.antiemodl import AntiEmojiDelete
+#from .antinuke.antiemoup import AntiEmojiUpdate
+#from .antinuke.antisticker import AntiSticker
+#from .antinuke.antiunban import AntiUnban
 
 ############ AUTOMOD ############
 from .automod.antispam import AntiSpam
